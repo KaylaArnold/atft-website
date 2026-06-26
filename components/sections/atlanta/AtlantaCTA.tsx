@@ -1,4 +1,3 @@
-content = """\
 const gradientBg = "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)"
 
 export default function AtlantaCTA() {
@@ -34,9 +33,3 @@ export default function AtlantaCTA() {
     </section>
   )
 }
-"""
-
-with open("components/sections/atlanta/AtlantaCTA.tsx", "w", encoding="utf-8") as f:
-    f.write(content)
-
-print("Done")
