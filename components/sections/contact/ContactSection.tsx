@@ -36,7 +36,7 @@ export default function ContactSection() {
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-1">
                 <p className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#C9A84C" }}>Email</p>
-                <p className="text-base text-brand-brown">support@arlettathefriendlytrader.com</p>
+                <a href="mailto:support@arlettathefriendlytrader.com" className="text-base text-brand-brown hover:text-gold transition-colors duration-200">support@arlettathefriendlytrader.com</a>
               </div>
 
               <div className="flex flex-col gap-1">
@@ -114,6 +114,7 @@ export default function ContactSection() {
                     <option value="community">5% Drippers membership</option>
                     <option value="booking">Booking and scheduling</option>
                     <option value="atlanta">Visiting Atlanta</option>
+                    <option value="merchandise">ATFT Merchandise</option>
                     <option value="other">Something else</option>
                   </select>
                 </div>
