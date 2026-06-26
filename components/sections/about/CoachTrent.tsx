@@ -1,4 +1,3 @@
-content = """\
 import Image from "next/image"
 
 export default function CoachTrent() {
@@ -54,9 +53,3 @@ export default function CoachTrent() {
     </section>
   )
 }
-"""
-
-with open("components/sections/about/CoachTrent.tsx", "w", encoding="utf-8") as f:
-    f.write(content)
-
-print("Done")
