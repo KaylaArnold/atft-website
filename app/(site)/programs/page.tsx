@@ -1,0 +1,21 @@
+import type { Metadata } from "next"
+import ProgramsHero from "@/components/sections/programs/ProgramsHero"
+import ProgramsGrid from "@/components/sections/programs/ProgramsGrid"
+import ProgramsFAQ from "@/components/sections/programs/ProgramsFAQ"
+import AboutCTA from "@/components/sections/about/AboutCTA"
+
+export const metadata: Metadata = {
+  title: "Programs",
+  description: "Explore all trading education programs by Arletta The Friendly Trader — from beginner to advanced, in-person to online.",
+}
+
+export default function ProgramsPage() {
+  return (
+    <div className="pt-[72px]">
+      <ProgramsHero />
+      <ProgramsGrid />
+      <ProgramsFAQ />
+      <AboutCTA />
+    </div>
+  )
+}

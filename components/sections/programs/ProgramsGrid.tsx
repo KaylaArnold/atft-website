@@ -1,4 +1,3 @@
-content = """\
 import Link from "next/link"
 
 const PROGRAMS = [
@@ -57,9 +56,3 @@ export default function ProgramsGrid() {
     </section>
   )
 }
-"""
-
-with open("components/sections/programs/ProgramsGrid.tsx", "w", encoding="utf-8") as f:
-    f.write(content)
-
-print("Done")
