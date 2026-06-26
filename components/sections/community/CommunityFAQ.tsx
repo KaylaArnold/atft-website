@@ -1,4 +1,3 @@
-content = """\
 "use client"
 
 import { useState } from "react"
@@ -8,7 +7,7 @@ const FAQS = [
   { q: "How do I access the community after joining?", a: "After signing up you will receive an invitation to join our Mighty Networks community. Everything — live sessions, replays, discussions, and resources — lives inside that platform. You can access it on desktop or via the Mighty Networks mobile app." },
   { q: "What time are the daily live sessions?", a: "Live sessions are held during market hours. Specific session times are shared inside the community. All sessions are recorded and added to the replay library so you never miss a thing." },
   { q: "Do I need to be an experienced trader to join?", a: "No. The community welcomes traders at every level. Beginners will find the live sessions educational and the community supportive. More experienced traders benefit from daily structure, accountability, and the coaching team's insight." },
-  { q: "Can I cancel anytime?", a: "Yes. There is no long-term commitment. You can cancel your monthly membership at any time and your access will continue through the end of your current billing period." },
+  { q: "Can I cancel anytime?", a: "Yes. There is no long-term commitment. You can cancel your monthly membership at any time inside of the Mighty Networks app and your access will continue through the end of your current billing period." },
   { q: "Is this the same as the trading classes?", a: "No — the community membership and the individual classes are separate. The membership gives you ongoing daily access to live sessions and community. The classes are standalone educational programs focused on specific topics or skill levels. Many members do both." },
 ]
 
@@ -50,9 +49,3 @@ export default function CommunityFAQ() {
     </section>
   )
 }
-"""
-
-with open("components/sections/community/CommunityFAQ.tsx", "w", encoding="utf-8") as f:
-    f.write(content)
-
-print("Done")

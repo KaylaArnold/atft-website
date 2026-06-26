@@ -1,0 +1,56 @@
+import { SITE_CONFIG } from "@/lib/constants"
+
+const gradientBg = "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)"
+const goldText = "linear-gradient(135deg, #C9A84C 0%, #E8C96A 50%, #C9A84C 100%)"
+
+export default function CommunityHero() {
+  return (
+    <section className="relative bg-brand-dark overflow-hidden" style={{ paddingTop: "8rem", paddingBottom: "6rem" }}>
+      <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, #C9A84C, transparent)" }} />
+      <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 50% 50%, #C9A84C 0%, transparent 70%)" }} />
+
+      <div className="relative max-w-site mx-auto px-6">
+        <div className="flex flex-col items-center text-center gap-8 max-w-3xl mx-auto">
+          <div className="flex items-center gap-3">
+            <div className="h-px w-8" style={{ background: "#C9A84C" }} />
+            <span className="text-xs font-semibold tracking-widest uppercase text-gold">Monthly Membership</span>
+            <div className="h-px w-8" style={{ background: "#C9A84C" }} />
+          </div>
+
+          <h1 className="font-display text-5xl lg:text-7xl font-bold leading-tight" style={{ color: "#F9F6F0" }}>
+            Join the{" "}
+            <span style={{ background: goldText, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              5% Drippers.
+            </span>
+          </h1>
+
+          <p className="text-lg leading-relaxed" style={{ color: "rgba(249,246,240,0.7)" }}>
+            A private trading community built for traders who are serious about growth. Daily live sessions, real education, accountability, and a group of people who actually show up — every single day.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 items-center">
+            <a href={SITE_CONFIG.communityUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: gradientBg }}>
+              Join for $299/month
+            </a>
+            <p className="text-sm" style={{ color: "rgba(249,246,240,0.5)" }}>Cancel anytime. No long-term commitment.</p>
+          </div>
+
+          <div className="grid grid-cols-3 gap-8 pt-8 w-full max-w-lg" style={{ borderTop: "1px solid rgba(201,168,76,0.15)" }}>
+            <div className="flex flex-col items-center gap-1">
+              <span className="font-display text-3xl font-bold" style={{ color: "#E8C96A" }}>Daily</span>
+              <span className="text-xs text-center" style={{ color: "rgba(249,246,240,0.5)" }}>Live Sessions</span>
+            </div>
+            <div className="flex flex-col items-center gap-1">
+              <span className="font-display text-3xl font-bold" style={{ color: "#E8C96A" }}>1,000+</span>
+              <span className="text-xs text-center" style={{ color: "rgba(249,246,240,0.5)" }}>Students Taught</span>
+            </div>
+            <div className="flex flex-col items-center gap-1">
+              <span className="font-display text-3xl font-bold" style={{ color: "#E8C96A" }}>3+</span>
+              <span className="text-xs text-center" style={{ color: "rgba(249,246,240,0.5)" }}>Years Teaching</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
