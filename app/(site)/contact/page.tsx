@@ -1,4 +1,3 @@
-content = """\
 import type { Metadata } from "next"
 import ContactSection from "@/components/sections/contact/ContactSection"
 
@@ -14,9 +13,3 @@ export default function ContactPage() {
     </div>
   )
 }
-"""
-
-with open("app/(site)/contact/page.tsx", "w", encoding="utf-8") as f:
-    f.write(content)
-
-print("Done")
