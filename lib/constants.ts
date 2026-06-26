@@ -20,5 +20,6 @@ export const SITE_CONFIG = {
   communityPrice: 299,
   communityUrl:   'https://arletta-the-friendly-trader.mn.co/',
   shopUrl:        'https://shop.arlettathefriendlytrader.com',
+  bookingUrl: 'https://httpsarlettathefriendlytraderasme.as.me/schedule/1a78dddd',
   disclaimer:     'Educational content only. Trading involves risk. Past results are not indicative of future performance.',
 } as const
