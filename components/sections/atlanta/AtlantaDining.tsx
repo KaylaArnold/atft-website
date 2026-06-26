@@ -6,7 +6,7 @@ const RESTAURANTS = [
 
 export default function AtlantaDining() {
   return (
-    <section className="section-padding" style={{ background: "#FBF6EC" }}>
+    <section id="dining" className="section-padding" style={{ background: "#FBF6EC" }}>
       <div className="max-w-site mx-auto px-6">
         <div className="flex flex-col gap-4 mb-12">
           <div className="flex items-center gap-3">

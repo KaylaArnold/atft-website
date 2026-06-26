@@ -18,7 +18,7 @@ const typeColors: Record<string, { bg: string; color: string }> = {
 
 export default function AtlantaThingsToDo() {
   return (
-    <section className="section-padding bg-brand-white">
+    <section id="things-to-do" className="section-padding bg-brand-white">
       <div className="max-w-site mx-auto px-6">
         <div className="flex flex-col gap-4 mb-12">
           <div className="flex items-center gap-3">

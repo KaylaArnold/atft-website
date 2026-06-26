@@ -18,10 +18,15 @@ export default function AtlantaHero() {
             Coming in from out of town for a class or session? We have got you covered. Here is everything you need to know about getting here, where to stay, where to eat, and what to do while you are in Midtown Atlanta.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
-            {["Hotels", "Dining", "Transportation", "Things To Do"].map((item) => (
-              <span key={item} className="text-xs font-medium px-4 py-2 rounded-full" style={{ background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.2)", color: "rgba(201,168,76,0.8)" }}>
-                {item}
-              </span>
+            {[
+              { label: "Hotels", href: "#hotels" },
+              { label: "Dining", href: "#dining" },
+              { label: "Transportation", href: "#transportation" },
+              { label: "Things To Do", href: "#things-to-do" },
+            ].map((item) => (
+              <a key={item.label} href={item.href} className="text-xs font-medium px-4 py-2 rounded-full transition-all duration-200 hover:opacity-80" style={{ background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.2)", color: "rgba(201,168,76,0.8)" }}>
+                {item.label}
+              </a>
             ))}
           </div>
           <div className="p-4 rounded-xl mt-2" style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.2)" }}>

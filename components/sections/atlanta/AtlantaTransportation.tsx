@@ -1,6 +1,6 @@
 export default function AtlantaTransportation() {
   return (
-    <section className="section-padding bg-brand-dark relative overflow-hidden">
+    <section id="transportation" className="section-padding bg-brand-dark relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, #C9A84C, transparent)" }} />
       <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 30% 50%, #C9A84C 0%, transparent 60%)" }} />
 

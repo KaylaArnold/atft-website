@@ -1,4 +1,3 @@
-content = """\
 "use client"
 
 import { useEffect, useState } from "react"
@@ -29,9 +28,3 @@ export default function BackToTop() {
     </button>
   )
 }
-"""
-
-with open("components/ui/BackToTop.tsx", "w", encoding="utf-8") as f:
-    f.write(content)
-
-print("Done")

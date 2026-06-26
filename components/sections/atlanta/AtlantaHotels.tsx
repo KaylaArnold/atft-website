@@ -17,7 +17,7 @@ const dotStyle = { background: "#C9A84C" }
 
 export default function AtlantaHotels() {
   return (
-    <section className="section-padding bg-brand-white">
+    <section id="hotels" className="section-padding bg-brand-white">
       <div className="max-w-site mx-auto px-6">
 
         <div className="flex flex-col gap-4 mb-12">
