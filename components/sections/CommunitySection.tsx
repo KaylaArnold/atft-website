@@ -85,7 +85,7 @@ export default function CommunitySection() {
               </a>
 
               <p className="text-xs text-center" style={{ color: "rgba(249,246,240,0.35)" }}>
-                Annual plan also available &mdash; ask us for details
+                Annual plan also available 
               </p>
 
             </div>

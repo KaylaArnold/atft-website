@@ -23,8 +23,8 @@
   --font-size-display-sm: 1.75rem;
 
   /* Spacing */
-  --spacing-section:     7.5rem;
-  --spacing-section-sm:  5rem;
+  --spacing-section:     4rem;
+  --spacing-section-sm:  2.5rem;
 
   /* Max Width */
   --width-site:          1200px;
@@ -75,8 +75,8 @@
   }
 
   .section-padding {
-    padding-top: var(--spacing-section);
-    padding-bottom: var(--spacing-section);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .max-w-site {

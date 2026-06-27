@@ -1,4 +1,3 @@
-content = """\
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -102,9 +101,3 @@ export default function DisclaimerPage() {
     </div>
   )
 }
-"""
-
-with open("app/(site)/disclaimer/page.tsx", "w", encoding="utf-8") as f:
-    f.write(content)
-
-print("Done")

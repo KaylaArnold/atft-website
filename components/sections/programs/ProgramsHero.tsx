@@ -17,13 +17,6 @@ export default function ProgramsHero() {
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "rgba(249,246,240,0.7)" }}>
             From complete beginners to advanced traders — every program is built on the same foundation: structure, discipline, and the 5% Method. Find where you are and start your drip.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
-            {["Beginner", "Intermediate", "Advanced", "All Levels", "In-Person", "Kids & Family"].map((level) => (
-              <span key={level} className="text-xs font-medium px-4 py-2 rounded-full" style={{ background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.2)", color: "rgba(201,168,76,0.8)" }}>
-                {level}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </section>

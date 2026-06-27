@@ -1,4 +1,4 @@
-﻿import Link from "next/link"
+import Link from "next/link"
 import Image from "next/image"
 import { NAV_LINKS, SOCIAL_LINKS, SITE_CONFIG } from "@/lib/constants"
 
@@ -71,10 +71,15 @@ export default function Footer() {
       </div>
 
       <div style={{ borderTop: "1px solid rgba(249,246,240,0.1)" }}>
-        <div className="max-w-site mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="max-w-site mx-auto px-6 py-6 flex flex-col gap-4 sm:flex-row items-center justify-between">
           <p className="text-xs" style={{ color: "rgba(249,246,240,0.4)" }}>
-            Copyright {currentYear} {SITE_CONFIG.name}. All rights reserved.
+            &copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.
           </p>
+          <div className="flex items-center gap-6">
+            <a href="/terms" className="text-xs hover:text-gold transition-colors duration-200" style={{ color: "rgba(249,246,240,0.4)" }}>Terms</a>
+            <a href="/privacy" className="text-xs hover:text-gold transition-colors duration-200" style={{ color: "rgba(249,246,240,0.4)" }}>Privacy</a>
+            <a href="/disclaimer" className="text-xs hover:text-gold transition-colors duration-200" style={{ color: "rgba(249,246,240,0.4)" }}>Trading Disclaimer</a>
+          </div>
           <p className="text-xs text-center sm:text-right max-w-lg" style={{ color: "rgba(249,246,240,0.4)" }}>
             {SITE_CONFIG.disclaimer}
           </p>

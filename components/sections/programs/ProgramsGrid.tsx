@@ -40,7 +40,7 @@ export default function ProgramsGrid() {
 
   return (
     <div>
-      <section className="section-padding bg-brand-white">
+      <section className="bg-brand-white" style={{ paddingTop: "7.5rem", paddingBottom: "3rem" }}>
         <div className="max-w-site mx-auto px-6">
 
           <div className="flex flex-col items-center gap-4 mb-12 text-center">
@@ -74,7 +74,7 @@ export default function ProgramsGrid() {
               <p className="text-base text-brand-brown">No programs found for this level.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
               {filtered.map((program) => (
                 <div key={program.name} className="flex flex-col gap-4 rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 bg-brand-white" style={cardStyle}>
                   <span className="self-start text-xs font-semibold px-3 py-1 rounded-full" style={{ background: program.badgeBg, color: program.badgeColor }}>{program.badge}</span>
