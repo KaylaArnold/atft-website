@@ -21,12 +21,38 @@ export const metadata: Metadata = {
   },
   description:
     'Learn the 5% Method with Arletta The Friendly Trader. Disciplined options trading strategies, risk management, and consistency — for traders at every level.',
-  keywords: ['trading education', 'options trading', '5% method', 'day trading', 'trading coach'],
+  keywords: ['trading education', 'options trading', '5% method', 'day trading', 'trading coach', 'Atlanta trading'],
   openGraph: {
     type:     'website',
     locale:   'en_US',
     url:      'https://www.arlettathefriendlytrader.com',
     siteName: 'Arletta The Friendly Trader',
+    title:    'Arletta The Friendly Trader',
+    description: 'Learn the 5% Method — disciplined options trading strategies, risk management, and consistency.',
+    images: [
+      {
+        url: '/images/arletta-hero.png',
+        width: 1200,
+        height: 630,
+        alt: 'Arletta The Friendly Trader',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Arletta The Friendly Trader',
+    description: 'Learn the 5% Method — disciplined options trading strategies, risk management, and consistency.',
+    images: ['/images/arletta-hero.png'],
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png' },
+    ],
   },
 }
 
