@@ -1,16 +1,19 @@
 const TESTIMONIALS = [
   {
     quote: "Coach Arletta and Coach Trent are truly changing lives! I am so grateful for their guidance, and the Drippers community is such an inspiring place to learn and grow. This journey has been life-changing!",
+    name: "Dr. Trenee",
     handle: "@drtrenee",
     platform: "YouTube",
   },
   {
     quote: "Most grateful and thankful for you Mrs. Arletta! You deserve all the blessings that God has in store for you! There is no other like you and Coach Trent! I first found you Coach Arletta through Krystal Lee's YouTube channel. I have never looked back since that day. I am grateful and most humble to be in your community of Drippers and cousins!",
-    handle: "Mechelle Bellamy",
-    platform: "Mighty Networks",
+    name: "Mechelle Bellamy",
+    handle: "Mighty Networks",
+    platform: "Community",
   },
   {
     quote: "You make so much space and time for your community. I am so happy to be a part of a TRUE community where you are seen and heard. Love all in the atmosphere.",
+    name: "Motymillion2",
     handle: "@motymillion2",
     platform: "TikTok",
   },
