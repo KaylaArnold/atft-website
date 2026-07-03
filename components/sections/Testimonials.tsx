@@ -1,21 +1,18 @@
 const TESTIMONIALS = [
   {
     quote: "Coach Arletta and Coach Trent are truly changing lives! I am so grateful for their guidance, and the Drippers community is such an inspiring place to learn and grow. This journey has been life-changing!",
-    name: "Dr. Trenee",
     handle: "@drtrenee",
     platform: "YouTube",
   },
   {
-    quote: "Before finding Arletta, I was trading emotionally and losing consistently. The 5% Method gave me a framework that actually works. I finally feel like a real trader.",
-    name: "Community Member",
-    handle: "@member",
-    platform: "Instagram",
+    quote: "Most grateful and thankful for you Mrs. Arletta! You deserve all the blessings that God has in store for you! There is no other like you and Coach Trent! I first found you Coach Arletta through Krystal Lee's YouTube channel. I have never looked back since that day. I am grateful and most humble to be in your community of Drippers and cousins!",
+    handle: "Mechelle Bellamy",
+    platform: "Mighty Networks",
   },
   {
-    quote: "The Inner Drip session was exactly what I needed. I knew the strategy but kept second-guessing myself. After one session my mindset completely shifted.",
-    name: "Community Member",
-    handle: "@member",
-    platform: "Instagram",
+    quote: "You make so much space and time for your community. I am so happy to be a part of a TRUE community where you are seen and heard. Love all in the atmosphere.",
+    handle: "@motymillion2",
+    platform: "TikTok",
   },
 ]
 
@@ -27,9 +24,16 @@ const PlatformIcon = ({ platform }: { platform: string }) => {
       </svg>
     )
   }
+  if (platform === "TikTok") {
+    return (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C">
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/>
+      </svg>
+    )
+  }
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="#E8C96A">
-      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A84C">
+      <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
     </svg>
   )
 }
@@ -53,7 +57,6 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Featured quote */}
         <div className="rounded-2xl p-8 lg:p-12 mb-8 relative overflow-hidden" style={{ background: "#0F0A02", border: "1px solid rgba(201,168,76,0.2)" }}>
           <div className="absolute top-6 left-8 font-display text-8xl font-bold leading-none" style={{ color: "rgba(201,168,76,0.1)" }}>"</div>
           <div className="relative flex flex-col gap-6 max-w-3xl mx-auto text-center">
@@ -72,7 +75,6 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Secondary testimonials */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {TESTIMONIALS.slice(1).map((testimonial, index) => (
             <div key={index} className="rounded-2xl p-6 flex flex-col gap-4" style={{ background: "#FBF6EC", border: "1px solid rgba(201,168,76,0.15)" }}>
@@ -82,16 +84,14 @@ export default function Testimonials() {
               </p>
               <div className="flex items-center gap-2 pt-2" style={{ borderTop: "1px solid rgba(201,168,76,0.15)" }}>
                 <PlatformIcon platform={testimonial.platform} />
-                <span className="text-sm font-medium text-brand-black">{testimonial.name}</span>
-                <span className="text-xs" style={{ color: "rgba(107,92,62,0.6)" }}>{testimonial.handle}</span>
+                <div>
+                  <p className="text-sm font-medium text-brand-black">{testimonial.name}</p>
+                  <p className="text-xs" style={{ color: "rgba(107,92,62,0.6)" }}>{testimonial.handle}</p>
+                </div>
               </div>
             </div>
           ))}
         </div>
-
-        <p className="text-center text-xs mt-8" style={{ color: "rgba(107,92,62,0.5)" }}>
-          * Placeholder testimonials. Real student stories coming soon.
-        </p>
 
       </div>
     </section>

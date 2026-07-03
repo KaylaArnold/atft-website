@@ -3,15 +3,14 @@
 import { useState } from "react"
 import { SITE_CONFIG } from "@/lib/constants"
 
-const FILTERS = ["All", "Beginner", "Intermediate", "Advanced", "All Levels", "In-Person", "Kids and Family", "Educators Only", "Members Only"]
+const FILTERS = ["All", "Beginner", "Intermediate", "Advanced", "All Levels", "In-Person", "Kids and Family", "Members Only"]
 
 const PROGRAMS = [
   { name: "First Drip (Intro to Day Trading)", badge: "Beginner", badgeColor: "#1a6b3c", badgeBg: "#e6f4ed", description: "The official starting point for new or inconsistent traders. Learn trading basics, chart reading, candlestick patterns, and the 5% Method framework with a focus on price action, the Opening Range Breakout strategy, mindset, and risk management.", details: "Includes guided live paper trading", highlight: "Perfect for complete beginners", price: null, salePrice: null, bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=88264742" },
-  { name: "Educated Drip: Making Cents After School (Beginner)", badge: "Educators Only", badgeColor: "#1a3d6b", badgeBg: "#e6eef4", description: "A specialized trading education program designed exclusively for teachers and educators. Beginner level — no prior trading experience required. Learn the 5% Method framework in plain English, built around your schedule.", details: "For teachers and educators only", highlight: "Beginner friendly — no experience needed", price: null, salePrice: null, bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/educateddripbeginner" },
-  { name: "Educated Drip: Making Cents After School (Experienced)", badge: "Educators Only", badgeColor: "#1a3d6b", badgeBg: "#e6eef4", description: "A specialized trading education program designed exclusively for teachers and educators with some trading experience. Build on what you already know using the 5% Method framework — structured, disciplined, and tailored for busy professionals.", details: "For teachers and educators only", highlight: "Requires some prior trading knowledge", price: null, salePrice: null, bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=94685844" },
   { name: "Swing Drip", badge: "Intermediate", badgeColor: "#7a4f00", badgeBg: "#fef3e2", description: "A focused class for traders looking to expand beyond day trading and build consistency with multi-day or multi-week positions. Learn to identify high-probability swing trade setups, plan entries and exits, manage risk over time, and maintain discipline.", details: "Multi-day and multi-week positions", highlight: "Limited time sale pricing", price: 1299, salePrice: 499, bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=88265071" },
   { name: "Inner Drip", badge: "All Levels", badgeColor: "#4a1a6b", badgeBg: "#f3e6f4", description: "A premium mindset alignment session for traders who know the strategy but struggle with consistent execution due to fear, hesitation, or emotional reactivity. Regulate your nervous system and reinforce discipline, patience, and confidence.", details: "Mindset and nervous system regulation", highlight: "For traders who know but struggle to execute", price: null, salePrice: null, bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=88266220" },
   { name: "Drip Reset", badge: "All Levels", badgeColor: "#4a1a6b", badgeBg: "#f3e6f4", description: "A focused refresher for traders who already know the basics but need realignment and clarity. Revisits the 5% Method to reinforce structure, disciplined execution, and proper trade management while addressing mindset challenges.", details: "Refresher and realignment session", highlight: "Regain confidence and consistency", price: null, salePrice: null, bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=88264849" },
+  { name: "Weekend Warrior: The Total Reset for Traders", badge: "All Levels", badgeColor: "#4a1a6b", badgeBg: "#f3e6f4", description: "A 3-day hybrid trading reset experience designed to help traders gain clarity, confidence, discipline, and alignment. Includes trading education, live coaching, mindset work, emotional reset, and accountability and strategy sessions. Only 20 seats available — first come first serve.", details: "July 24-26, 2026 | Midtown Atlanta or Zoom", highlight: "Only 20 seats — fills quickly", price: null, salePrice: null, bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=93396111" },
   { name: "Futures Drip", badge: "Advanced", badgeColor: "#8B1a1a", badgeBg: "#fde8e8", description: "An advanced futures trading class for traders who understand charting basics and want to trade futures responsibly. Learn contract fundamentals, ORB 5 and ORB 15 execution, stop placement, and risk-first decision-making.", details: "Requires prior charting knowledge", highlight: "Live educational trade demonstrations", price: null, salePrice: null, bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=88265110" },
   { name: "Drip Mastery Intensive", badge: "Advanced", badgeColor: "#8B1a1a", badgeBg: "#fde8e8", description: "A high-level, in-person experience for experienced traders ready to sharpen execution and expand into long-term wealth building. Led by Arletta and a team of coaches blending live trading, advanced strategy, portfolio construction, and mindset mastery.", details: "In-person with Arletta and coaches", highlight: "The most comprehensive program we offer", price: null, salePrice: null, bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=88265181" },
   { name: "The Midtown Drip Room", badge: "In-Person", badgeColor: "#1a3d6b", badgeBg: "#e6eef4", description: "Trade alongside disciplined market participants in a quiet, professional Midtown Atlanta environment during peak market hours. No coaching. No trade calls. Just structure, focus, and energy at the open.", details: "Mon-Fri | 8:45 AM - 11:30 AM EST", highlight: "Weekly passes available", price: null, salePrice: null, bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=89599997" },
@@ -40,7 +39,7 @@ export default function ProgramsGrid() {
 
   return (
     <div>
-      <section className="bg-brand-white" style={{ paddingTop: "7.5rem", paddingBottom: "3rem" }}>
+      <section className="bg-brand-white" style={{ paddingTop: "4rem", paddingBottom: "3rem" }}>
         <div className="max-w-site mx-auto px-6">
 
           <div className="flex flex-col items-center gap-4 mb-12 text-center">
@@ -55,15 +54,7 @@ export default function ProgramsGrid() {
 
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             {FILTERS.map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className="text-xs font-semibold px-4 py-2 rounded-full transition-all duration-200"
-                style={activeFilter === filter
-                  ? { background: gradientBg, color: "#0F0A02" }
-                  : { background: "transparent", color: "#6B5C3E", border: "1px solid rgba(201,168,76,0.3)" }
-                }
-              >
+              <button key={filter} onClick={() => setActiveFilter(filter)} className="text-xs font-semibold px-4 py-2 rounded-full transition-all duration-200" style={activeFilter === filter ? { background: gradientBg, color: "#0F0A02" } : { background: "transparent", color: "#6B5C3E", border: "1px solid rgba(201,168,76,0.3)" }}>
                 {filter}
               </button>
             ))}

@@ -21,5 +21,6 @@ export const SITE_CONFIG = {
   communityUrl:   'https://arletta-the-friendly-trader.mn.co/',
   shopUrl:        'https://shop.arlettathefriendlytrader.com',
   bookingUrl: 'https://httpsarlettathefriendlytraderasme.as.me/schedule/1a78dddd',
+  waitlistUrl: 'https://forms.gle/Z9VyFNpbc1btjt4N9',
   disclaimer:     'Educational content only. Trading involves risk. Past results are not indicative of future performance.',
 } as const

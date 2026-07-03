@@ -87,7 +87,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-4">
           <Link
-            href={SITE_CONFIG.communityUrl}
+            href="/community"
             target="_blank"
             rel="noopener noreferrer"
             className="
@@ -98,7 +98,7 @@ export default function Navbar() {
               whitespace-nowrap
             "
           >
-            Join the Drippers →
+            Join the Waitlist →
           </Link>
         </div>
 
@@ -141,7 +141,7 @@ export default function Navbar() {
 
           {/* Mobile CTA */}
           <Link
-            href={SITE_CONFIG.communityUrl}
+            href="/community"
             target="_blank"
             rel="noopener noreferrer"
             className="
@@ -150,7 +150,7 @@ export default function Navbar() {
               hover:opacity-90 transition-all duration-200
             "
           >
-            Join the Drippers →
+            Join the Waitlist →
           </Link>
         </nav>
       </div>

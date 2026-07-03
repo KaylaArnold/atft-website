@@ -60,11 +60,11 @@ export default function Footer() {
           <p className="text-sm leading-relaxed" style={{ color: "rgba(249,246,240,0.6)" }}>
             Join hundreds of traders learning the 5% Method together — live sessions, replays, and real support.
           </p>
-          <a href={SITE_CONFIG.communityUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-brand-black text-sm font-semibold px-5 py-3 rounded-md text-center hover:opacity-90 transition-all duration-200 mt-2" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)" }}>
-            Join the 5% Drippers
+          <a href={SITE_CONFIG.waitlistUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-brand-black text-sm font-semibold px-5 py-3 rounded-md text-center hover:opacity-90 transition-all duration-200 mt-2" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)" }}>
+            Join the Waitlist
           </a>
           <p className="text-xs mt-2" style={{ color: "rgba(249,246,240,0.4)" }}>
-            ${SITE_CONFIG.communityPrice}/month - Cancel anytime
+            Next enrollment opens in November 2026.
           </p>
         </div>
 

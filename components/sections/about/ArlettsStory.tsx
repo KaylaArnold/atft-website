@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function ArlettsStory() {
   return (
     <section className="section-padding bg-brand-white">
@@ -5,20 +7,18 @@ export default function ArlettsStory() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           <div className="relative">
-            <div className="relative w-full max-w-md mx-auto rounded-2xl overflow-hidden" style={{ aspectRatio: "4/5", background: "linear-gradient(135deg, #F0EBE0 0%, #E8E0D0 100%)", border: "1px solid rgba(201,168,76,0.15)" }}>
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.2)" }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,0.4)" strokeWidth="1.5">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                </div>
-                <p className="text-xs tracking-widest uppercase" style={{ color: "rgba(107,92,62,0.4)" }}>Arletta photo coming soon</p>
-              </div>
-              <div className="absolute top-4 left-4 w-8 h-8" style={{ borderTop: "2px solid rgba(201,168,76,0.3)", borderLeft: "2px solid rgba(201,168,76,0.3)" }} />
-              <div className="absolute top-4 right-4 w-8 h-8" style={{ borderTop: "2px solid rgba(201,168,76,0.3)", borderRight: "2px solid rgba(201,168,76,0.3)" }} />
-              <div className="absolute bottom-4 left-4 w-8 h-8" style={{ borderBottom: "2px solid rgba(201,168,76,0.3)", borderLeft: "2px solid rgba(201,168,76,0.3)" }} />
-              <div className="absolute bottom-4 right-4 w-8 h-8" style={{ borderBottom: "2px solid rgba(201,168,76,0.3)", borderRight: "2px solid rgba(201,168,76,0.3)" }} />
+            <div className="relative w-full max-w-md mx-auto rounded-2xl overflow-hidden" style={{ height: "560px", border: "1px solid rgba(201,168,76,0.15)" }}>
+              <Image
+                src="/images/arletta-about.jpg"
+                alt="Arletta The Friendly Trader"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className="absolute top-4 left-4 w-8 h-8" style={{ borderTop: "2px solid rgba(201,168,76,0.5)", borderLeft: "2px solid rgba(201,168,76,0.5)" }} />
+              <div className="absolute top-4 right-4 w-8 h-8" style={{ borderTop: "2px solid rgba(201,168,76,0.5)", borderRight: "2px solid rgba(201,168,76,0.5)" }} />
+              <div className="absolute bottom-4 left-4 w-8 h-8" style={{ borderBottom: "2px solid rgba(201,168,76,0.5)", borderLeft: "2px solid rgba(201,168,76,0.5)" }} />
+              <div className="absolute bottom-4 right-4 w-8 h-8" style={{ borderBottom: "2px solid rgba(201,168,76,0.5)", borderRight: "2px solid rgba(201,168,76,0.5)" }} />
             </div>
             <div className="absolute -bottom-6 -right-6 rounded-xl px-6 py-4 hidden lg:block" style={{ background: "#0F0A02", border: "1px solid rgba(201,168,76,0.2)" }}>
               <p className="text-xs tracking-widest uppercase mb-1" style={{ color: "rgba(201,168,76,0.6)" }}>Started with</p>

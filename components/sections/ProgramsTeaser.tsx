@@ -111,7 +111,7 @@ export default function ProgramsTeaser() {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200"
             style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)" }}
           >
-            View all 11 programs &rarr;
+            View all programs &rarr;
           </Link>
         </div>
 
