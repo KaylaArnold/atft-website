@@ -2,6 +2,7 @@ export const NAV_LINKS = [
   { label: 'About',         href: '/about',                                       external: false },
   { label: 'Programs',      href: '/programs',                                    external: false },
   { label: 'Community',     href: '/community',                                   external: false },
+  { label: 'Events',        href: '/events',                                      external: false },
   { label: 'Shop',          href: 'https://shop.arlettathefriendlytrader.com',    external: true  },
   { label: 'Atlanta Guide', href: '/atlanta-guide',                               external: false },
   { label: 'Contact',       href: '/contact',                                     external: false },

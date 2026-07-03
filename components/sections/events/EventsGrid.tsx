@@ -1,4 +1,3 @@
-content = """\
 "use client"
 
 import { useState } from "react"
@@ -217,7 +216,7 @@ function CalendarView({ events }: { events: typeof EVENTS }) {
 }
 
 export default function EventsGrid() {
-  const [view, setView] = useState<"list" | "calendar">("list")
+  const [view, setView] = useState<"list" | "calendar">("calendar")
 
   return (
     <section className="section-padding bg-brand-white">
@@ -257,9 +256,3 @@ export default function EventsGrid() {
     </section>
   )
 }
-"""
-
-with open("components/sections/events/EventsGrid.tsx", "w", encoding="utf-8") as f:
-    f.write(content)
-
-print("Done")
