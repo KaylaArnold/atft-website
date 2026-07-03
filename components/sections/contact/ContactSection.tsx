@@ -3,15 +3,28 @@
 import { useState } from "react"
 import { SOCIAL_LINKS } from "@/lib/constants"
 
-const gradientBg = "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)"
-
 export default function ContactSection() {
-  const [formState, setFormState] = useState({ name: "", email: "", subject: "", message: "" })
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSubmitting(true)
+    const form = e.currentTarget
+    const data = new FormData(form)
+    try {
+      const response = await fetch("https://formspree.io/f/xaqganqw", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      })
+      if (response.ok) {
+        setSubmitted(true)
+      }
+    } catch (error) {
+      console.error("Form error:", error)
+    }
+    setSubmitting(false)
   }
 
   return (
@@ -98,17 +111,17 @@ export default function ContactSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
                     <label className="text-xs font-semibold text-brand-black" htmlFor="name">Full name</label>
-                    <input id="name" type="text" required placeholder="Your name" value={formState.name} onChange={(e) => setFormState({ ...formState, name: e.target.value })} className="px-4 py-3 rounded-lg text-sm text-brand-black bg-brand-white outline-none transition-all duration-200" style={{ border: "1px solid rgba(201,168,76,0.25)" }} />
+                    <input id="name" name="name" type="text" required placeholder="Your name" className="px-4 py-3 rounded-lg text-sm text-brand-black bg-brand-white outline-none transition-all duration-200" style={{ border: "1px solid rgba(201,168,76,0.25)" }} />
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-xs font-semibold text-brand-black" htmlFor="email">Email address</label>
-                    <input id="email" type="email" required placeholder="your@email.com" value={formState.email} onChange={(e) => setFormState({ ...formState, email: e.target.value })} className="px-4 py-3 rounded-lg text-sm text-brand-black bg-brand-white outline-none transition-all duration-200" style={{ border: "1px solid rgba(201,168,76,0.25)" }} />
+                    <input id="email" name="email" type="email" required placeholder="your@email.com" className="px-4 py-3 rounded-lg text-sm text-brand-black bg-brand-white outline-none transition-all duration-200" style={{ border: "1px solid rgba(201,168,76,0.25)" }} />
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-2">
                   <label className="text-xs font-semibold text-brand-black" htmlFor="subject">Subject</label>
-                  <select id="subject" required value={formState.subject} onChange={(e) => setFormState({ ...formState, subject: e.target.value })} className="px-4 py-3 rounded-lg text-sm text-brand-black bg-brand-white outline-none transition-all duration-200" style={{ border: "1px solid rgba(201,168,76,0.25)" }}>
+                  <select id="subject" name="subject" required className="px-4 py-3 rounded-lg text-sm text-brand-black bg-brand-white outline-none transition-all duration-200" style={{ border: "1px solid rgba(201,168,76,0.25)" }}>
                     <option value="">Select a topic</option>
                     <option value="program">Question about a program</option>
                     <option value="community">5% Drippers membership</option>
@@ -121,11 +134,11 @@ export default function ContactSection() {
 
                 <div className="flex flex-col gap-2">
                   <label className="text-xs font-semibold text-brand-black" htmlFor="message">Message</label>
-                  <textarea id="message" required rows={5} placeholder="Tell us how we can help..." value={formState.message} onChange={(e) => setFormState({ ...formState, message: e.target.value })} className="px-4 py-3 rounded-lg text-sm text-brand-black bg-brand-white outline-none transition-all duration-200 resize-none" style={{ border: "1px solid rgba(201,168,76,0.25)" }} />
+                  <textarea id="message" name="message" required rows={5} placeholder="Tell us how we can help..." className="px-4 py-3 rounded-lg text-sm text-brand-black bg-brand-white outline-none transition-all duration-200 resize-none" style={{ border: "1px solid rgba(201,168,76,0.25)" }} />
                 </div>
 
-                <button type="submit" className="inline-flex items-center justify-center px-8 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: gradientBg }}>
-                  Send Message
+                <button type="submit" disabled={submitting} className="inline-flex items-center justify-center px-8 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200 disabled:opacity-60" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)" }}>
+                  {submitting ? "Sending..." : "Send Message"}
                 </button>
 
                 <p className="text-xs text-center text-brand-brown opacity-60">We typically respond within 1-2 business days.</p>
