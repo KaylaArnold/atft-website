@@ -29,20 +29,11 @@ export const metadata: Metadata = {
     siteName: 'Arletta The Friendly Trader',
     title:    'Arletta The Friendly Trader',
     description: 'Learn the 5% Method — disciplined options trading strategies, risk management, and consistency.',
-    images: [
-      {
-        url: '/images/arletta-hero.png',
-        width: 1200,
-        height: 630,
-        alt: 'Arletta The Friendly Trader',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Arletta The Friendly Trader',
     description: 'Learn the 5% Method — disciplined options trading strategies, risk management, and consistency.',
-    images: ['/images/arletta-hero.png'],
   },
   icons: {
     icon: [

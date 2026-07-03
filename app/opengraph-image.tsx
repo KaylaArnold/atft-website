@@ -1,4 +1,3 @@
-content = """\
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
@@ -49,9 +48,3 @@ export default async function Image() {
     { ...size }
   )
 }
-"""
-
-with open("app/opengraph-image.tsx", "w", encoding="utf-8") as f:
-    f.write(content)
-
-print("Done")
