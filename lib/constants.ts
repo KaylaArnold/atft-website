@@ -5,6 +5,7 @@ export const NAV_LINKS = [
   { label: 'Events',        href: '/events',                                      external: false },
   { label: 'Shop',          href: 'https://shop.arlettathefriendlytrader.com',    external: true  },
   { label: 'Atlanta Guide', href: '/atlanta-guide',                               external: false },
+  { label: 'FAQ',           href: '/faq',                                         external: false },
   { label: 'Contact',       href: '/contact',                                     external: false },
 ] as const
 
