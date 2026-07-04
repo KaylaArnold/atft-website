@@ -4,6 +4,18 @@ import { useState } from "react"
 
 const EVENTS = [
   {
+    name: "Mini Drippers Account Setup Session",
+    date: "2026-07-06",
+    displayDate: "Monday, July 6, 2026",
+    time: "6:00 PM - 7:00 PM EDT",
+    description: "This session is designed to help you get everything set up before the program begins. We'll walk through the necessary account setup, answer questions, and make sure you're ready for Orientation and your first day of class.",
+    location: "Zoom",
+    audience: "Mini Drippers",
+    emoji: "orientation",
+    registration: null,
+    recurring: "Every Wednesday",
+  },
+  {
     name: "TEACHING MOMENTS: w/ Coach Arletta LIVE | Options Trading Training & Q&A",
     date: "2026-07-08",
     displayDate: "Wednesday, July 8, 2026",
@@ -13,7 +25,7 @@ const EVENTS = [
     audience: "Everyone",
     emoji: "graduate",
     registration: null,
-    recurring: "Every Wednesday",
+    recurring: null,
   },
   {
     name: "Drip & Tell Thursday LIVE",
