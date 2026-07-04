@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import ProgramsHero from "@/components/sections/programs/ProgramsHero"
 import ProgramsGrid from "@/components/sections/programs/ProgramsGrid"
-import AboutCTA from "@/components/sections/about/AboutCTA"
 
 export const metadata: Metadata = {
   title: "Programs",
@@ -13,7 +12,6 @@ export default function ProgramsPage() {
     <div className="pt-[72px]">
       <ProgramsHero />
       <ProgramsGrid />
-      <AboutCTA />
     </div>
   )
 }
