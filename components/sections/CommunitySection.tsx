@@ -80,12 +80,12 @@ export default function CommunitySection() {
 
               <div style={{ borderTop: "1px solid rgba(201,168,76,0.15)" }} />
 
-              <a href={SITE_CONFIG.communityUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200 text-center" style={{ background: gradientBg }}>
-                Join the 5% Drippers
+              <a href={SITE_CONFIG.waitlistUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200 text-center" style={{ background: gradientBg }}>
+                Join the Waitlist
               </a>
 
               <p className="text-xs text-center" style={{ color: "rgba(249,246,240,0.35)" }}>
-                Annual plan also available 
+                Next enrollment opens November 2026 
               </p>
 
             </div>
