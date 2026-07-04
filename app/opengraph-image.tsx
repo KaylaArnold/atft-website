@@ -26,7 +26,7 @@ export default async function Image() {
 
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
           <div style={{ fontSize: '16px', fontWeight: '600', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C9A84C' }}>
-            THE 5% METHOD
+            THE 5% DRIP Method
           </div>
           <div style={{ fontSize: '64px', fontWeight: '700', color: '#F9F6F0', textAlign: 'center', lineHeight: 1.1 }}>
             Arletta The Friendly Trader

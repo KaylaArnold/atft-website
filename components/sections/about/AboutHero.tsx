@@ -15,7 +15,7 @@ export default function AboutHero() {
             Meet Arletta.
           </h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "rgba(249,246,240,0.7)" }}>
-            Trading educator, coach, and founder of the 5% Method. Not here to sell hype or shortcuts — here to teach structure, discipline, and a smarter way to trade.
+            Trading educator, coach, and founder of the 5% DRIP Method. Not here to sell hype or shortcuts — here to teach structure, discipline, and a smarter way to trade.
           </p>
         </div>
       </div>

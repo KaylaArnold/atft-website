@@ -8,7 +8,7 @@ import AboutCTA from "@/components/sections/about/AboutCTA"
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Learn about Arletta The Friendly Trader — her journey from $100 to $350,000, the 5% Method, and the team behind the education.",
+  description: "Learn about Arletta The Friendly Trader — her journey from $100 to $350,000, the 5% DRIP Method, and the team behind the education.",
 }
 
 export default function AboutPage() {

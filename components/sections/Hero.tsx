@@ -16,7 +16,7 @@ export default function Hero() {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="flex flex-col gap-8">
           <div className="flex items-center gap-3">
             <div className="h-px w-8" style={{ background: "#C9A84C" }} />
-            <span className="text-xs font-semibold tracking-widest uppercase text-gold">The 5% Method</span>
+            <span className="text-xs font-semibold tracking-widest uppercase text-gold">The 5% DRIP Method</span>
           </div>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="font-display text-4xl lg:text-6xl font-bold leading-tight" style={{ color: "#F9F6F0" }}>
             Trade with{" "}
@@ -26,7 +26,7 @@ export default function Hero() {
             <span style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 50%, #C9A84C 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>discipline.</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.35 }} className="text-lg leading-relaxed max-w-lg" style={{ color: "rgba(249,246,240,0.7)" }}>
-            Learn the 5% Method — a structured options trading framework focused on discipline, risk management, and consistency. Taught by Arletta The Friendly Trader and her team of coaches.
+            Learn the 5% DRIP Method — a structured options trading framework focused on discipline, risk management, and consistency. Taught by Arletta The Friendly Trader and her team of coaches.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="flex flex-col sm:flex-row gap-4">
             <Link href="/community" className="inline-flex items-center justify-center px-8 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)" }}>

@@ -84,7 +84,7 @@ export default function TermsPage() {
 
             <div className="flex flex-col gap-3">
               <h2 className="font-display text-2xl font-bold text-brand-black">12. Intellectual Property</h2>
-              <p>All content created by ATFT, including the 5% Method, course materials, branding, logos, videos, graphics, frameworks, presentations, worksheets, website content, and community content is protected by applicable intellectual property laws. No ownership rights are transferred through your purchase.</p>
+              <p>All content created by ATFT, including the 5% DRIP Method, course materials, branding, logos, videos, graphics, frameworks, presentations, worksheets, website content, and community content is protected by applicable intellectual property laws. No ownership rights are transferred through your purchase.</p>
             </div>
 
             <div className="flex flex-col gap-3">

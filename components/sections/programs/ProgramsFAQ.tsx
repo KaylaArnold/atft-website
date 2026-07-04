@@ -12,8 +12,8 @@ const FAQS = [
     a: "Most of our programs are live sessions — either in-person in Atlanta or via Zoom. Live paper trading and live demonstrations are a core part of how we teach. The 5% Drippers community subscription includes a replay library for members who cannot attend live.",
   },
   {
-    q: "What is the 5% Method?",
-    a: "The 5% Method is a structured options trading framework developed by Arletta that focuses on capital protection, disciplined execution, and consistent small gains over time. It is designed to help traders build a repeatable process rather than chasing wins.",
+    q: "What is the 5% DRIP Method?",
+    a: "The 5% DRIP Method is a structured options trading framework developed by Arletta that focuses on capital protection, disciplined execution, and consistent small gains over time. It is designed to help traders build a repeatable process rather than chasing wins.",
   },
   {
     q: "Do classes happen online or in-person?",

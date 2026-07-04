@@ -6,7 +6,7 @@ const FEATURED_PROGRAMS = [
     badge: "Beginner",
     badgeColor: "#1a6b3c",
     badgeBg: "#e6f4ed",
-    description: "The official starting point for new or inconsistent traders. Learn trading basics, chart reading, candlestick patterns, and the 5% Method framework.",
+    description: "The official starting point for new or inconsistent traders. Learn trading basics, chart reading, candlestick patterns, and the 5% DRIP Method framework.",
     highlight: "Includes live paper trading",
   },
   {

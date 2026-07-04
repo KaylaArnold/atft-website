@@ -3,7 +3,7 @@
 import { useState } from "react"
 
 const FAQS = [
-  { q: "What exactly is the 5% Drippers community?", a: "The 5% Drippers is a private trading community hosted on Mighty Networks. Members get access to daily live trading sessions, a full replay library, weekly market insights, trade education, and a supportive group of traders all learning the 5% Method together." },
+  { q: "What exactly is the 5% Drippers community?", a: "The 5% Drippers is a private trading community hosted on Mighty Networks. Members get access to daily live trading sessions, a full replay library, weekly market insights, trade education, and a supportive group of traders all learning the 5% DRIP Method together." },
   { q: "How do I access the community after joining?", a: "After signing up you will receive an invitation to join our Mighty Networks community. Everything — live sessions, replays, discussions, and resources — lives inside that platform. You can access it on desktop or via the Mighty Networks mobile app." },
   { q: "What time are the daily live sessions?", a: "Live sessions are held during market hours. Specific session times are shared inside the community. All sessions are recorded and added to the replay library so you never miss a thing." },
   { q: "Do I need to be an experienced trader to join?", a: "No. The community welcomes traders at every level. Beginners will find the live sessions educational and the community supportive. More experienced traders benefit from daily structure, accountability, and the coaching team's insight." },

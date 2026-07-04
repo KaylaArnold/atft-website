@@ -22,7 +22,7 @@ export default function AboutTeaser() {
               <div className="absolute bottom-4 right-4 w-8 h-8" style={{ borderBottom: "2px solid rgba(201,168,76,0.4)", borderRight: "2px solid rgba(201,168,76,0.4)" }} />
             </div>
             <div className="absolute -bottom-6 -right-6 rounded-xl px-6 py-4 hidden lg:block" style={{ background: "#0F0A02", border: "1px solid rgba(201,168,76,0.2)" }}>
-              <p className="text-xs tracking-widest uppercase mb-1" style={{ color: "rgba(201,168,76,0.6)" }}>The 5% Method</p>
+              <p className="text-xs tracking-widest uppercase mb-1" style={{ color: "rgba(201,168,76,0.6)" }}>The 5% DRIP Method</p>
               <p className="text-sm font-semibold" style={{ color: "#F9F6F0" }}>Structure over speculation</p>
             </div>
           </div>

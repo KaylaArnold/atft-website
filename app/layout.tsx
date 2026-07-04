@@ -20,20 +20,20 @@ export const metadata: Metadata = {
     template: '%s | Arletta The Friendly Trader',
   },
   description:
-    'Learn the 5% Method with Arletta The Friendly Trader. Disciplined options trading strategies, risk management, and consistency — for traders at every level.',
-  keywords: ['trading education', 'options trading', '5% method', 'day trading', 'trading coach', 'Atlanta trading'],
+    'Learn the 5% DRIP Method with Arletta The Friendly Trader. Disciplined options trading strategies, risk management, and consistency — for traders at every level.',
+  keywords: ['trading education', 'options trading', '5% DRIP Method', 'day trading', 'trading coach', 'Atlanta trading'],
   openGraph: {
     type:     'website',
     locale:   'en_US',
     url:      'https://www.arlettathefriendlytrader.com',
     siteName: 'Arletta The Friendly Trader',
     title:    'Arletta The Friendly Trader',
-    description: 'Learn the 5% Method — disciplined options trading strategies, risk management, and consistency.',
+    description: 'Learn the 5% DRIP Method — disciplined options trading strategies, risk management, and consistency.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Arletta The Friendly Trader',
-    description: 'Learn the 5% Method — disciplined options trading strategies, risk management, and consistency.',
+    description: 'Learn the 5% DRIP Method — disciplined options trading strategies, risk management, and consistency.',
   },
   icons: {
     icon: [

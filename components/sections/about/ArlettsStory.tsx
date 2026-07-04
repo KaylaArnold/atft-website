@@ -32,14 +32,14 @@ export default function ArlettsStory() {
               <span className="text-xs font-semibold tracking-widest uppercase text-gold">Arletta's Journey</span>
             </div>
             <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-black leading-tight">
-              The real story behind the 5% Method.
+              The real story behind the 5% DRIP Method.
             </h2>
             <div className="flex flex-col gap-4">
               <p className="text-base leading-relaxed text-brand-brown">
                 I am not here to sell hype or shortcuts. I am here to teach structure, discipline, and a smarter way to trade. My journey into day trading options was not overnight success. Like many traders, my husband Trent and I spent years learning through real experience — wins, losses, and everything in between.
               </p>
               <p className="text-base leading-relaxed text-brand-brown">
-                I personally began with just $100 and, over time, grew that into more than $350,000 through skill, risk management, and consistency — not luck. That experience shaped what is now known as the 5% Method, a practical approach designed to help traders focus on capital protection first, while building steady growth.
+                I personally began with just $100 and, over time, grew that into more than $350,000 through skill, risk management, and consistency — not luck. That experience shaped what is now known as the 5% DRIP Method, a practical approach designed to help traders focus on capital protection first, while building steady growth.
               </p>
               <p className="text-base leading-relaxed text-brand-brown">
                 We have also experienced the highs of earning over a million dollars, and the lows of losing nearly as much — and rebuilding again from the ground up. Those seasons taught us lessons no textbook ever could. That perspective is what we bring to our students every single day.
