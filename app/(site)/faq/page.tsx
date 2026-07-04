@@ -1,4 +1,3 @@
-content = """\
 import type { Metadata } from "next"
 import FAQSection from "@/components/sections/faq/FAQSection"
 
@@ -14,9 +13,3 @@ export default function FAQPage() {
     </div>
   )
 }
-"""
-
-with open("app/(site)/faq/page.tsx", "w", encoding="utf-8") as f:
-    f.write(content)
-
-print("Done")
