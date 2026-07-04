@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-const FILTERS = ["All", "Beginner", "Intermediate", "Advanced", "All Levels", "In-Person", "Kids and Family", "Members Only"]
+const FILTERS = ["All", "Beginner", "Intermediate", "Advanced", "All Levels", "In-Person", "Members Only"]
 
 const PROGRAMS = [
   { name: "First Drip (Intro to Day Trading)", badge: "Beginner", badgeColor: "#1a6b3c", badgeBg: "#e6f4ed", description: "The official starting point for new or inconsistent traders. Learn trading basics, chart reading, candlestick patterns, and the 5% DRIP Method framework with a focus on price action, the Opening Range Breakout strategy, mindset, and risk management.", details: "Includes guided live paper trading", highlight: "Perfect for complete beginners", price: null, salePrice: null, bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=88264742" },
