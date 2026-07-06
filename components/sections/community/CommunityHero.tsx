@@ -1,3 +1,4 @@
+content = """\
 import { SITE_CONFIG } from "@/lib/constants"
 
 const gradientBg = "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)"
@@ -26,7 +27,7 @@ export default function CommunityHero() {
           </h1>
 
           <p className="text-lg leading-relaxed" style={{ color: "rgba(249,246,240,0.7)" }}>
-            A private trading community built for traders who are serious about growth. Daily live sessions, real education, accountability, and a group of people who actually show up — every single day.
+            A private trading community built for traders who are serious about growth. Daily live sessions, real education, accountability, and a group of people who actually show up every single day.
           </p>
 
           <div className="w-full rounded-2xl p-8 flex flex-col items-center gap-6" style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.3)" }}>
@@ -36,7 +37,7 @@ export default function CommunityHero() {
             </div>
 
             <p className="text-base text-center leading-relaxed" style={{ color: "rgba(249,246,240,0.7)" }}>
-              The 5% Drippers Community intentionally opens only twice each year — in July and November — so every member receives personalized coaching, accountability, and support.
+              The 5% Drippers Community intentionally opens only twice each year in July and November so every member receives personalized coaching, accountability, and support.
             </p>
 
             <div className="flex flex-col items-center gap-2">
@@ -44,12 +45,22 @@ export default function CommunityHero() {
               <p className="font-display text-4xl font-bold" style={{ color: "#E8C96A" }}>November 2026</p>
             </div>
 
-              <a href={SITE_CONFIG.waitlistUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: gradientBg }}>              Join the Waitlist
+            <a href={SITE_CONFIG.waitlistUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: gradientBg }}>
+              Join the Waitlist
             </a>
 
             <p className="text-xs" style={{ color: "rgba(249,246,240,0.4)" }}>
               Waitlist members receive early notification before enrollment opens to the public.
             </p>
+
+            <div style={{ borderTop: "1px solid rgba(201,168,76,0.15)", paddingTop: "1rem", width: "100%" }}>
+              <p className="text-sm text-center" style={{ color: "rgba(249,246,240,0.5)" }}>
+                Already a member?{" "}
+                <a href={SITE_CONFIG.communityUrl} target="_blank" rel="noopener noreferrer" style={{ color: "#C9A84C", fontWeight: "600", textDecoration: "underline" }}>
+                  Access your community here
+                </a>
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-3 gap-8 w-full max-w-lg pt-4" style={{ borderTop: "1px solid rgba(201,168,76,0.15)" }}>
@@ -72,3 +83,9 @@ export default function CommunityHero() {
     </section>
   )
 }
+"""
+
+with open("components/sections/community/CommunityHero.tsx", "w", encoding="utf-8") as f:
+    f.write(content)
+
+print("Done")
