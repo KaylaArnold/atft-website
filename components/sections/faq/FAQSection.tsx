@@ -28,7 +28,7 @@ const FAQ_SECTIONS = [
     category: "Community Membership",
     questions: [
       { q: "What is the 5% Drippers community?", a: "The 5% Drippers is a private trading community hosted on Mighty Networks. Members get access to daily live trading sessions, a full replay library, weekly market insights, trade education, and a supportive group of traders all learning the 5% DRIP Method together." },
-      { q: "I am an existing member. How do I access the community?", a: "If you are already a 5% Drippers member, you can access your community directly through Mighty Networks. Visit our Community page and click the 'Access your community here' link, or go directly to your Mighty Networks app. If you are having trouble accessing your account, contact us at support@arlettathefriendlytrader.com." },
+      { q: "I am an existing member. How do I access the community?", a: "If you are already a 5% Drippers member, you can log back in directly through Mighty Networks. Visit our <a href='/community' style='color:#C9A84C;text-decoration:underline;'>Community page</a> and click the 'Access your community here' link at the bottom of the enrollment box — or <a href='https://arletta-the-friendly-trader.mn.co/' target='_blank' rel='noopener noreferrer' style='color:#C9A84C;text-decoration:underline;'>click here</a> to go directly to the community.",
       { q: "When does enrollment open?", a: "The 5% Drippers community opens enrollment twice a year — in July and November. Join the waitlist to be notified before enrollment opens to the public." },
       { q: "How much does the community cost?", a: "Membership is $299 per month. An annual plan is also available. There is no long-term commitment — you can cancel at any time." },
       { q: "How do I access the community after joining?", a: "After signing up you will receive an invitation to join our Mighty Networks community where everything lives — sessions, replays, discussions, and resources." },
@@ -93,7 +93,7 @@ export default function FAQSection() {
                       </button>
                       {openItem === key && (
                         <div className="px-6 pb-6">
-                          <p className="text-base text-brand-brown leading-relaxed">{faq.a}</p>
+                          <p className="text-base text-brand-brown leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.a }} />
                         </div>
                       )}
                     </div>
