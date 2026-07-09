@@ -104,7 +104,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden p-2 text-brand-black hover:text-gold transition-colors"
+          className={`lg:hidden p-2 transition-colors ${isScrolled ? "text-brand-black hover:text-gold" : "text-gold"}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isMobileMenuOpen}
