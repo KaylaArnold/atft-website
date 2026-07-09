@@ -63,6 +63,18 @@ const EVENTS = [
     registration: null,
     recurring: null,
   },
+  {
+    name: "Swing Drip",
+    date: "2026-07-23",
+    displayDate: "Thursday, July 23, 2026",
+    time: "1:00 PM - 3:00 PM EDT",
+    description: "Learn how to hold trades beyond the day trade with structure and confidence. Covers swing setups, entries, exits, risk management, and emotional control.",
+    location: "Zoom and In-Person (Midtown Atlanta)",
+    audience: "Everyone",
+    emoji: "graduate",
+    registration: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=88265071",
+    recurring: null,
+  },
 ]
 
 const AUDIENCE_COLORS: Record<string, { bg: string; color: string }> = {
