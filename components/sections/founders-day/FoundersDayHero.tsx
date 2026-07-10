@@ -1,8 +1,15 @@
+import Image from "next/image"
+
 export default function FoundersDayHero() {
   return (
     <section className="relative bg-brand-dark overflow-hidden" style={{ paddingTop: "8rem", paddingBottom: "6rem" }}>
       <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, #C9A84C, transparent)" }} />
       <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 50% 50%, #C9A84C 0%, transparent 70%)" }} />
+
+      {/* Watermark */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <Image src="/images/logo-watermark.png" alt="" width={600} height={600} className="object-contain select-none" style={{ opacity: 0.04 }} aria-hidden={true} priority />
+      </div>
 
       <div className="relative max-w-site mx-auto px-6">
         <div className="flex flex-col items-center text-center gap-8 max-w-3xl mx-auto">
