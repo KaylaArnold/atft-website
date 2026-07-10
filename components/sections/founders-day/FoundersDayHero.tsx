@@ -8,7 +8,7 @@ export default function FoundersDayHero() {
 
       {/* Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <Image src="/images/logo-watermark.png" alt="" width={600} height={600} className="object-contain select-none" style={{ opacity: 0.08 }} aria-hidden={true} priority />
+        <Image src="/images/logo-watermark.png" alt="" width={600} height={600} className="object-contain select-none" style={{ opacity: 0.12 }} aria-hidden={true} priority />
       </div>
 
       <div className="relative max-w-site mx-auto px-6">
