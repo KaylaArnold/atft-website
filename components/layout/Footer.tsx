@@ -45,7 +45,7 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <p className="text-xs font-semibold tracking-widest uppercase text-gold">Programs</p>
           <ul className="flex flex-col gap-3">
-            {["First Drip", "Swing Drip", "Inner Drip", "Futures Drip", "Kid's Drip", "See All Programs"].map((program) => (
+            {["First Drip", "Swing Drip", "Futures Drip", "Weekend Warrior", "See All Programs"].map((program) => (
               <li key={program}>
                 <Link href="/programs" className="text-sm hover:text-gold transition-colors" style={{ color: "rgba(249,246,240,0.6)" }}>
                   {program}
