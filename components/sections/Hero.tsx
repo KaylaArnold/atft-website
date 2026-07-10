@@ -11,6 +11,19 @@ export default function Hero() {
       <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, #C9A84C, transparent)" }} />
       <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, #C9A84C 0%, transparent 50%)" }} />
 
+      {/* Watermark logo */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <Image
+          src="/images/logo-watermark.png"
+          alt=""
+          width={600}
+          height={600}
+          className="object-contain select-none"
+          style={{ opacity: 0.04 }}
+          aria-hidden="true"
+        />
+      </div>
+
       <div className="relative max-w-site mx-auto px-6 py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-end w-full">
 
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="flex flex-col gap-8">

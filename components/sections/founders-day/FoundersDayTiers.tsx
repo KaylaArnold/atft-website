@@ -32,27 +32,30 @@ export default function FoundersDayTiers() {
           </div>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-black">Show your support.</h2>
           <p className="text-base text-brand-brown max-w-xl leading-relaxed">
-            Every contribution — large or small — makes a difference. Choose the tier that feels right for you.
+            Every contribution — large or small — makes a difference. Choose the amount that feels right for you.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
           {TIERS.map((tier) => (
-            <a key={tier.name} href={tier.url} target="_blank" rel="noopener noreferrer" className="flex flex-col gap-3 p-6 rounded-2xl bg-brand-white hover:-translate-y-1 transition-all duration-300 group" style={{ border: "1px solid rgba(201,168,76,0.2)", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
-              <div className="flex items-baseline gap-1">
-                {tier.amount ? (
-                  <>
-                    <span className="font-display text-3xl font-bold" style={{ color: "#C9A84C" }}>${tier.amount.toLocaleString()}</span>
-                  </>
-                ) : (
-                  <span className="font-display text-2xl font-bold" style={{ color: "#C9A84C" }}>Custom</span>
-                )}
+            <a key={tier.name} href={tier.url} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-brand-white hover:-translate-y-1 transition-all duration-300 group" style={{ border: "1px solid rgba(201,168,76,0.2)", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-1" style={{ background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.2)" }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
               </div>
-              <h3 className="font-display text-lg font-bold text-brand-black">{tier.name}</h3>
-              <div className="mt-auto pt-3" style={{ borderTop: "1px solid rgba(201,168,76,0.12)" }}>
-                <span className="text-xs font-semibold" style={{ color: "#8B6914" }}>
-                  Donate &rarr;
+              {tier.amount ? (
+                <span className="font-display text-3xl font-bold" style={{ color: "#C9A84C" }}>
+                  ${tier.amount.toLocaleString()}
                 </span>
+              ) : (
+                <span className="font-display text-2xl font-bold" style={{ color: "#C9A84C" }}>
+                  Custom
+                </span>
+              )}
+              <span className="text-xs font-medium text-brand-brown">{tier.name}</span>
+              <div className="mt-2 w-full pt-3" style={{ borderTop: "1px solid rgba(201,168,76,0.12)" }}>
+                <span className="text-xs font-semibold" style={{ color: "#8B6914" }}>Donate &rarr;</span>
               </div>
             </a>
           ))}
