@@ -20,7 +20,7 @@ export default function FoundersDayHero() {
           </div>
 
           <h1 className="font-display text-5xl lg:text-7xl font-bold leading-tight" style={{ color: "#F9F6F0" }}>
-            Founders Day.
+            Founder's Day.
           </h1>
 
           <p className="text-lg leading-relaxed" style={{ color: "rgba(249,246,240,0.7)" }}>
