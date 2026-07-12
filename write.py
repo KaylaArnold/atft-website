@@ -1,78 +1,104 @@
 content = """\
 "use client"
 
-import Link from "next/link"
-import Image from "next/image"
-import { motion } from "framer-motion"
-import { SITE_CONFIG } from "@/lib/constants"
+const TIERS = [
+  { name: "First Drip", amount: 150, url: "https://buy.stripe.com/9B64gzbon0d75uG5bIb3q06" },
+  { name: "Rising Dripper", amount: 200, url: "https://buy.stripe.com/bJe14n2RR6Bv0amaw2b3q07" },
+  { name: "Community Dripper", amount: 250, url: "https://buy.stripe.com/5kQ8wPbonbVPg9k33Ab3q08" },
+  { name: "Dedicated Dripper", amount: 300, url: "https://buy.stripe.com/bJe6oHdwv7Fz9KWaw2b3q09" },
+  { name: "Bronze Dripper", amount: 400, url: "https://buy.stripe.com/bJe3cv2RR8JD9KWfQmb3q0a" },
+  { name: "Silver Dripper", amount: 500, url: "https://buy.stripe.com/eVqbJ16433pj1eqcEab3q0b" },
+  { name: "Gold Dripper", amount: 750, url: "https://buy.stripe.com/cNi9ATdwvgc59KWdIeb3q0c" },
+  { name: "Platinum Dripper", amount: 1000, url: "https://buy.stripe.com/eVqeVd0JJ1hb7CO47Eb3q0d" },
+  { name: "Diamond Dripper", amount: 1500, url: "https://buy.stripe.com/28EeVdcsr8JD4qCdIeb3q0e" },
+  { name: "Elite Dripper", amount: 2000, url: "https://buy.stripe.com/fZubJ14ZZf812iugUqb3q0f" },
+  { name: "Legacy Dripper", amount: 3000, url: "https://buy.stripe.com/6oU8wP643f81aP0aw2b3q0g" },
+  { name: "Visionary", amount: 5000, url: "https://buy.stripe.com/bJe7sL7870d74qC0Vsb3q0h" },
+  { name: "Founding Partner", amount: 8000, url: "https://buy.stripe.com/9B66oH1NNcZT9KW7jQb3q0i" },
+  { name: "Founder's Circle", amount: 10000, url: "https://buy.stripe.com/9B67sLfEDe3X2iueMib3q0j" },
+  { name: "Cornerstone", amount: 20000, url: "https://buy.stripe.com/bJecN5fEDgc53my47Eb3q0k" },
+  { name: "My Own Drip", amount: None, url: "https://donate.stripe.com/14A3cvbonbVP9KWcEab3q0l" },
+]
 
-export default function Hero() {
+const gradientBg = "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)"
+
+export default function FoundersDayTiers() {
   return (
-    <section className="relative min-h-screen flex items-center bg-brand-dark overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, #C9A84C, transparent)" }} />
-      <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, #C9A84C 0%, transparent 50%)" }} />
+    <section id="tiers" className="section-padding bg-brand-white">
+      <div className="max-w-site mx-auto px-6">
 
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <Image src="/images/logo-watermark.png" alt="" width={600} height={600} className="object-contain select-none" style={{ opacity: 0.04 }} aria-hidden={true} priority />
-      </div>
-
-      <div className="relative max-w-site mx-auto px-6 py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-end w-full">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="flex flex-col gap-8">
-
-          {/* Sale callout */}
-          <motion.a href="https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=88265071" target="_blank" rel="noopener noreferrer" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="inline-flex items-center gap-3 self-start px-4 py-2 rounded-full text-xs font-semibold hover:opacity-90 transition-all duration-200" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)", color: "#0F0A02" }}>
-            <span className="w-2 h-2 rounded-full bg-brand-black opacity-60 animate-pulse" />
-            Summer Sale — Swing Drip $499 (reg. $1,299) · Last class July 23rd · Book Now
-          </motion.a>
-
+        <div className="flex flex-col items-center gap-4 mb-8 text-center">
           <div className="flex items-center gap-3">
             <div className="h-px w-8" style={{ background: "#C9A84C" }} />
-            <span className="text-xs font-semibold tracking-widest uppercase text-gold">The 5% DRIP Method</span>
+            <span className="text-xs font-semibold tracking-widest uppercase text-gold">Choose Your Level</span>
+            <div className="h-px w-8" style={{ background: "#C9A84C" }} />
           </div>
+          <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-black">Show your support.</h2>
+          <p className="text-base text-brand-brown max-w-xl leading-relaxed">
+            Every contribution — large or small — makes a difference. Choose the amount that feels right for you.
+          </p>
+          <div className="flex items-center gap-2 px-5 py-3 rounded-full" style={{ background: "#fde8e8", border: "1px solid rgba(139,26,26,0.15)" }}>
+            <div className="w-2 h-2 rounded-full" style={{ background: "#8B1a1a" }} />
+            <p className="text-sm font-semibold" style={{ color: "#8B1a1a" }}>Giving closes July 19, 2026 at 11:59 PM EDT</p>
+          </div>
+        </div>
 
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="font-display text-4xl lg:text-6xl font-bold leading-tight" style={{ color: "#F9F6F0" }}>
-            Trade with{" "}
-            <span style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 50%, #C9A84C 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>structure.</span>
-            <br />
-            Grow with{" "}
-            <span style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 50%, #C9A84C 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>discipline.</span>
-          </motion.h1>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+          {TIERS.map((tier) => (
+            <a key={tier.name} href={tier.url} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center text-center gap-2 p-6 rounded-2xl bg-brand-white hover:-translate-y-1 transition-all duration-300" style={{ border: "1px solid rgba(201,168,76,0.2)", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-1" style={{ background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.2)" }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+              </div>
+              {tier.amount ? (
+                <span className="font-display text-3xl font-bold" style={{ color: "#C9A84C" }}>${tier.amount.toLocaleString()}</span>
+              ) : (
+                <span className="font-display text-2xl font-bold" style={{ color: "#C9A84C" }}>Custom</span>
+              )}
+              <span className="text-xs font-medium text-brand-brown">{tier.name}</span>
+              <div className="mt-2 w-full pt-3" style={{ borderTop: "1px solid rgba(201,168,76,0.12)" }}>
+                <span className="text-xs font-semibold" style={{ color: "#8B6914" }}>Donate</span>
+              </div>
+            </a>
+          ))}
+        </div>
 
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.35 }} className="text-lg leading-relaxed max-w-lg" style={{ color: "rgba(249,246,240,0.7)" }}>
-            Learn the 5% DRIP Method — a structured options trading framework focused on discipline, risk management, and consistency. Taught by Arletta The Friendly Trader and her team of coaches.
-          </motion.p>
+        <div className="flex flex-col items-center gap-4 mt-8 mb-8 p-6 rounded-2xl" style={{ background: "#FBF6EC", border: "1px solid rgba(201,168,76,0.15)" }}>
+          <p className="text-sm font-semibold text-brand-black">Share this page with your fellow Drippers</p>
+          <p className="text-xs text-brand-brown">Help us spread the word about Founders Day</p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.arlettathefriendlytrader.com/founders-day" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 hover:opacity-80" style={{ background: "#1877F2", color: "#fff" }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              Facebook
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=Show%20your%20support%20for%20Coach%20Arletta%20on%20Founder%27s%20Day!&url=https://www.arlettathefriendlytrader.com/founders-day" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 hover:opacity-80" style={{ background: "#000", color: "#fff" }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              X / Twitter
+            </a>
+            <a href="https://www.youtube.com/watch?v=U47pq5-NFpU" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 hover:opacity-80" style={{ background: "#FF0000", color: "#fff" }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              YouTube
+            </a>
+            <button onClick={() => { navigator.clipboard.writeText("https://www.arlettathefriendlytrader.com/founders-day"); alert("Link copied!"); }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 hover:opacity-80" style={{ background: "#0F0A02", color: "#E8C96A", border: "1px solid rgba(201,168,76,0.3)" }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" /><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" /></svg>
+              Copy Link
+            </button>
+          </div>
+        </div>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="flex flex-col sm:flex-row gap-4">
-            <Link href="/community" className="inline-flex items-center justify-center px-8 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)" }}>
-              Join the Waitlist
-            </Link>
-            <Link href="/programs" className="inline-flex items-center justify-center px-8 py-4 rounded-md text-sm font-semibold transition-all duration-200" style={{ color: "#F9F6F0", border: "1px solid rgba(201,168,76,0.4)" }}>
-              Explore Programs
-            </Link>
-          </motion.div>
+        <div className="text-center flex flex-col gap-3">
+          <p className="text-xs text-brand-brown opacity-60">Donations are processed securely through Stripe. All contributions are non-refundable.</p>
+          <p className="text-xs text-brand-brown opacity-60">Donations to Arletta The Friendly Trader are not tax deductible as charitable contributions.</p>
+        </div>
 
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.7 }} className="text-xs" style={{ color: "rgba(249,246,240,0.35)" }}>
-            {SITE_CONFIG.disclaimer}
-          </motion.p>
-        </motion.div>
-
-        <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.3 }} className="relative flex items-end justify-center">
-          <Image src="/images/arletta-hero.png" alt="Arletta The Friendly Trader" width={480} height={640} className="object-contain object-bottom drop-shadow-2xl" priority />
-          <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.8 }} className="absolute bottom-4 left-0 rounded-xl px-5 py-4" style={{ background: "#1E1608", border: "1px solid rgba(201,168,76,0.3)" }}>
-            <p className="text-xs tracking-widest uppercase mb-1" style={{ color: "rgba(201,168,76,0.6)" }}>Started with</p>
-            <p className="font-display text-2xl font-bold" style={{ color: "#E8C96A" }}>$100</p>
-            <p className="text-xs mt-1" style={{ color: "rgba(249,246,240,0.5)" }}>Grew to $350,000+</p>
-          </motion.div>
-        </motion.div>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-32" style={{ background: "linear-gradient(to bottom, transparent, rgba(15,10,2,0.3))" }} />
     </section>
   )
 }
 """
 
-with open("components/sections/Hero.tsx", "w", encoding="utf-8") as f:
+with open("components/sections/founders-day/FoundersDayTiers.tsx", "w", encoding="utf-8") as f:
     f.write(content)
 
 print("Done")
