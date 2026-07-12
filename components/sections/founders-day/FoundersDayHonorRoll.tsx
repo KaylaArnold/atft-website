@@ -168,7 +168,8 @@ export default function FoundersDayHonorRoll() {
         </div>
 
         <div className="mb-16">
-          <h3 className="font-display text-3xl font-bold text-brand-black text-center mb-8">Honor Roll</h3>
+          <h3 className="font-display text-3xl font-bold text-brand-black text-center mb-2">Honor Roll</h3>
+          <p className="text-sm text-brand-brown opacity-60 text-center mb-8">Click a letter to find your name.</p>
 
           <div className="flex flex-wrap justify-center gap-2 mb-10">
             {letters.map((letter) => (
@@ -177,13 +178,7 @@ export default function FoundersDayHonorRoll() {
               </button>
             ))}
           </div>
-          {filtered.length === 0 && (
-            <div className="text-center py-8 flex flex-col items-center gap-2">
-              <p className="text-base font-semibold text-brand-black">Find your name on the Honor Roll</p>
-              <p className="text-sm text-brand-brown opacity-60">Click a letter above to see donors in that section.</p>
-            </div>
-          )}
-          
+
           <div className="flex flex-col gap-8">
             {filtered.map((section) => (
               <div key={section.letter}>
