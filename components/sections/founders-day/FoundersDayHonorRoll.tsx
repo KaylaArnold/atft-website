@@ -1,4 +1,3 @@
-content = """\
 export default function FoundersDayHonorRoll() {
   const HONOR_ROLL = [
     { letter: "A", donors: [
@@ -237,9 +236,3 @@ export default function FoundersDayHonorRoll() {
     </section>
   )
 }
-"""
-
-with open("components/sections/founders-day/FoundersDayHonorRoll.tsx", "w", encoding="utf-8") as f:
-    f.write(content)
-
-print("Done")

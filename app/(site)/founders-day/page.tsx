@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import FoundersDayHero from "@/components/sections/founders-day/FoundersDayHero"
 import FoundersDayReplay from "@/components/sections/founders-day/FoundersDayReplay"
+import FoundersDayHonorRoll from "@/components/sections/founders-day/FoundersDayHonorRoll"
 import FoundersDayTiers from "@/components/sections/founders-day/FoundersDayTiers"
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function FoundersDayPage() {
     <div className="pt-[72px]">
       <FoundersDayHero />
       <FoundersDayReplay />
+      <FoundersDayHonorRoll />
       <FoundersDayTiers />
     </div>
   )
