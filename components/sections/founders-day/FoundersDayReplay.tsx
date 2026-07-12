@@ -1,4 +1,4 @@
-export default function FoundersDayReplay() {
+﻿export default function FoundersDayReplay() {
   return (
     <section className="section-padding" style={{ background: "#FBF6EC" }}>
       <div className="max-w-site mx-auto px-6">
@@ -16,8 +16,8 @@ export default function FoundersDayReplay() {
 
         <div className="relative w-full max-w-4xl mx-auto rounded-2xl overflow-hidden" style={{ aspectRatio: "16/9", border: "1px solid rgba(201,168,76,0.2)" }}>
           <iframe
-            src="https://www.youtube.com/embed/U47pq5-NFpU"
-            title="Founder's Day 2026 — Arletta The Friendly Trader"
+            src="https://www.youtube.com/embed/JwU2FOwxrJc"
+            title="Founder's Day 2026 â€” Arletta The Friendly Trader"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="absolute inset-0 w-full h-full"
