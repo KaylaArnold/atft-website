@@ -200,7 +200,7 @@ export default function FoundersDayHonorRoll() {
         </div>
 
         <div className="mb-16">
-          <h3 className="font-display text-3xl font-bold text-brand-black text-center mb-8">Special Gifts</h3>
+          <h3 className="font-display text-3xl font-bold text-brand-black text-center mb-8">Expressions of Kindness</h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {SPECIAL_GIFTS.map((gift) => (
               <div key={gift.name} className="flex flex-col items-center text-center gap-3 p-6 rounded-2xl" style={{ background: "#0F0A02", border: "1px solid rgba(201,168,76,0.2)" }}>
