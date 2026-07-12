@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import FoundersDayHero from "@/components/sections/founders-day/FoundersDayHero"
+import FoundersDayReplay from "@/components/sections/founders-day/FoundersDayReplay"
 import FoundersDayTiers from "@/components/sections/founders-day/FoundersDayTiers"
 
 export const metadata: Metadata = {
@@ -8,20 +9,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Founder's Day - Arletta The Friendly Trader",
     description: "Show your support for Coach Arletta on Founder's Day, July 11, 2026.",
-    images: [
-      {
-        url: '/images/founders-day-og.png',
-        width: 1200,
-        height: 630,
-        alt: "Founder's Day - Arletta The Friendly Trader",
-      }
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Founder's Day - Arletta The Friendly Trader",
     description: "Show your support for Coach Arletta on Founder's Day, July 11, 2026.",
-    images: ['/images/founders-day-og.png'],
   },
 }
 
@@ -29,6 +21,7 @@ export default function FoundersDayPage() {
   return (
     <div className="pt-[72px]">
       <FoundersDayHero />
+      <FoundersDayReplay />
       <FoundersDayTiers />
     </div>
   )
