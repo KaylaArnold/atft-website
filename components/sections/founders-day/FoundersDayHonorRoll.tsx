@@ -122,9 +122,9 @@ const SPECIAL_RECOGNITION = [
 const gradientBg = "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)"
 
 export default function FoundersDayHonorRoll() {
-  const [activeLetter, setActiveLetter] = useState("All")
-  const letters = ["All", ...HONOR_ROLL.map((s) => s.letter)]
-  const filtered = activeLetter === "All" ? HONOR_ROLL : HONOR_ROLL.filter((s) => s.letter === activeLetter)
+  const [activeLetter, setActiveLetter] = useState<string | null>(null)
+  const letters = HONOR_ROLL.map((s) => s.letter)
+  const filtered = activeLetter ? HONOR_ROLL.filter((s) => s.letter === activeLetter) : []
 
   return (
     <section id="honor-roll" className="section-padding bg-brand-white">
@@ -172,7 +172,7 @@ export default function FoundersDayHonorRoll() {
 
           <div className="flex flex-wrap justify-center gap-2 mb-10">
             {letters.map((letter) => (
-              <button key={letter} onClick={() => setActiveLetter(letter)} className="w-10 h-10 rounded-full text-sm font-bold transition-all duration-200" style={activeLetter === letter ? { background: gradientBg, color: "#0F0A02" } : { background: "transparent", color: "#6B5C3E", border: "1px solid rgba(201,168,76,0.3)" }}>
+              <button key={letter} onClick={() => setActiveLetter(activeLetter === letter ? null : letter)} className="w-10 h-10 rounded-full text-sm font-bold transition-all duration-200" style={activeLetter === letter ? { background: gradientBg, color: "#0F0A02" } : { background: "transparent", color: "#6B5C3E", border: "1px solid rgba(201,168,76,0.3)" }}>
                 {letter}
               </button>
             ))}
