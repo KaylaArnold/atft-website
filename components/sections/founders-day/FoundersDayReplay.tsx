@@ -25,7 +25,7 @@ export default function FoundersDayReplay() {
         </div>
 
         <p className="text-center text-sm text-brand-brown mt-6 opacity-60">
-          After watching, consider showing your support below before giving closes July 19 at 11:59 PM EDT.
+
         </p>
       </div>
     </section>
