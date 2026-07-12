@@ -1,0 +1,33 @@
+export default function FoundersDayReplay() {
+  return (
+    <section className="section-padding" style={{ background: "#FBF6EC" }}>
+      <div className="max-w-site mx-auto px-6">
+        <div className="flex flex-col items-center gap-6 text-center mb-10">
+          <div className="flex items-center gap-3">
+            <div className="h-px w-8" style={{ background: "#C9A84C" }} />
+            <span className="text-xs font-semibold tracking-widest uppercase text-gold">Missed It?</span>
+            <div className="h-px w-8" style={{ background: "#C9A84C" }} />
+          </div>
+          <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-black">Watch the Replay.</h2>
+          <p className="text-base text-brand-brown max-w-xl leading-relaxed">
+            Couldn't make it to Founder's Day? Watch the full celebration and see the love and support from our incredible community.
+          </p>
+        </div>
+
+        <div className="relative w-full max-w-4xl mx-auto rounded-2xl overflow-hidden" style={{ aspectRatio: "16/9", border: "1px solid rgba(201,168,76,0.2)" }}>
+          <iframe
+            src="https://www.youtube.com/embed/U47pq5-NFpU"
+            title="Founder's Day 2026 — Arletta The Friendly Trader"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="absolute inset-0 w-full h-full"
+          />
+        </div>
+
+        <p className="text-center text-sm text-brand-brown mt-6 opacity-60">
+          After watching, consider showing your support below before giving closes July 19 at 11:59 PM EDT.
+        </p>
+      </div>
+    </section>
+  )
+}
