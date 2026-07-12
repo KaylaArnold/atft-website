@@ -177,7 +177,13 @@ export default function FoundersDayHonorRoll() {
               </button>
             ))}
           </div>
-
+          {filtered.length === 0 && (
+            <div className="text-center py-8 flex flex-col items-center gap-2">
+              <p className="text-base font-semibold text-brand-black">Find your name on the Honor Roll</p>
+              <p className="text-sm text-brand-brown opacity-60">Click a letter above to see donors in that section.</p>
+            </div>
+          )}
+          
           <div className="flex flex-col gap-8">
             {filtered.map((section) => (
               <div key={section.letter}>
