@@ -79,6 +79,7 @@ const HONOR_ROLL = [
     { name: "P. Billionaire", contribution: "$300" },
     { name: "Pierre Cooper", contribution: "$100" },
     { name: "Phil Phillips", contribution: "$100" },
+    { name: "Phylis Temea", contribution: "$150" },
   ]},
   { letter: "R", donors: [
     { name: "Raushanah Muhammad", contribution: "$300" },
