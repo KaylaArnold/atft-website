@@ -55,6 +55,7 @@ const HONOR_ROLL = [
   ]},
   { letter: "L", donors: [
     { name: "LaShawn B.", contribution: "$150" },
+    { name: "Lateaisha Johnson", contribution: "$300" },
     { name: "LaWanda Brown", contribution: "$150" },
     { name: "Lazuras Jackson", contribution: "$200" },
     { name: "LeCovian Thomas", contribution: "$150" },
