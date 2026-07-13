@@ -147,7 +147,7 @@ export default function FoundersDayHonorRoll() {
             <span className="text-xs font-semibold tracking-widest uppercase text-gold">Founders Day 2026</span>
             <div className="h-px w-8" style={{ background: "#C9A84C" }} />
           </div>
-          <h2 className="font-display text-4xl lg:text-6xl font-bold text-brand-black">Appreciation Founder's Day Donors</h2>
+          <h2 className="font-display text-4xl lg:text-6xl font-bold text-brand-black">A Message for Donors</h2>
           <p className="text-base text-brand-brown leading-relaxed italic">With Deep Gratitude</p>
 
           <div className="p-8 rounded-2xl text-left" style={{ background: "#FBF6EC", border: "1px solid rgba(201,168,76,0.2)" }}>
