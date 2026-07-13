@@ -17,6 +17,9 @@ const HONOR_ROLL = [
     { name: "Beverly Davis", contribution: "$400" },
     { name: "Bill Murray", contribution: "$150" },
   ]},
+  { letter: "C", donors: [
+    { name: "Chyree Mozee", contribution: "$50" },
+  ]},
   { letter: "D", donors: [
     { name: "Danielle Terry", contribution: "$100" },
     { name: "Deanna Retie", contribution: "$50" },
@@ -25,6 +28,7 @@ const HONOR_ROLL = [
   { letter: "E", donors: [
     { name: "Ebony", contribution: "$150" },
     { name: "Elizabeth N.", contribution: "$500" },
+    { name: "Edward Fowler", contribution: "$500" },
   ]},
   { letter: "F", donors: [
     { name: "Fletcher Mallard", contribution: "$400" },
@@ -56,6 +60,7 @@ const HONOR_ROLL = [
     { name: "LeCovian Thomas", contribution: "$150" },
     { name: "Linda DeBose", contribution: "$1,250" },
     { name: "Liz Johnson", contribution: "$2,000" },
+    { name: "Lydia Lubin", contribution: "$150" },
   ]},
   { letter: "M", donors: [
     { name: "Marie Destiny", contribution: "$200" },
@@ -63,6 +68,7 @@ const HONOR_ROLL = [
     { name: "Marzetta Terry", contribution: "$200" },
     { name: "Melissa B.", contribution: "$500" },
     { name: "Michelle Star", contribution: "$1,000" },
+    { name: "Mohammun Moore", contribution: "$150" },
     { name: "Ms. Ivory Ginneh", contribution: "$150" },
     { name: "Myra Williams", contribution: "$1,000" },
   ]},
@@ -72,6 +78,7 @@ const HONOR_ROLL = [
   { letter: "P", donors: [
     { name: "P. Billionaire", contribution: "$300" },
     { name: "Pierre Cooper", contribution: "$100" },
+    { name: "Phil Phillips", contribution: "$100" },
   ]},
   { letter: "R", donors: [
     { name: "Raushanah Muhammad", contribution: "$300" },
@@ -83,10 +90,12 @@ const HONOR_ROLL = [
     { name: "Sasha Foster", contribution: "$150" },
     { name: "Shamika Rush", contribution: "$150" },
     { name: "Shondria Thomas", contribution: "$150" },
+    { name: "Stacy Bellamy", contribution: "$50" },
     { name: "Stephanie Stevens", contribution: "$300" },
   ]},
   { letter: "T", donors: [
     { name: "Tammy Morrison", contribution: "$250" },
+    { name: "Tarsha Gordon", contribution: "$200" },
     { name: "Taquita Edwards", contribution: "$300" },
     { name: "TaSheen", contribution: "$1,000" },
     { name: "Tanny G.", contribution: "$150" },
