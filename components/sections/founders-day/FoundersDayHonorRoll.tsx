@@ -128,7 +128,7 @@ const SPECIAL_GIFTS = [
 const SPECIAL_RECOGNITION = [
   { name: "Miss Ruby", role: "Support Team" },
   { name: "Blair", role: "Support Team" },
-  { name: "Coach T", role: "Thank you for your continued support and contribution." },
+  { name: "Coach T", role: "Mentor & Community Support" },
 ]
 
 const gradientBg = "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)"
@@ -148,7 +148,7 @@ export default function FoundersDayHonorRoll() {
             <span className="text-xs font-semibold tracking-widest uppercase text-gold">Founders Day 2026</span>
             <div className="h-px w-8" style={{ background: "#C9A84C" }} />
           </div>
-          <h2 className="font-display text-4xl lg:text-6xl font-bold text-brand-black">A Message for Our Donors</h2>
+          <h2 className="font-display text-4xl lg:text-6xl font-bold text-brand-black">A Thank You from Coach Arletta</h2>
           <p className="text-base text-brand-brown leading-relaxed italic">With Deep Gratitude</p>
 
           <div className="p-8 rounded-2xl text-left" style={{ background: "#FBF6EC", border: "1px solid rgba(201,168,76,0.2)" }}>
@@ -165,7 +165,7 @@ export default function FoundersDayHonorRoll() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full mt-4">
             <div className="flex flex-col items-center gap-2 p-5 rounded-2xl" style={{ background: "#0F0A02", border: "1px solid rgba(201,168,76,0.2)" }}>
               <span className="font-display text-3xl font-bold" style={{ color: "#E8C96A" }}>66</span>
-              <span className="text-xs tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.6)" }}>Supporters Honored</span>
+              <span className="text-xs tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.6)" }}>Supporters Recognized</span>
             </div>
             <div className="flex flex-col items-center gap-2 p-5 rounded-2xl" style={{ background: "#0F0A02", border: "1px solid rgba(201,168,76,0.2)" }}>
               <span className="font-display text-3xl font-bold" style={{ color: "#E8C96A" }}>$26,000+</span>
@@ -180,7 +180,7 @@ export default function FoundersDayHonorRoll() {
         </div>
 
         <div className="mb-16">
-          <h3 className="font-display text-3xl font-bold text-brand-black text-center mb-2">Founder's Day Donors</h3>
+          <h3 className="font-display text-3xl font-bold text-brand-black text-center mb-2">Our Supporters</h3>
           <p className="text-sm text-brand-brown opacity-60 text-center mb-8">Click a letter to find your name.</p>
 
           <div className="flex flex-wrap justify-center gap-2 mb-10">
@@ -242,7 +242,12 @@ export default function FoundersDayHonorRoll() {
           <p className="text-base leading-relaxed mb-4" style={{ color: "rgba(249,246,240,0.7)" }}>Thank you for believing in the vision. Thank you for believing in the mission. Thank you for believing in us. May God continue to bless you abundantly.</p>
           <p className="font-display text-xl font-bold mt-6" style={{ color: "#E8C96A" }}>"One Yes Changed Thousands of Lives." 💜</p>
         </div>
-
+        
+        <div className="text-center mt-12 flex flex-col items-center gap-2">
+          <p className="font-display text-2xl font-bold text-brand-black">Thank you for celebrating Founder's Day 2026.</p>
+          <p className="text-base text-brand-brown">We'll see you next year.</p>
+          <p className="text-2xl mt-2">💜</p>
+        </div>
       </div>
     </section>
   )

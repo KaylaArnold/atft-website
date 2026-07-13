@@ -32,7 +32,7 @@ export default function FoundersDayTiers() {
             <span className="text-xs font-semibold tracking-widest uppercase text-gold">Choose Your Level</span>
             <div className="h-px w-8" style={{ background: "#C9A84C" }} />
           </div>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-black">Show your support.</h2>
+          <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-black">Support the Vision</h2>
           <p className="text-base text-brand-brown max-w-xl leading-relaxed">
             Every contribution — large or small — makes a difference. Choose the amount that feels right for you.
           </p>

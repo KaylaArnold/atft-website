@@ -5,7 +5,7 @@ export default function FoundersDayReplay() {
         <div className="flex flex-col items-center gap-6 text-center mb-10">
           <div className="flex items-center gap-3">
             <div className="h-px w-8" style={{ background: "#C9A84C" }} />
-            <span className="text-xs font-semibold tracking-widest uppercase text-gold">Missed It?</span>
+            <span className="text-xs font-semibold tracking-widest uppercase text-gold">Relive the Celebration</span>
             <div className="h-px w-8" style={{ background: "#C9A84C" }} />
           </div>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-black">Watch the Replay.</h2>
