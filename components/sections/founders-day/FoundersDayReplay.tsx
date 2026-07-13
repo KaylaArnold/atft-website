@@ -10,14 +10,14 @@ export default function FoundersDayReplay() {
           </div>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-black">Watch the Replay.</h2>
           <p className="text-base text-brand-brown max-w-xl leading-relaxed">
-            Couldn't make it to Founder's Day? Watch the full celebration and see the love and support from our incredible community.
+            Could not make it to Founder's Day? Watch the full celebration and see the love and support from our incredible community.
           </p>
         </div>
 
         <div className="relative w-full max-w-4xl mx-auto rounded-2xl overflow-hidden" style={{ aspectRatio: "16/9", border: "1px solid rgba(201,168,76,0.2)" }}>
           <iframe
             src="https://www.youtube.com/embed/JwU2FOwxrJc"
-            title="Founder's Day 2026 — Arletta The Friendly Trader"
+            title="Founder's Day 2026 - Arletta The Friendly Trader"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="absolute inset-0 w-full h-full"
@@ -25,7 +25,7 @@ export default function FoundersDayReplay() {
         </div>
 
         <p className="text-center text-sm text-brand-brown mt-6 opacity-60">
-
+          The replay is available for a limited time.
         </p>
       </div>
     </section>

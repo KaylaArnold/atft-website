@@ -242,12 +242,6 @@ export default function FoundersDayHonorRoll() {
           <p className="text-base leading-relaxed mb-4" style={{ color: "rgba(249,246,240,0.7)" }}>Thank you for believing in the vision. Thank you for believing in the mission. Thank you for believing in us. May God continue to bless you abundantly.</p>
           <p className="font-display text-xl font-bold mt-6" style={{ color: "#E8C96A" }}>"One Yes Changed Thousands of Lives." 💜</p>
         </div>
-        
-        <div className="text-center mt-12 flex flex-col items-center gap-2">
-          <p className="font-display text-2xl font-bold text-brand-black">Thank you for celebrating Founder's Day 2026.</p>
-          <p className="text-base text-brand-brown">We'll see you next year.</p>
-          <p className="text-2xl mt-2">💜</p>
-        </div>
       </div>
     </section>
   )
