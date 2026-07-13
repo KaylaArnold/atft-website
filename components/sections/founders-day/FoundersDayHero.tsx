@@ -46,16 +46,16 @@ export default function FoundersDayHero() {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <a href="#replay" className="inline-flex items-center justify-center px-6 py-3 rounded-md text-sm font-semibold transition-all duration-200" style={{ color: "#F9F6F0", border: "1px solid rgba(201,168,76,0.4)" }}>
-              Watch the Replay
-            </a>
-            <a href="#honor-roll" className="inline-flex items-center justify-center px-6 py-3 rounded-md text-sm font-semibold transition-all duration-200" style={{ color: "#F9F6F0", border: "1px solid rgba(201,168,76,0.4)" }}>
-              View the Honor Roll
-            </a>
-            <a href="#tiers" className="inline-flex items-center justify-center px-6 py-3 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)" }}>
-              Show Your Support
-            </a>
-          </div>
+            <a href="#replay" className="inline-flex items-center justify-center px-6 py-3 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)" }}>
+            Watch the Replay
+          </a>
+          <a href="#honor-roll" className="inline-flex items-center justify-center px-6 py-3 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)" }}>
+            View the Honor Roll
+          </a>
+          <a href="#tiers" className="inline-flex items-center justify-center px-6 py-3 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)" }}>
+            Show Your Support
+          </a>
+        </div>
         </div>
       </div>
     </section>
