@@ -89,6 +89,7 @@ const HONOR_ROLL = [
   { letter: "S", donors: [
     { name: "Sasha Foster", contribution: "$150" },
     { name: "Shamika Rush", contribution: "$150" },
+    { name: "Shante Jenkins", contribution: "$200" },
     { name: "Shondria Thomas", contribution: "$150" },
     { name: "Stacy Bellamy", contribution: "$50" },
     { name: "Stephanie Stevens", contribution: "$300" },
