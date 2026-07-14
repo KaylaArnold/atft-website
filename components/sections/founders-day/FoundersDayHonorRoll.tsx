@@ -18,6 +18,7 @@ const HONOR_ROLL = [
     { name: "Bill Murray", contribution: "$150" },
   ]},
   { letter: "C", donors: [
+    { name: "Chanty Mutabazi", contribution: "$150" },
     { name: "Chyree Mozee", contribution: "$50" },
   ]},
   { letter: "D", donors: [
@@ -92,6 +93,7 @@ const HONOR_ROLL = [
     { name: "Sasha Foster", contribution: "$150" },
     { name: "Shamika Rush", contribution: "$150" },
     { name: "Shante Jenkins", contribution: "$200" },
+    { name: "Shalic Bullock", contribution: "$500" },
     { name: "Shondria Thomas", contribution: "$150" },
     { name: "Stacy Bellamy", contribution: "$50" },
     { name: "Stephanie Stevens", contribution: "$300" },
@@ -200,10 +202,9 @@ export default function FoundersDayHonorRoll() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                   {section.donors.map((donor) => (
-                    <div key={donor.name} className="flex items-center justify-between px-5 py-4 rounded-xl" style={{ background: "#FBF6EC", border: "1px solid rgba(201,168,76,0.15)" }}>
-                      <span className="text-sm font-semibold text-brand-black">{donor.name}</span>
-                      <span className="text-sm font-bold" style={{ color: "#C9A84C" }}>{donor.contribution}</span>
-                    </div>
+                <div key={donor.name} className="flex items-center justify-center px-5 py-4 rounded-xl" style={{ background: "#FBF6EC", border: "1px solid rgba(201,168,76,0.15)" }}>
+                  <span className="text-sm font-semibold text-brand-black">{donor.name}</span>
+                </div>
                   ))}
                 </div>
               </div>
