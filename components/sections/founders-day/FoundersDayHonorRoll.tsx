@@ -38,6 +38,9 @@ const HONOR_ROLL = [
     { name: "Gina Bearden", contribution: "$250" },
     { name: "Glenys Moffitt", contribution: "$1,000" },
   ]},
+  { letter: "H", donors: [
+    { name: "Hugh Hill", contribution: "$2000" },
+  ]},
   { letter: "I", donors: [
     { name: "Ingrid Albritton", contribution: "$250" },
   ]},
