@@ -6,7 +6,7 @@ const HONOR_ROLL = [
   { letter: "A", donors: [
     { name: "Alfred S.", contribution: "$400" },
     { name: "Aldia Tyus", contribution: "$150" },
-    { name: "Amira Elamin", contribution: "$150" },
+    { name: "Amira Elamin", contribution: "$1150" },
     { name: "Amber Marquet", contribution: "$150" },
     { name: "Anita Calloway (B12)", contribution: "$1,000" },
     { name: "Anika Davidson", contribution: "$400" },
@@ -27,6 +27,7 @@ const HONOR_ROLL = [
     { name: "Desiree Atkins", contribution: "$200" },
   ]},
   { letter: "E", donors: [
+    { name: "Engrid Albritton", contribution: "$250" },
     { name: "Ebony", contribution: "$150" },
     { name: "Elizabeth N.", contribution: "$500" },
     { name: "Edward Fowler", contribution: "$500" },
@@ -42,9 +43,10 @@ const HONOR_ROLL = [
     { name: "Hugh Hill", contribution: "$2000" },
   ]},
   { letter: "I", donors: [
-    { name: "Ingrid Albritton", contribution: "$250" },
+    { name: "Ingrid Taylor", contribution: "$500" },
   ]},
   { letter: "J", donors: [
+    { name: "Janel Harris", contribution: "$500" },
     { name: "J.L. Carter", contribution: "$50" },
     { name: "J. Huskey", contribution: "$150" },
     { name: "Jaquise Stukes", contribution: "$500" },
@@ -65,6 +67,7 @@ const HONOR_ROLL = [
     { name: "LeCovian Thomas", contribution: "$150" },
     { name: "Linda DeBose", contribution: "$1,250" },
     { name: "Liz Johnson", contribution: "$2,000" },
+    { name: "Lisa Spriggins", contribution: "$300"},
     { name: "Lydia Lubin", contribution: "$150" },
   ]},
   { letter: "M", donors: [
@@ -107,6 +110,7 @@ const HONOR_ROLL = [
     { name: "Taquita Edwards", contribution: "$300" },
     { name: "TaSheen", contribution: "$1,000" },
     { name: "Tanny G.", contribution: "$150" },
+    { name: "Tanya D Johnson", contribution: "$200"},
     { name: "Teresa D.", contribution: "$150" },
     { name: "Tiffany Johnson", contribution: "$150" },
     { name: "Tonya Johnson", contribution: "$500" },

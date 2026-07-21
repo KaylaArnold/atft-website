@@ -3,7 +3,7 @@ export const NAV_LINKS = [
   { label: 'Programs',      href: '/programs',                                    external: false },
   { label: 'Community',     href: '/community',                                   external: false },
   { label: 'Events',        href: '/events',                                      external: false },
-  { label: "Founder's Day",  href: '/founders-day',     external: false },
+  { label: "Give Back",  href: '/give-back', external: false },
   { label: 'Atlanta Guide', href: '/atlanta-guide',                               external: false },
   { label: 'FAQ',           href: '/faq',                                         external: false },
   { label: 'Contact',       href: '/contact',                                     external: false },

@@ -1,4 +1,3 @@
-content = """\
 "use client"
 
 import { useState } from "react"
@@ -128,9 +127,3 @@ export default function FoundersDayDonors() {
     </section>
   )
 }
-"""
-
-with open("components/sections/give-back/FoundersDayDonors.tsx", "w", encoding="utf-8") as f:
-    f.write(content)
-
-print("Done")
