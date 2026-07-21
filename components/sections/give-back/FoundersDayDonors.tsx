@@ -19,7 +19,7 @@ const HONOR_ROLL = [
   { letter: "P", donors: ["P. Billionaire", "Phil Phillips", "Pierre Cooper"] },
   { letter: "R", donors: ["Raushanah Muhammad", "Robert Brooks", "Robyn Walker", "Rosemary James"] },
   { letter: "S", donors: ["Sasha Foster", "Shamika Rush", "Shondria Thomas", "Stacy Bellamy", "Stephanie Stevens"] },
-  { letter: "T", donors: ["Tammy Morrison", "Taquita Edwards", "Tarsha Gordon", "TaSheen", "Tanny G.", "Teresa D.", "Tiffany Johnson", "Tonya Johnson", "Torino G.", "Tracy Miller"] },
+  { letter: "T", donors: ["Tammy Morrison", "Taquita Edwards", "Tarsha Gordon", "TaSheen", "Tanny G.", "Teresa D.", "Tiffany Johnson", "Tanya Johnson", "Torino G.", "Tracy Miller"] },
   { letter: "V", donors: ["Velvet"] },
   { letter: "W", donors: ["Wanda Martin"] },
   { letter: "Y", donors: ["Yvonne Byrd"] },
