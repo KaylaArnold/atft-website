@@ -147,7 +147,19 @@ const PROGRAM_SECTIONS: ProgramSection[] = [
     eyebrow: "5% Dripper Membership Required",
     description: "In-person, weekly class for members only",
     programs: [
-            {
+      {
+        name: "ATFT Dripper Maintenance",
+        badge: "Eligible Graduates Only",
+        badgeColor: "#8b6914",
+        badgeBg: "#fbf6ec",
+        description: "A graduate continuation program providing ongoing support, accountability, education, and community for eligible graduates of approved 6- or 12-month ATFT Academy programs. Enrollment is not automatic and requires a review and panel interview.",
+        details: "$99 per month - Approved ATFT Academy graduates only",
+        highlight: "You do not have to be perfect, but you do have to be progressing.",
+        price: 99,
+        bookingUrl: "https://forms.gle/NuWg3Dnyb2ZC8fQn9",
+        buttonLabel: "Apply for Consideration",
+      },
+         {
         name: "The DRIP Room",
         badge: "Members Only",
         badgeColor: "#8b6914",
