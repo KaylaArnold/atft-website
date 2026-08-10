@@ -143,7 +143,7 @@ const PROGRAM_SECTIONS: ProgramSection[] = [
     ],
   },
   {
-    title: "ATFT Peer Coaching™",
+    title: "ATFT Peer Coaching",
     eyebrow: "Accountability & Support",
     description: "Get personalized one-on-one accountability, encouragement, and structure to help you trade with greater consistency and discipline.",
     programs: [
