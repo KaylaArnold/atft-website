@@ -41,6 +41,25 @@ const PROGRAM_SECTIONS: ProgramSection[] = [
     ],
   },
   {
+    title: "Members Only",
+    eyebrow: "5% Dripper Membership Required",
+    description: "In-person, weekly class for members only",
+    programs: [
+            {
+        name: "The DRIP Room",
+        badge: "Members Only",
+        badgeColor: "#8b6914",
+        badgeBg: "#fbf6ec",
+        description: "An exclusive session for active 5% Drippers community members. Details and schedule are shared inside the Mighty Networks community. Active membership required to book.",
+        details: "Active 5% Drippers membership required",
+        highlight: "Members are verified before class",
+        price: null,
+        bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=88266056",
+        buttonLabel: "Book This Class",
+      },
+    ],
+  },
+  {
     title: "Master Your Strategy",
     eyebrow: "Build Your Edge",
     description: "Strengthen your execution with focused strategies designed for different markets and trading styles.",
