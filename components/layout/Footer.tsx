@@ -72,9 +72,14 @@ export default function Footer() {
 
       <div style={{ borderTop: "1px solid rgba(249,246,240,0.1)" }}>
         <div className="max-w-site mx-auto px-6 py-6 flex flex-col gap-4 sm:flex-row items-center justify-between">
-          <p className="text-xs" style={{ color: "rgba(249,246,240,0.4)" }}>
-            &copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.
-          </p>
+          <div className="flex flex-col gap-1">
+            <p className="text-xs" style={{ color: "rgba(249,246,240,0.4)" }}>
+              &copy; {currentYear} Arletta The Friendly Trader. All rights reserved.
+            </p>
+            <p className="text-xs" style={{ color: "rgba(249,246,240,0.3" }}>
+              Arletta The Friendly Trader is a DBA of WGM Capital.
+            </p>
+          </div>
           <div className="flex items-center gap-6">
             <a href="/terms" className="text-xs hover:text-gold transition-colors duration-200" style={{ color: "rgba(249,246,240,0.4)" }}>Terms</a>
             <a href="/privacy" className="text-xs hover:text-gold transition-colors duration-200" style={{ color: "rgba(249,246,240,0.4)" }}>Privacy</a>
