@@ -95,48 +95,46 @@ const gradientBg = "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100
 
 export default function DripperPathway() {
   return (
-    <section className="bg-brand-dark py-20 lg:py-24">
+    <section className="bg-brand-white py-16 lg:py-20">
       <div className="max-w-site mx-auto px-6">
-        <div className="flex flex-col items-center text-center gap-4 max-w-3xl mx-auto mb-12">
+        <div className="flex flex-col items-center text-center gap-3 max-w-3xl mx-auto mb-10">
           <div className="flex items-center gap-3">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-xs font-semibold tracking-widest uppercase text-gold">Your Roadmap</span>
+            <span className="text-xs font-semibold tracking-widest uppercase text-gold">Find Your Level</span>
             <div className="h-px w-8 bg-gold" />
           </div>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-white">The ATFT Four-Level Dripper Pathway</h2>
-          <p className="text-xl font-display italic text-gold">Learn It. Maintain It. Grow It. Preserve It.</p>
-          <p className="text-sm lg:text-base leading-relaxed" style={{ color: "rgba(249,246,240,0.72)" }}>
+          <p className="text-sm lg:text-base leading-relaxed text-brand-brown">
             Move from building your trading foundation to managing, protecting, and preserving significant wealth. Each level is designed for a different stage of your journey.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {PATHWAY_LEVELS.map((item) => (
-            <article key={item.level} className="flex flex-col rounded-2xl p-6 lg:p-8" style={{ background: "rgba(249,246,240,0.05)", border: "1px solid rgba(201,168,76,0.28)" }}>
+            <article key={item.level} className="flex flex-col rounded-2xl p-6 lg:p-8 bg-brand-white hover:-translate-y-1 transition-transform duration-300" style={{ border: "1px solid rgba(201,168,76,0.2)", boxShadow: "0 4px 20px rgba(28,22,10,0.06)" }}>
               <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
                 <span className="text-xs font-semibold tracking-widest uppercase text-gold">{item.level}</span>
                 <span className="rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider" style={{ color: "#1C160A", background: gradientBg }}>{item.action}</span>
               </div>
 
               <div className="flex flex-wrap items-baseline justify-between gap-2 mb-4">
-                <h3 className="font-display text-2xl lg:text-3xl font-bold text-brand-white">{item.title}</h3>
+                <h3 className="font-display text-2xl lg:text-3xl font-bold text-brand-black">{item.title}</h3>
                 {item.price && <span className="font-display text-xl font-bold text-gold">{item.price}</span>}
               </div>
 
-              <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(249,246,240,0.72)" }}>{item.summary}</p>
+              <p className="text-sm leading-relaxed mb-5 text-brand-brown">{item.summary}</p>
 
               {(item.qualification || item.duration || item.access || item.journey) && (
                 <div className="grid gap-2 rounded-xl p-4 mb-5" style={{ background: "rgba(201,168,76,0.08)" }}>
-                  {item.qualification && <p className="text-xs text-brand-white"><strong className="text-gold">Qualification:</strong> {item.qualification}</p>}
-                  {item.duration && <p className="text-xs text-brand-white"><strong className="text-gold">Duration:</strong> {item.duration}</p>}
-                  {item.access && <p className="text-xs text-brand-white"><strong className="text-gold">Access:</strong> {item.access}</p>}
-                  {item.journey && <p className="text-xs text-brand-white"><strong className="text-gold">Target journey:</strong> {item.journey}</p>}
+                  {item.qualification && <p className="text-xs text-brand-brown"><strong className="text-brand-black">Qualification:</strong> {item.qualification}</p>}
+                  {item.duration && <p className="text-xs text-brand-brown"><strong className="text-brand-black">Duration:</strong> {item.duration}</p>}
+                  {item.access && <p className="text-xs text-brand-brown"><strong className="text-brand-black">Access:</strong> {item.access}</p>}
+                  {item.journey && <p className="text-xs text-brand-brown"><strong className="text-brand-black">Target journey:</strong> {item.journey}</p>}
                 </div>
               )}
 
               <ul className="grid gap-3 mb-6 flex-1">
                 {item.topics.map((topic) => (
-                  <li key={topic} className="flex items-start gap-3 text-sm" style={{ color: "rgba(249,246,240,0.78)" }}>
+                  <li key={topic} className="flex items-start gap-3 text-sm text-brand-brown">
                     <Check aria-hidden="true" className="w-4 h-4 mt-0.5 flex-shrink-0 text-gold" />
                     <span>{topic}</span>
                   </li>
@@ -144,7 +142,7 @@ export default function DripperPathway() {
               </ul>
 
               {item.principle && (
-                <p className="font-display text-lg italic leading-relaxed text-brand-white border-l-2 border-gold pl-4 mb-6">“{item.principle}”</p>
+                <p className="font-display text-lg italic leading-relaxed text-brand-black border-l-2 border-gold pl-4 mb-6">“{item.principle}”</p>
               )}
 
               <a href={item.buttonUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-opacity" style={{ background: gradientBg }}>
@@ -154,7 +152,7 @@ export default function DripperPathway() {
           ))}
         </div>
 
-        <p className="text-center text-xs leading-relaxed mt-8 max-w-4xl mx-auto" style={{ color: "rgba(249,246,240,0.5)" }}>
+        <p className="text-center text-xs leading-relaxed mt-8 max-w-4xl mx-auto" style={{ color: "rgba(107,92,62,0.55)" }}>
           ATFT provides financial education, not individualized financial, legal, tax, or investment advice. Legal, tax, trust, and estate matters should be addressed by appropriately licensed professionals.
         </p>
       </div>
