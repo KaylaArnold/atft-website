@@ -15,7 +15,7 @@ export default function ProgramsHero() {
             Find your program.
           </h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "rgba(249,246,240,0.7)" }}>
-            From complete beginners to advanced traders — every program is built on the same foundation: structure, discipline, and the 5% DRIP Method. Find where you are and start your drip.
+            Start with the fundamentals, strengthen your discipline, scale your trading capital, and learn how to preserve the wealth you build.
           </p>
         </div>
       </div>
