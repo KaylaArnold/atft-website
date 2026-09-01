@@ -100,9 +100,11 @@ export default function DripperPathway() {
         <div className="flex flex-col items-center text-center gap-3 max-w-3xl mx-auto mb-10">
           <div className="flex items-center gap-3">
             <div className="h-px w-8 bg-gold" />
-            <span className="text-xs font-semibold tracking-widest uppercase text-gold">Find Your Level</span>
+            <span className="text-xs font-semibold tracking-widest uppercase text-gold">Signature Development Path</span>
             <div className="h-px w-8 bg-gold" />
           </div>
+          <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-black">The ATFT Four-Level Dripper Pathway</h2>
+          <p className="text-xl font-display italic text-gold">Learn It. Maintain It. Grow It. Preserve It.</p>
           <p className="text-sm lg:text-base leading-relaxed text-brand-brown">
             Move from building your trading foundation to managing, protecting, and preserving significant wealth. Each level is designed for a different stage of your journey.
           </p>

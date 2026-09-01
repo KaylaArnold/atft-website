@@ -8,14 +8,14 @@ export default function ProgramsHero() {
         <div className="flex flex-col items-center text-center gap-6 max-w-3xl mx-auto">
           <div className="flex items-center gap-3">
             <div className="h-px w-8" style={{ background: "#C9A84C" }} />
-            <span className="text-xs font-semibold tracking-widest uppercase text-gold">Your Trading Roadmap</span>
+            <span className="text-xs font-semibold tracking-widest uppercase text-gold">Trading Education</span>
             <div className="h-px w-8" style={{ background: "#C9A84C" }} />
           </div>
           <h1 className="font-display text-5xl lg:text-7xl font-bold leading-tight" style={{ color: "#F9F6F0" }}>
-            The ATFT Four-Level Dripper Pathway
+            Find Your Program
           </h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "rgba(249,246,240,0.7)" }}>
-            Learn it. Maintain it. Grow it. Preserve it. Find the level designed for where you are in your trading journey.
+            Explore the ATFT Four-Level Dripper Pathway, specialized trading education, personal coaching, and member experiences designed for every stage of your trading journey.
           </p>
         </div>
       </div>
