@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import ProgramsHero from "@/components/sections/programs/ProgramsHero"
+import DripperPathway from "@/components/sections/programs/DripperPathway"
 import ProgramsGrid from "@/components/sections/programs/ProgramsGrid"
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export default function ProgramsPage() {
   return (
     <div className="pt-[72px]">
       <ProgramsHero />
+      <DripperPathway />
       <ProgramsGrid />
     </div>
   )

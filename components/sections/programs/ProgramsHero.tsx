@@ -12,10 +12,10 @@ export default function ProgramsHero() {
             <div className="h-px w-8" style={{ background: "#C9A84C" }} />
           </div>
           <h1 className="font-display text-5xl lg:text-7xl font-bold leading-tight" style={{ color: "#F9F6F0" }}>
-            Find your program.
+            Find Your Program
           </h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "rgba(249,246,240,0.7)" }}>
-            From complete beginners to advanced traders — every program is built on the same foundation: structure, discipline, and the 5% DRIP Method. Find where you are and start your drip.
+            Explore the ATFT Four-Level Dripper Pathway, specialized trading education, personal coaching, and member experiences designed for every stage of your trading journey.
           </p>
         </div>
       </div>
