@@ -85,7 +85,7 @@ export default function CommunitySection() {
               </a>
 
               <p className="text-xs text-center" style={{ color: "rgba(249,246,240,0.35)" }}>
-                Next enrollment opens November 2026 
+                Next enrollment opens September 3rd, 2026 
               </p>
 
             </div>

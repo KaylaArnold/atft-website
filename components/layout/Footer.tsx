@@ -64,7 +64,7 @@ export default function Footer() {
             Join the Waitlist
           </a>
           <p className="text-xs mt-2" style={{ color: "rgba(249,246,240,0.4)" }}>
-            Next enrollment opens in November 2026.
+            Next enrollment opens on September 3rd, 2026.
           </p>
         </div>
 
