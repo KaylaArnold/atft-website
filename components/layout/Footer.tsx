@@ -66,9 +66,6 @@ export default function Footer() {
           <p className="text-xs mt-2" style={{ color: "rgba(249,246,240,0.4)" }}>
             Enrollment is open now at $299/month.
           </p>
-          <p className="text-xs leading-relaxed" style={{ color: "rgba(249,246,240,0.5)" }}>
-            {SITE_CONFIG.waitlistDiscountNotice}
-          </p>
         </div>
 
       </div>

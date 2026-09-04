@@ -151,11 +151,6 @@ export default function DripperPathway() {
               <a href={item.buttonUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-opacity" style={{ background: gradientBg }}>
                 {item.buttonLabel}
               </a>
-              {item.level === "Level 1" && (
-                <p className="text-xs text-center leading-relaxed mt-3 text-brand-brown">
-                  <strong>Waitlist members:</strong> {SITE_CONFIG.waitlistDiscountNotice}
-                </p>
-              )}
             </article>
           ))}
         </div>

@@ -50,10 +50,6 @@ export default function CommunityWaitlist() {
             Enrollment is completed securely through Mighty Networks.
           </p>
 
-          <p className="text-sm text-center leading-relaxed rounded-xl px-5 py-4 w-full" style={{ color: "rgba(249,246,240,0.75)", background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.18)" }}>
-            <strong style={{ color: "#E8C96A" }}>Waitlist members:</strong> {SITE_CONFIG.waitlistDiscountNotice}
-          </p>
-
           <div className="w-full p-6 rounded-2xl" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(201,168,76,0.15)" }}>
             <p className="text-xs tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.6)" }}>Monthly rate</p>
             <p className="font-display text-3xl font-bold mt-2" style={{ color: "#E8C96A" }}>$299/month</p>

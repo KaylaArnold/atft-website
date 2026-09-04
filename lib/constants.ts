@@ -25,6 +25,5 @@ export const SITE_CONFIG = {
   shopUrl:        'https://shop.arlettathefriendlytrader.com',
   bookingUrl: 'https://httpsarlettathefriendlytraderasme.as.me/schedule/1a78dddd',
   waitlistUrl: 'https://forms.gle/Z9VyFNpbc1btjt4N9',
-  waitlistDiscountNotice: 'Joined the waitlist but did not receive your discounted enrollment link? Please contact us before enrolling at the regular rate.',
   disclaimer:     'Educational content only. Trading involves risk. Past results are not indicative of future performance.',
 } as const
