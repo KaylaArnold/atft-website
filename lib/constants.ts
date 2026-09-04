@@ -19,9 +19,9 @@ export const SOCIAL_LINKS = {
 export const SITE_CONFIG = {
   name:           'Arletta The Friendly Trader',
   tagline:        'Trade with structure. Grow with discipline.',
-  communityPrice: 499,
+  communityPrice: 299,
   communityUrl:   'https://arletta-the-friendly-trader.mn.co/',
-  enrollmentUrl:  'https://arletta-the-friendly-trader.mn.co/plans/1998987?bundle_token=26d9878a5445cce2db1cd9888b86740d&utm_source=manual',
+  enrollmentUrl:  'https://arletta-the-friendly-trader.mn.co/plans/1998145?bundle_token=08dbace4fef8f14eedcd234c4b7e5664&utm_source=manual',
   shopUrl:        'https://shop.arlettathefriendlytrader.com',
   bookingUrl: 'https://httpsarlettathefriendlytraderasme.as.me/schedule/1a78dddd',
   waitlistUrl: 'https://forms.gle/Z9VyFNpbc1btjt4N9',
