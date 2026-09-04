@@ -24,14 +24,15 @@ const PATHWAY_LEVELS: PathwayLevel[] = [
     level: "Level 1",
     title: "The Academy",
     action: "Learn It",
+    price: "$499/month",
     summary: "This is where Mini Drippers are built. Learn the foundation of the ATFT trading system and how to responsibly grow from your first $100.",
     topics: [
       "Trading discipline and risk management",
       "Chart reading and structured execution",
       "Building confidence and responsible account growth",
     ],
-    buttonLabel: "Join the Academy Waitlist",
-    buttonUrl: SITE_CONFIG.waitlistUrl,
+    buttonLabel: "Enroll Now",
+    buttonUrl: SITE_CONFIG.enrollmentUrl,
   },
   {
     level: "Level 2",
@@ -150,6 +151,11 @@ export default function DripperPathway() {
               <a href={item.buttonUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-opacity" style={{ background: gradientBg }}>
                 {item.buttonLabel}
               </a>
+              {item.level === "Level 1" && (
+                <p className="text-xs text-center leading-relaxed mt-3 text-brand-brown">
+                  <strong>Waitlist members:</strong> {SITE_CONFIG.waitlistDiscountNotice}
+                </p>
+              )}
             </article>
           ))}
         </div>

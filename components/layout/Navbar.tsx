@@ -86,8 +86,8 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-4">
-          <Link
-            href="/community"
+          <a
+            href={SITE_CONFIG.enrollmentUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="
@@ -98,8 +98,8 @@ export default function Navbar() {
               whitespace-nowrap
             "
           >
-            Join the Waitlist →
-          </Link>
+            Enroll Now →
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -140,8 +140,8 @@ export default function Navbar() {
           ))}
 
           {/* Mobile CTA */}
-          <Link
-            href="/community"
+          <a
+            href={SITE_CONFIG.enrollmentUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="
@@ -150,8 +150,8 @@ export default function Navbar() {
               hover:opacity-90 transition-all duration-200
             "
           >
-            Join the Waitlist →
-          </Link>
+            Enroll Now →
+          </a>
         </nav>
       </div>
     </header>
