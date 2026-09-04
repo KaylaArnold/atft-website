@@ -32,24 +32,28 @@ export default function CommunityHero() {
           <div className="w-full rounded-2xl p-8 flex flex-col items-center gap-6" style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.3)" }}>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full" style={{ background: "#C9A84C" }} />
-              <p className="text-sm font-semibold tracking-wide uppercase" style={{ color: "#E8C96A" }}>Enrollment opens September 3rd</p>
+              <p className="text-sm font-semibold tracking-wide uppercase" style={{ color: "#E8C96A" }}>Enrollment is open now</p>
             </div>
 
             <p className="text-base text-center leading-relaxed" style={{ color: "rgba(249,246,240,0.7)" }}>
-              The 5% Drippers Community intentionally opens only twice each year in July and November so every member receives personalized coaching, accountability, and support.
+              Join the 5% Drippers Community for daily live sessions, structured education, accountability, and support from traders committed to consistency and growth.
             </p>
 
             <div className="flex flex-col items-center gap-2">
-              <p className="text-xs tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.6)" }}>Next enrollment opens</p>
-              <p className="font-display text-4xl font-bold" style={{ color: "#E8C96A" }}>September 3rd, 2026</p>
+              <p className="text-xs tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.6)" }}>Regular monthly rate</p>
+              <p className="font-display text-4xl font-bold" style={{ color: "#E8C96A" }}>$499/month</p>
             </div>
 
-            <a href={SITE_CONFIG.waitlistUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: gradientBg }}>
-              Join the Waitlist
+            <a href={SITE_CONFIG.enrollmentUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: gradientBg }}>
+              Enroll Now
             </a>
 
             <p className="text-xs" style={{ color: "rgba(249,246,240,0.4)" }}>
-              Waitlist members receive exclusive discounts before enrollment opens to the public.
+              Complete enrollment securely through Mighty Networks.
+            </p>
+
+            <p className="text-sm text-center leading-relaxed rounded-xl px-5 py-4 w-full" style={{ color: "rgba(249,246,240,0.75)", background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.18)" }}>
+              <strong style={{ color: "#E8C96A" }}>Waitlist members:</strong> {SITE_CONFIG.waitlistDiscountNotice}
             </p>
 
             <div style={{ borderTop: "1px solid rgba(201,168,76,0.15)", paddingTop: "1rem", width: "100%" }}>

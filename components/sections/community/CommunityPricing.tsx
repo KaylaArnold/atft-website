@@ -68,12 +68,16 @@ export default function CommunityPricing() {
 
               <div style={{ borderTop: "1px solid rgba(201,168,76,0.15)" }} />
 
-              <a href={SITE_CONFIG.communityUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200 text-center" style={{ background: gradientBg }}>
-                Join the 5% Drippers
+              <a href={SITE_CONFIG.enrollmentUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200 text-center" style={{ background: gradientBg }}>
+                Enroll Now
               </a>
 
               <p className="text-xs text-center" style={{ color: "rgba(249,246,240,0.35)" }}>
                 Annual plan also available
+              </p>
+
+              <p className="text-xs text-center leading-relaxed rounded-lg px-4 py-3" style={{ color: "rgba(249,246,240,0.65)", background: "rgba(201,168,76,0.08)" }}>
+                <strong style={{ color: "#E8C96A" }}>Waitlist members:</strong> {SITE_CONFIG.waitlistDiscountNotice}
               </p>
             </div>
           </div>

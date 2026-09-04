@@ -29,7 +29,7 @@ const FAQ_SECTIONS = [
     questions: [
       { q: "What is the 5% Drippers community?", a: "The 5% Drippers is a private trading community hosted on Mighty Networks. Members get access to daily live trading sessions, a full replay library, weekly market insights, trade education, and a supportive group of traders all learning the 5% DRIP Method together." },
       { q: "I am an existing member. How do I access the community?", a: "If you are already a 5% Drippers member, you can log back in directly through Mighty Networks. Visit our Community page and click the 'Access your community here' link at the bottom of the enrollment box." },
-      { q: "When does enrollment open?", a: "The 5% Drippers community opens enrollment twice a year — in July and November. Join the waitlist to be notified before enrollment opens to the public." },
+      { q: "Is enrollment currently open?", a: "Yes. Enrollment for the 5% Drippers community is open now at the regular rate of $499 per month. Select any Enroll Now button on the website to get started through Mighty Networks." },
       { q: "How much does the community cost?", a: "Membership is $299 per month. An annual plan is also available. There is no long-term commitment — you can cancel at any time." },
       { q: "How do I access the community after joining?", a: "After signing up you will receive an invitation to join our Mighty Networks community where everything lives — sessions, replays, discussions, and resources." },
       { q: "Is the community membership the same as the classes?", a: "No. The community membership and individual classes are separate. The membership gives you ongoing daily access. The classes are standalone educational programs. Many members participate in both." },

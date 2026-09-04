@@ -60,11 +60,14 @@ export default function Footer() {
           <p className="text-sm leading-relaxed" style={{ color: "rgba(249,246,240,0.6)" }}>
             Join hundreds of traders learning the 5% DRIP Method together — live sessions, replays, and real support.
           </p>
-          <a href={SITE_CONFIG.waitlistUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-brand-black text-sm font-semibold px-5 py-3 rounded-md text-center hover:opacity-90 transition-all duration-200 mt-2" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)" }}>
-            Join the Waitlist
+          <a href={SITE_CONFIG.enrollmentUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-brand-black text-sm font-semibold px-5 py-3 rounded-md text-center hover:opacity-90 transition-all duration-200 mt-2" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)" }}>
+            Enroll Now
           </a>
           <p className="text-xs mt-2" style={{ color: "rgba(249,246,240,0.4)" }}>
-            Next enrollment opens on September 3rd, 2026.
+            Enrollment is open now at $499/month.
+          </p>
+          <p className="text-xs leading-relaxed" style={{ color: "rgba(249,246,240,0.5)" }}>
+            {SITE_CONFIG.waitlistDiscountNotice}
           </p>
         </div>
 
