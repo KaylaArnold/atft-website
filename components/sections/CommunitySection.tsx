@@ -85,11 +85,7 @@ export default function CommunitySection() {
               </a>
 
               <p className="text-xs text-center" style={{ color: "rgba(249,246,240,0.35)" }}>
-                Enrollment is open now at the regular rate of $499/month.
-              </p>
-
-              <p className="text-xs text-center leading-relaxed rounded-lg px-4 py-3" style={{ color: "rgba(249,246,240,0.65)", background: "rgba(201,168,76,0.08)" }}>
-                <strong style={{ color: "#E8C96A" }}>Waitlist members:</strong> {SITE_CONFIG.waitlistDiscountNotice}
+                Enrollment is open now at $299/month.
               </p>
 
             </div>

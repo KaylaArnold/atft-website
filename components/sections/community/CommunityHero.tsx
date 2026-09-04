@@ -40,8 +40,8 @@ export default function CommunityHero() {
             </p>
 
             <div className="flex flex-col items-center gap-2">
-              <p className="text-xs tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.6)" }}>Regular monthly rate</p>
-              <p className="font-display text-4xl font-bold" style={{ color: "#E8C96A" }}>$499/month</p>
+              <p className="text-xs tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.6)" }}>Monthly rate</p>
+              <p className="font-display text-4xl font-bold" style={{ color: "#E8C96A" }}>$299/month</p>
             </div>
 
             <a href={SITE_CONFIG.enrollmentUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: gradientBg }}>
@@ -50,10 +50,6 @@ export default function CommunityHero() {
 
             <p className="text-xs" style={{ color: "rgba(249,246,240,0.4)" }}>
               Complete enrollment securely through Mighty Networks.
-            </p>
-
-            <p className="text-sm text-center leading-relaxed rounded-xl px-5 py-4 w-full" style={{ color: "rgba(249,246,240,0.75)", background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.18)" }}>
-              <strong style={{ color: "#E8C96A" }}>Waitlist members:</strong> {SITE_CONFIG.waitlistDiscountNotice}
             </p>
 
             <div style={{ borderTop: "1px solid rgba(201,168,76,0.15)", paddingTop: "1rem", width: "100%" }}>

@@ -4,7 +4,7 @@ import CommunityBenefits from "@/components/sections/community/CommunityBenefits
 
 export const metadata: Metadata = {
   title: "Community",
-  description: "Enrollment is open for Arletta's private 5% Drippers trading community at the regular rate of $499 per month.",
+  description: "Enrollment is open for Arletta's private 5% Drippers trading community at $299 per month.",
 }
 
 export default function CommunityPage() {
