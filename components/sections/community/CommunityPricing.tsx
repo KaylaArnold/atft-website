@@ -26,7 +26,7 @@ export default function CommunityPricing() {
               <span className="text-xs font-semibold tracking-widest uppercase text-gold">Simple Pricing</span>
             </div>
             <h2 className="font-display text-4xl lg:text-5xl font-bold leading-tight" style={{ color: "#F9F6F0" }}>
-              One price. Everything included.
+              Everything you need to keep growing.
             </h2>
             <p className="text-base leading-relaxed" style={{ color: "rgba(249,246,240,0.7)" }}>
               No upsells. No hidden fees. No tiers. One monthly membership gives you full access to everything the 5% Drippers community has to offer — live sessions, replays, community, and coaching support.
@@ -45,12 +45,9 @@ export default function CommunityPricing() {
           <div className="flex justify-center lg:justify-end">
             <div className="w-full max-w-sm rounded-2xl p-8 flex flex-col gap-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(201,168,76,0.25)" }}>
               <div className="flex flex-col gap-2">
-                <p className="text-xs font-semibold tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.7)" }}>Monthly membership</p>
-                <div className="flex items-baseline gap-2">
-                  <span className="font-display text-6xl font-bold" style={{ color: "#E8C96A" }}>${SITE_CONFIG.communityPrice}</span>
-                  <span className="text-base" style={{ color: "rgba(249,246,240,0.5)" }}>/month</span>
-                </div>
-                <p className="text-xs" style={{ color: "rgba(249,246,240,0.4)" }}>Cancel anytime. No long-term commitment.</p>
+                <p className="text-xs font-semibold tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.7)" }}>Enrollment Status</p>
+                <p className="font-display text-4xl font-bold" style={{ color: "#E8C96A" }}>Current class underway</p>
+                <p className="text-xs" style={{ color: "rgba(249,246,240,0.4)" }}>Join the waitlist for the next enrollment period.</p>
               </div>
 
               <div style={{ borderTop: "1px solid rgba(201,168,76,0.15)" }} />
@@ -68,13 +65,10 @@ export default function CommunityPricing() {
 
               <div style={{ borderTop: "1px solid rgba(201,168,76,0.15)" }} />
 
-              <a href={SITE_CONFIG.enrollmentUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200 text-center" style={{ background: gradientBg }}>
-                Enroll Now
+              <a href={SITE_CONFIG.waitlistUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200 text-center" style={{ background: gradientBg }}>
+                Join the October Waitlist
               </a>
 
-              <p className="text-xs text-center" style={{ color: "rgba(249,246,240,0.35)" }}>
-                Annual plan also available
-              </p>
 
             </div>
           </div>

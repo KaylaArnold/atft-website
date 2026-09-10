@@ -24,15 +24,14 @@ const PATHWAY_LEVELS: PathwayLevel[] = [
     level: "Level 1",
     title: "The Academy",
     action: "Learn It",
-    price: "$299/month",
     summary: "This is where Mini Drippers are built. Learn the foundation of the ATFT trading system and how to responsibly grow from your first $100.",
     topics: [
       "Trading discipline and risk management",
       "Chart reading and structured execution",
       "Building confidence and responsible account growth",
     ],
-    buttonLabel: "Enroll Now",
-    buttonUrl: SITE_CONFIG.enrollmentUrl,
+    buttonLabel: "Join the October Waitlist",
+    buttonUrl: SITE_CONFIG.waitlistUrl,
   },
   {
     level: "Level 2",
