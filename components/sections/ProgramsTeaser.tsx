@@ -1,10 +1,10 @@
 import Link from "next/link"
 
 const FEATURED_PROGRAMS = [
-  { name: "First Drip", badge: "Beginner", badgeColor: "#1a6b3c", badgeBg: "#e6f4ed", description: "The official starting point for new or inconsistent traders. Learn trading basics, chart reading, candlestick patterns, and the 5% DRIP Method framework.", highlight: "Includes live paper trading" },
-  { name: "Swing Drip", badge: "Intermediate", badgeColor: "#7a4f00", badgeBg: "#fef3e2", description: "For traders looking to expand beyond day trading. Build consistency with multi-day positions, high-probability setups, and emotional control.", highlight: "Multi-day and multi-week positions" },
-  { name: "Futures Drip", badge: "Advanced", badgeColor: "#8B1a1a", badgeBg: "#fde8e8", description: "An advanced futures trading class for traders who understand charting basics and want to trade futures responsibly with structure and discipline.", highlight: "Live educational trade demonstrations" },
-  { name: "Weekend Warrior: The Total Reset", badge: "All Levels", badgeColor: "#4a1a6b", badgeBg: "#f3e6f4", description: "A 3-day hybrid trading reset experience designed to help traders gain clarity, confidence, discipline, and alignment. Only 20 seats available.", highlight: "July 24-26, 2026 - limited seats" },
+  { name: "First Drip", badge: "Beginner", badgeColor: "#1a6b3c", badgeBg: "#e6f4ed", description: "The official starting point for new or inconsistent traders. Learn trading basics, chart reading, candlestick patterns, and the 5% DRIP Method framework.", highlight: "Includes live paper trading", href: "/programs", linkLabel: "Learn more", external: false },
+  { name: "Swing Drip", badge: "Intermediate", badgeColor: "#7a4f00", badgeBg: "#fef3e2", description: "For traders looking to expand beyond day trading. Build consistency with multi-day positions, high-probability setups, and emotional control.", highlight: "Multi-day and multi-week positions", href: "/programs", linkLabel: "Learn more", external: false },
+  { name: "Futures Drip", badge: "Advanced", badgeColor: "#8B1a1a", badgeBg: "#fde8e8", description: "An advanced futures trading class for traders who understand charting basics and want to trade futures responsibly with structure and discipline.", highlight: "Live educational trade demonstrations", href: "/programs", linkLabel: "Learn more", external: false },
+  { name: "A+ Portfolio™", badge: "Long-Term Investing", badgeColor: "#4a1a6b", badgeBg: "#f3e6f4", description: "Build, evaluate, and maintain a long-term investment portfolio designed around your goals, time horizon, and risk tolerance—not a list of popular tickers.", highlight: "$1,250 portfolio-building experience", href: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=88265934", linkLabel: "Schedule now", external: true },
 ]
 
 const gradientBg = "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)"
@@ -37,8 +37,8 @@ export default function ProgramsTeaser() {
                 <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#C9A84C" }} />
                 <span className="text-xs font-medium" style={{ color: "#8B6914" }}>{program.highlight}</span>
               </div>
-              <Link href="/programs" className="inline-flex items-center gap-2 text-sm font-semibold text-gold transition-colors duration-200">
-                Learn more
+              <Link href={program.href} target={program.external ? "_blank" : undefined} rel={program.external ? "noopener noreferrer" : undefined} className="inline-flex items-center gap-2 text-sm font-semibold text-gold transition-colors duration-200">
+                {program.linkLabel}
               </Link>
             </div>
           ))}
