@@ -2,6 +2,7 @@
 
 type ProgramCard = {
   name: string
+  tagline?: string
   badge?: string
   badgeColor?: string
   badgeBg?: string
@@ -11,6 +12,9 @@ type ProgramCard = {
   price: number | null
   bookingUrl: string
   buttonLabel: string
+  features?: string[]
+  principle?: string
+  featured?: boolean
 }
 
 type ProgramSection = {
@@ -37,6 +41,40 @@ const PROGRAM_SECTIONS: ProgramSection[] = [
         price: 499,
         bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=88264742",
         buttonLabel: "Book This Class",
+      },
+    ],
+  },
+  {
+    title: "Build a Portfolio With Purpose",
+    eyebrow: "Long-Term Investing",
+    description: "Learn how to build, evaluate, and maintain a long-term investment portfolio designed around your life—not a list of popular tickers.",
+    programs: [
+      {
+        name: "A+ Portfolio™",
+        tagline: "Build It. Understand It. Grow It.",
+        badge: "Portfolio Building Experience",
+        badgeColor: "#7a4f00",
+        badgeBg: "#fef3e2",
+        description: "A comprehensive experience for investors starting with cash or reviewing investments they already own. Coach Arletta teaches the framework behind a properly structured portfolio so you can understand what you own, why you own it, and how each investment supports your goals. This is not a stock-pick class—you will learn how to build and maintain a portfolio with purpose.",
+        details: "Includes the A+ Portfolio Checkup™ framework for evaluating investments you already own",
+        highlight: "Suitable for both new investors and people with an existing portfolio",
+        price: 1250,
+        bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=88265934",
+        buttonLabel: "Schedule A+ Portfolio™",
+        features: [
+          "Define your goals, time horizon, and risk tolerance",
+          "Understand taxable brokerage and retirement accounts",
+          "Create an appropriate asset-allocation strategy",
+          "Understand ETFs, REITs, and real-estate exposure",
+          "Evaluate long-term individual stocks",
+          "Identify portfolio overlap and overconcentration",
+          "Understand growth, income, and diversification",
+          "Use basic support and resistance for long-term entries",
+          "Create a Dollar Cost Averaging (DCA) strategy",
+          "Review and rebalance your portfolio over time",
+        ],
+        principle: "ATFT Portfolio Rule #1: Never start with the ticker. Start with the person.™",
+        featured: true,
       },
     ],
   },
@@ -211,9 +249,9 @@ const cardStyle = { border: "1px solid rgba(201,168,76,0.15)", boxShadow: "0 2px
 const dividerStyle = { borderTop: "1px solid rgba(201,168,76,0.12)" }
 const dotStyle = { background: "#C9A84C" }
 
-const getGridClass = (count: number) => {
-  if (count === 1) return "grid grid-cols-1 max-w-md mx-auto"
-  if (count === 2) return "grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto"
+const getGridClass = (programs: ProgramCard[]) => {
+  if (programs.length === 1) return `grid grid-cols-1 ${programs[0].featured ? "max-w-4xl" : "max-w-md"} mx-auto`
+  if (programs.length === 2) return "grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto"
   return "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
 }
 
@@ -234,14 +272,30 @@ export default function ProgramsGrid() {
                 <p className="text-sm text-brand-brown max-w-xl leading-relaxed">{section.description}</p>
               </div>
 
-              <div className={`${getGridClass(section.programs.length)} gap-6 items-stretch`}>
+              <div className={`${getGridClass(section.programs)} gap-6 items-stretch`}>
                 {section.programs.map((program) => (
                   <div key={program.name} className="flex flex-col gap-4 rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 bg-brand-white" style={cardStyle}>
                     {program.badge && (
                       <span className="self-start text-xs font-semibold px-3 py-1 rounded-full" style={{ background: program.badgeBg, color: program.badgeColor }}>{program.badge}</span>
                     )}
                     <h4 className="font-display text-xl font-bold text-brand-black leading-tight">{program.name}</h4>
+                    {program.tagline && <p className="font-display text-lg italic text-gold">{program.tagline}</p>}
                     <p className="text-sm text-brand-brown leading-relaxed flex-1">{program.description}</p>
+
+                    {program.features && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 rounded-xl p-5" style={{ background: "rgba(201,168,76,0.06)" }}>
+                        {program.features.map((feature) => (
+                          <div key={feature} className="flex items-start gap-2">
+                            <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5" style={dotStyle} />
+                            <span className="text-xs text-brand-brown leading-relaxed">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {program.principle && (
+                      <p className="font-display text-lg italic leading-relaxed text-brand-black border-l-2 border-gold pl-4">{program.principle}</p>
+                    )}
 
                     {program.price ? (
                       <div className="flex items-baseline gap-2">
