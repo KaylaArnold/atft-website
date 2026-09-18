@@ -10,6 +10,8 @@ type ProgramCard = {
   details: string
   highlight: string
   price: number | null
+  originalPrice?: number
+  saleLabel?: string
   bookingUrl: string
   buttonLabel: string
   features?: string[]
@@ -75,6 +77,28 @@ const PROGRAM_SECTIONS: ProgramSection[] = [
         ],
         principle: "ATFT Portfolio Rule #1: Never start with the ticker. Start with the person.™",
         featured: true,
+      },
+    ],
+  },
+  {
+    title: "Trade Before Your Day Begins",
+    eyebrow: "Early-Morning Trading",
+    description: "Build a focused trading routine around the 6:00–8:00 AM ET market window.",
+    programs: [
+      {
+        name: "The A.M. Advantage™",
+        tagline: "Trade Early. Take Your Percentage. Start Your Day.",
+        badge: "Live Class · October 5",
+        badgeColor: "#7a4f00",
+        badgeBg: "#fef3e2",
+        description: "What if your trading day could be over before your day even begins? The A.M. Advantage™ is designed for people who cannot—or do not want to—sit in front of the market at 9:30 AM. Learn a structured approach to trading early and build a focused routine that fits your lifestyle.",
+        details: "October 5, 2026 · 6:00–8:00 AM ET",
+        highlight: "A focused early-morning trading experience",
+        price: 499,
+        originalPrice: 1299,
+        saleLabel: "Sale Price",
+        bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=98438296",
+        buttonLabel: "Reserve Your Seat",
       },
     ],
   },
@@ -298,9 +322,14 @@ export default function ProgramsGrid() {
                     )}
 
                     {program.price ? (
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-sm text-brand-brown">Investment:</span>
-                        <span className="text-2xl font-bold font-display" style={{ color: "#C9A84C" }}>{program.price.toLocaleString()}</span>
+                      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                        {program.originalPrice && (
+                          <span className="text-sm text-brand-brown">
+                            Regular Price: <span className="line-through">${program.originalPrice.toLocaleString()}</span>
+                          </span>
+                        )}
+                        <span className="text-sm text-brand-brown">{program.saleLabel ?? "Investment"}:</span>
+                        <span className="text-2xl font-bold font-display" style={{ color: "#C9A84C" }}>${program.price.toLocaleString()}</span>
                       </div>
                     ) : (
                       <div className="text-sm font-semibold" style={{ color: "#C9A84C" }}>Application Required</div>
