@@ -64,7 +64,7 @@ export default function Footer() {
             Join the Waitlist
           </a>
           <p className="text-xs mt-2" style={{ color: "rgba(249,246,240,0.4)" }}>
-            The current class is underway. Next enrollment: October 2026.
+            Early enrollment opens November 9, 2026. Classes begin January 18, 2027.
           </p>
         </div>
 

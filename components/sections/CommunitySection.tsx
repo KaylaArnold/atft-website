@@ -59,7 +59,7 @@ export default function CommunitySection() {
               <div className="flex flex-col gap-2">
                 <p className="text-xs font-semibold tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.7)" }}>Enrollment Status</p>
                 <p className="font-display text-4xl font-bold" style={{ color: "#E8C96A" }}>Current class underway</p>
-                <p className="text-xs" style={{ color: "rgba(249,246,240,0.4)" }}>Join the waitlist for the next enrollment period.</p>
+                <p className="text-xs" style={{ color: "rgba(249,246,240,0.4)" }}>Early enrollment opens November 9.</p>
               </div>
 
               <div style={{ borderTop: "1px solid rgba(201,168,76,0.15)" }} />
@@ -78,11 +78,11 @@ export default function CommunitySection() {
               <div style={{ borderTop: "1px solid rgba(201,168,76,0.15)" }} />
 
               <a href={SITE_CONFIG.waitlistUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200 text-center" style={{ background: gradientBg }}>
-                Join the October Waitlist
+                Join the Early Enrollment Waitlist
               </a>
 
               <p className="text-xs text-center" style={{ color: "rgba(249,246,240,0.35)" }}>
-                The current class has started. Enrollment reopens in October 2026.
+                Save with early enrollment November 9–December 11. Classes begin January 18, 2027.
               </p>
 
             </div>

@@ -36,20 +36,20 @@ export default function CommunityHero() {
             </div>
 
             <p className="text-base text-center leading-relaxed" style={{ color: "rgba(249,246,240,0.7)" }}>
-              The current class is underway. Join the waitlist to be notified when enrollment reopens for the next 5% Drippers class.
+              The current class is underway. Join the waitlist for early enrollment and save on the next six-month Mini Dripper program.
             </p>
 
             <div className="flex flex-col items-center gap-2">
-              <p className="text-xs tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.6)" }}>Next enrollment</p>
-              <p className="font-display text-4xl font-bold" style={{ color: "#E8C96A" }}>October 2026</p>
+              <p className="text-xs tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.6)" }}>Early enrollment opens</p>
+              <p className="font-display text-4xl font-bold" style={{ color: "#E8C96A" }}>November 9, 2026</p>
             </div>
 
             <a href={SITE_CONFIG.waitlistUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: gradientBg }}>
-              Join the October Waitlist
+              Join the Early Enrollment Waitlist
             </a>
 
             <p className="text-xs" style={{ color: "rgba(249,246,240,0.4)" }}>
-              Waitlist members will be notified when enrollment becomes available.
+              Early enrollment is $299/month through December 11. Classes begin January 18, 2027.
             </p>
 
             <div style={{ borderTop: "1px solid rgba(201,168,76,0.15)", paddingTop: "1rem", width: "100%" }}>
