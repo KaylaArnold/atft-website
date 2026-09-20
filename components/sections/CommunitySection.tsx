@@ -57,9 +57,9 @@ export default function CommunitySection() {
             <div className="w-full max-w-sm rounded-2xl p-8 flex flex-col gap-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(201,168,76,0.25)" }}>
 
               <div className="flex flex-col gap-2">
-                <p className="text-xs font-semibold tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.7)" }}>Enrollment Status</p>
-                <p className="font-display text-4xl font-bold" style={{ color: "#E8C96A" }}>Current class underway</p>
-                <p className="text-xs" style={{ color: "rgba(249,246,240,0.4)" }}>Early enrollment opens November 9.</p>
+                <p className="text-xs font-semibold tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.7)" }}>Early Enrollment Opens</p>
+                <p className="font-display text-4xl font-bold" style={{ color: "#E8C96A" }}>November 9, 2026</p>
+                <p className="text-xs" style={{ color: "rgba(249,246,240,0.4)" }}>$299/month through December 11</p>
               </div>
 
               <div style={{ borderTop: "1px solid rgba(201,168,76,0.15)" }} />
