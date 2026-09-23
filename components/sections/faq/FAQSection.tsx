@@ -29,8 +29,8 @@ const FAQ_SECTIONS = [
     questions: [
       { q: "What is the 5% Drippers community?", a: "The 5% Drippers is a private trading community hosted on Mighty Networks. Members get access to daily live trading sessions, a full replay library, weekly market insights, trade education, and a supportive group of traders all learning the 5% DRIP Method together." },
       { q: "I am an existing member. How do I access the community?", a: "If you are already a 5% Drippers member, you can log back in directly through Mighty Networks. Visit our Community page and click the 'Access your community here' link at the bottom of the enrollment box." },
-      { q: "Is enrollment currently open?", a: "Enrollment is currently closed and the present class is underway. The next enrollment period is expected in October 2026. Join the waitlist to be notified when enrollment opens." },
-      { q: "How much does the community cost?", a: "Current pricing and plan options will be shared when enrollment reopens. Join the waitlist to receive the October enrollment details." },
+      { q: "Is enrollment currently open?", a: "Enrollment is currently closed and the present class is underway. Early enrollment for the next six-month Mini Dripper program opens November 9 and runs through December 11, 2026. Regular enrollment closes January 4, 2027, and classes begin January 18." },
+      { q: "How much does the community cost?", a: "Early enrollment is $299 per month from November 9 through December 11, 2026. From December 12 through the January 4 deadline, tuition is $499 per month or $2,200 paid upfront for the full six-month program." },
       { q: "How do I access the community after joining?", a: "After signing up you will receive an invitation to join our Mighty Networks community where everything lives — sessions, replays, discussions, and resources." },
       { q: "Is the community membership the same as the classes?", a: "No. The community membership and individual classes are separate. The membership gives you ongoing daily access. The classes are standalone educational programs. Many members participate in both." },
     ],

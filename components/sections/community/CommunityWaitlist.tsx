@@ -22,18 +22,18 @@ export default function CommunityWaitlist() {
           </h2>
 
           <p className="text-base leading-relaxed" style={{ color: "rgba(249,246,240,0.7)" }}>
-            The current class is underway. Join the waitlist for the next enrollment period in October 2026.
+            The current class is underway. Join the waitlist to be notified when early enrollment opens November 9, 2026.
           </p>
 
           <div className="w-full rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(201,168,76,0.2)" }}>
             <a href={SITE_CONFIG.waitlistUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full px-8 py-5 text-base font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: gradientBg }}>
-              Join the October Waitlist
+              Join the Early Enrollment Waitlist
             </a>
           </div>
 
           <div className="flex flex-col gap-3 w-full">
             {[
-              "Get notified when October enrollment opens",
+              "Get notified when early enrollment opens November 9",
               "Learn what to expect from the program",
               "Receive enrollment updates by email",
             ].map((item) => (
@@ -51,8 +51,9 @@ export default function CommunityWaitlist() {
           </p>
 
           <div className="w-full p-6 rounded-2xl" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(201,168,76,0.15)" }}>
-            <p className="text-xs tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.6)" }}>Next enrollment</p>
-            <p className="font-display text-3xl font-bold mt-2" style={{ color: "#E8C96A" }}>October 2026</p>
+            <p className="text-xs tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.6)" }}>Early enrollment</p>
+            <p className="font-display text-3xl font-bold mt-2" style={{ color: "#E8C96A" }}>November 9–December 11</p>
+            <p className="text-sm mt-2" style={{ color: "rgba(249,246,240,0.65)" }}>$299/month · Classes begin January 18, 2027</p>
           </div>
 
         </div>

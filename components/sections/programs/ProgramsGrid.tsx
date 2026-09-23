@@ -10,6 +10,8 @@ type ProgramCard = {
   details: string
   highlight: string
   price: number | null
+  originalPrice?: number
+  saleLabel?: string
   bookingUrl: string
   buttonLabel: string
   features?: string[]
@@ -30,6 +32,22 @@ const PROGRAM_SECTIONS: ProgramSection[] = [
     eyebrow: "Build Your Skills",
     description: "Choose focused education and coaching to strengthen specific parts of your trading journey.",
     programs: [
+      {
+        name: "The A.M. Advantage™",
+        tagline: "Trade Early. Take Your Percentage. Start Your Day.",
+        badge: "Live Class · October 5",
+        badgeColor: "#7a4f00",
+        badgeBg: "#fef3e2",
+        description: "Trade the premarket with ease. What if your trading day could be over before your day even begins? Not everybody can sit in front of the market at 9:30 AM. Some people are packing lunches, getting children to school, commuting, or clocking in. Others simply do not want trading to consume their entire morning. The A.M. Advantage™ was built for them.",
+        details: "October 5, 2026 · 6:00–8:00 AM ET",
+        highlight: "A focused early-morning trading experience",
+        principle: "The promise isn’t “more money.” It’s a better trading lifestyle.",
+        price: 499,
+        originalPrice: 1299,
+        saleLabel: "Sale Price",
+        bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=98438296",
+        buttonLabel: "Reserve Your Seat",
+      },
       {
         name: "First Drip",
         badge: "Beginner",
@@ -223,25 +241,6 @@ const PROGRAM_SECTIONS: ProgramSection[] = [
       },
     ],
   },
-  {
-    title: "Members Only",
-    eyebrow: "5% Dripper Membership Required",
-    description: "In-person, weekly class for members only",
-    programs: [
-      {
-        name: "The DRIP Room",
-        badge: "Members Only",
-        badgeColor: "#8b6914",
-        badgeBg: "#fbf6ec",
-        description: "An exclusive session for active 5% Drippers community members. Details and schedule are shared inside the Mighty Networks community. Active membership required to book.",
-        details: "Active 5% Drippers membership required",
-        highlight: "Members are verified before class",
-        price: null,
-        bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=88266056",
-        buttonLabel: "Book This Class",
-      },
-    ],
-  },
 ]
 
 const gradientBg = "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)"
@@ -298,9 +297,14 @@ export default function ProgramsGrid() {
                     )}
 
                     {program.price ? (
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-sm text-brand-brown">Investment:</span>
-                        <span className="text-2xl font-bold font-display" style={{ color: "#C9A84C" }}>{program.price.toLocaleString()}</span>
+                      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                        {program.originalPrice && (
+                          <span className="text-sm text-brand-brown">
+                            Regular Price: <span className="line-through">${program.originalPrice.toLocaleString()}</span>
+                          </span>
+                        )}
+                        <span className="text-sm text-brand-brown">{program.saleLabel ?? "Investment"}:</span>
+                        <span className="text-2xl font-bold font-display" style={{ color: "#C9A84C" }}>${program.price.toLocaleString()}</span>
                       </div>
                     ) : (
                       <div className="text-sm font-semibold" style={{ color: "#C9A84C" }}>Application Required</div>

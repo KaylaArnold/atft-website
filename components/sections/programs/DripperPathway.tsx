@@ -30,7 +30,7 @@ const PATHWAY_LEVELS: PathwayLevel[] = [
       "Chart reading and structured execution",
       "Building confidence and responsible account growth",
     ],
-    buttonLabel: "Join the October Waitlist",
+    buttonLabel: "Join the Early Enrollment Waitlist",
     buttonUrl: SITE_CONFIG.waitlistUrl,
   },
   {
