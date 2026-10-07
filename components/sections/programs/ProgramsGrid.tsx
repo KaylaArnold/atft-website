@@ -35,11 +35,11 @@ const PROGRAM_SECTIONS: ProgramSection[] = [
       {
         name: "The Premarket Drip",
         tagline: "Trade Early. Take Your Percentage. Start Your Day.",
-        badge: "Live Class · October 5",
+        badge: "Live Class",
         badgeColor: "#7a4f00",
         badgeBg: "#fef3e2",
         description: "Trade the premarket with ease. What if your trading day could be over before your day even begins? Not everybody can sit in front of the market at 9:30 AM. Some people are packing lunches, getting children to school, commuting, or clocking in. Others simply do not want trading to consume their entire morning. The Premarket Drip was built for them.",
-        details: "October 5, 2026 · 6:00–8:00 AM ET",
+        details: "6:00–8:00 AM ET · Available dates shown when scheduling",
         highlight: "A focused early-morning trading experience",
         principle: "The promise isn’t “more money.” It’s a better trading lifestyle.",
         price: 499,
