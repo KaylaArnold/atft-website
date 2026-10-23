@@ -1,38 +1,58 @@
-const BENEFITS = [
-  { icon: "M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z", title: "Daily Live Trading Sessions", desc: "Trade alongside Arletta and the coaching team every market day. Watch real decisions made in real time with full explanation of the why behind every move." },
-  { icon: "M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z M21 12a9 9 0 11-18 0 9 9 0 0118 0z", title: "Full Replay Library", desc: "Missed a session? Every live session is recorded and available in the replay library. Learn at your own pace without missing a thing." },
-  { icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z", title: "Private Community Access", desc: "Connect with hundreds of traders at every level. Ask questions, share wins, get feedback, and stay accountable — inside our Mighty Networks community." },
-  { icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", title: "Weekly Market Insights", desc: "Every week the team breaks down what happened in the market, what to watch for, and how the 5% DRIP Method applies to current conditions." },
-  { icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253", title: "Trade Education and Strategy", desc: "Beyond live sessions — ongoing education on options strategies, risk management, chart reading, and execution built around the 5% DRIP Method framework." },
-  { icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", title: "Accountability and Support", desc: "Trading alone is hard. Inside the community you have a team of coaches and fellow traders keeping you accountable, motivated, and on track." },
+import Image from "next/image"
+
+const LEARNING_TOPICS = [
+  "Stock charts, candlesticks, and market movement",
+  "The 5% Daily Drip™ trading approach",
+  "Technical analysis and potential entries and exits",
+  "Risk management and stop losses",
+  "Patience, discipline, and emotional control",
+  "Protecting your trading capital",
+  "Journaling, review, and accountability",
+  "Learning alongside other traders",
 ]
 
 export default function CommunityBenefits() {
   return (
     <section className="section-padding bg-brand-white">
-      <div className="max-w-site mx-auto px-6">
-        <div className="flex flex-col items-center gap-4 mb-16 text-center">
-          <div className="flex items-center gap-3">
-            <div className="h-px w-8" style={{ background: "#C9A84C" }} />
-            <span className="text-xs font-semibold tracking-widest uppercase text-gold">What You Get</span>
-            <div className="h-px w-8" style={{ background: "#C9A84C" }} />
+      <div className="max-w-site mx-auto px-6 space-y-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="relative min-h-[420px] overflow-hidden rounded-2xl">
+            <Image src="/images/arletta-teaching.jpg" alt="Coach Arletta teaching trading education" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
           </div>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-black">Everything included in your membership.</h2>
-          <p className="text-base text-brand-brown max-w-xl leading-relaxed">One membership. Everything you need to trade with structure, stay accountable, and keep growing.</p>
+          <div className="flex flex-col gap-6">
+            <p className="text-xs font-semibold tracking-widest uppercase text-gold">Meet Coach Arletta</p>
+            <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-black">The Friendly Trader.</h2>
+            <p className="text-base leading-relaxed text-brand-brown">Coach Arletta makes trading education practical, relatable, and clear. She teaches students to understand what they are doing, take personal responsibility for their decisions, and build the emotional discipline that responsible trading requires.</p>
+            <blockquote className="font-display text-2xl italic leading-relaxed text-brand-black border-l-2 border-gold pl-5">“Never allow your money to grow faster than your discipline.”</blockquote>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {BENEFITS.map((benefit) => (
-            <div key={benefit.title} className="flex flex-col gap-4 p-6 rounded-2xl hover:-translate-y-1 transition-all duration-300" style={{ background: "#FBF6EC", border: "1px solid rgba(201,168,76,0.15)" }}>
-              <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(201,168,76,0.15)", border: "1px solid rgba(201,168,76,0.2)" }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d={benefit.icon} />
-                </svg>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <article className="rounded-2xl p-8 lg:p-10" style={{ background: "#FBF6EC", border: "1px solid rgba(201,168,76,0.2)" }}>
+            <p className="text-xs font-semibold tracking-widest uppercase text-gold mb-4">More Than a Class</p>
+            <h2 className="font-display text-3xl lg:text-4xl font-bold text-brand-black mb-5">What Does It Mean to Become a Dripper?</h2>
+            <p className="text-base leading-relaxed text-brand-brown">Becoming a Dripper means entering a supportive community built around mentorship, accountability, encouragement, and growth. You will have people beside you, but you must still do your own work: study, practice, journal, review, ask questions, and take responsibility for every trading decision.</p>
+          </article>
+          <article className="rounded-2xl p-8 lg:p-10 bg-brand-dark">
+            <p className="text-xs font-semibold tracking-widest uppercase text-gold mb-4">Grow Together</p>
+            <h2 className="font-display text-3xl lg:text-4xl font-bold mb-5" style={{ color: "#F9F6F0" }}>A Community That Feels Like Family</h2>
+            <p className="text-base leading-relaxed" style={{ color: "rgba(249,246,240,0.72)" }}>The ATFT community brings education, encouragement, and accountability into one space. Students learn alongside people who understand the journey, celebrate progress, and support personal growth both inside and outside the market.</p>
+          </article>
+        </div>
+
+        <div>
+          <div className="flex flex-col items-center gap-4 mb-10 text-center">
+            <p className="text-xs font-semibold tracking-widest uppercase text-gold">Six Months of Growth</p>
+            <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-black">What Will You Learn?</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {LEARNING_TOPICS.map((topic) => (
+              <div key={topic} className="flex items-start gap-3 rounded-xl p-5" style={{ background: "#FBF6EC", border: "1px solid rgba(201,168,76,0.18)" }}>
+                <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold text-brand-black bg-gold">✓</span>
+                <p className="text-sm leading-relaxed text-brand-brown">{topic}</p>
               </div>
-              <h3 className="font-display text-lg font-bold text-brand-black">{benefit.title}</h3>
-              <p className="text-sm text-brand-brown leading-relaxed">{benefit.desc}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

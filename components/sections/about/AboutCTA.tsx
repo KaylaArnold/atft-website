@@ -28,9 +28,9 @@ export default function AboutCTA() {
           <Link href="/programs" className="inline-flex items-center justify-center px-8 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: gradientBg }}>
             Explore Programs
           </Link>
-          <a href={SITE_CONFIG.communityUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 rounded-md text-sm font-semibold transition-all duration-200" style={{ color: "#F9F6F0", border: "1px solid rgba(201,168,76,0.4)" }}>
-            Join the 5% Drippers
-          </a>
+          <Link href={SITE_CONFIG.dailyDripUrl} className="inline-flex items-center justify-center px-8 py-4 rounded-md text-sm font-semibold transition-all duration-200" style={{ color: "#F9F6F0", border: "1px solid rgba(201,168,76,0.4)" }}>
+            Explore 5% Daily Drip™
+          </Link>
         </div>
 
         <p className="text-xs" style={{ color: "rgba(249,246,240,0.35)" }}>

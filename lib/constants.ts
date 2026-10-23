@@ -1,7 +1,7 @@
 export const NAV_LINKS = [
   { label: 'About',         href: '/about',                                       external: false },
   { label: 'Programs',      href: '/programs',                                    external: false },
-  { label: 'Community',     href: '/community',                                   external: false },
+  { label: '5% Daily Drip™', href: '/community',                                  external: false },
   { label: "Give Back",  href: '/give-back', external: false },
   { label: 'Atlanta Guide', href: '/atlanta-guide',                               external: false },
   { label: 'FAQ',           href: '/faq',                                         external: false },
@@ -21,6 +21,6 @@ export const SITE_CONFIG = {
   communityUrl:   'https://arletta-the-friendly-trader.mn.co/',
   shopUrl:        'https://shop.arlettathefriendlytrader.com',
   bookingUrl: 'https://httpsarlettathefriendlytraderasme.as.me/schedule/1a78dddd',
-  waitlistUrl: 'https://forms.gle/Z9VyFNpbc1btjt4N9',
+  dailyDripUrl: '/community',
   disclaimer:     'Educational content only. Trading involves risk. Past results are not indicative of future performance.',
 } as const
