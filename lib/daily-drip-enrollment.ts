@@ -5,9 +5,9 @@ export { getCurrentDailyDripTier } from "@/lib/daily-drip-schedule"
 export type { DailyDripTierId } from "@/lib/daily-drip-schedule"
 
 const CHECKOUT_URLS: Record<DailyDripTierId, string> = {
-  flash: "",
-  early: "",
-  standard: "",
+  flash: process.env.STRIPE_DAILY_DRIP_FLASH_PAYMENT_LINK_URL?.trim() ?? "",
+  early: process.env.STRIPE_DAILY_DRIP_EARLY_PAYMENT_LINK_URL?.trim() ?? "",
+  standard: process.env.STRIPE_DAILY_DRIP_STANDARD_PAYMENT_LINK_URL?.trim() ?? "",
 }
 
 export function getDailyDripCheckoutUrl(tier: DailyDripTierId) {
