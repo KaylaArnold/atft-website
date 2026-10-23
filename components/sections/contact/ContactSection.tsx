@@ -124,7 +124,7 @@ export default function ContactSection() {
                   <select id="subject" name="subject" required className="px-4 py-3 rounded-lg text-sm text-brand-black bg-brand-white outline-none transition-all duration-200" style={{ border: "1px solid rgba(201,168,76,0.25)" }}>
                     <option value="">Select a topic</option>
                     <option value="program">Question about a program</option>
-                    <option value="community">5% Drippers membership</option>
+                    <option value="community">5% Daily Drip™</option>
                     <option value="booking">Booking and scheduling</option>
                     <option value="atlanta">Visiting Atlanta</option>
                     <option value="merchandise">ATFT Merchandise</option>

@@ -22,16 +22,16 @@ const APPLICATION_URL = "https://forms.gle/Sd7nEo5uAWfVbCPT6"
 const PATHWAY_LEVELS: PathwayLevel[] = [
   {
     level: "Level 1",
-    title: "The Academy",
+    title: "5% Daily Drip™",
     action: "Learn It",
-    summary: "This is where Mini Drippers are built. Learn the foundation of the ATFT trading system and how to responsibly grow from your first $100.",
+    summary: "The six-month ATFT Academy mentorship where Drippers learn the foundation of the ATFT trading system and how to responsibly grow from their first $100.",
     topics: [
       "Trading discipline and risk management",
       "Chart reading and structured execution",
       "Building confidence and responsible account growth",
     ],
-    buttonLabel: "Join the Early Enrollment Waitlist",
-    buttonUrl: SITE_CONFIG.waitlistUrl,
+    buttonLabel: "View Enrollment Options",
+    buttonUrl: SITE_CONFIG.dailyDripUrl,
   },
   {
     level: "Level 2",
@@ -147,7 +147,7 @@ export default function DripperPathway() {
                 <p className="font-display text-lg italic leading-relaxed text-brand-black border-l-2 border-gold pl-4 mb-6">“{item.principle}”</p>
               )}
 
-              <a href={item.buttonUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-opacity" style={{ background: gradientBg }}>
+              <a href={item.buttonUrl} target={item.buttonUrl.startsWith("http") ? "_blank" : undefined} rel={item.buttonUrl.startsWith("http") ? "noopener noreferrer" : undefined} className="inline-flex items-center justify-center px-6 py-3 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-opacity" style={{ background: gradientBg }}>
                 {item.buttonLabel}
               </a>
             </article>

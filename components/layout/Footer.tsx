@@ -56,15 +56,15 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <p className="text-xs font-semibold tracking-widest uppercase text-gold">Community</p>
+          <p className="text-xs font-semibold tracking-widest uppercase text-gold">5% Daily Drip™</p>
           <p className="text-sm leading-relaxed" style={{ color: "rgba(249,246,240,0.6)" }}>
-            Join hundreds of traders learning the 5% DRIP Method together — live sessions, replays, and real support.
+            Six months of trading education, mentorship, accountability, and community for the January–June 2027 cohort.
           </p>
-          <a href={SITE_CONFIG.waitlistUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-brand-black text-sm font-semibold px-5 py-3 rounded-md text-center hover:opacity-90 transition-all duration-200 mt-2" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)" }}>
-            Join the Waitlist
-          </a>
+          <Link href={SITE_CONFIG.dailyDripUrl} className="inline-block text-brand-black text-sm font-semibold px-5 py-3 rounded-md text-center hover:opacity-90 transition-all duration-200 mt-2" style={{ background: "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)" }}>
+            Explore 5% Daily Drip™
+          </Link>
           <p className="text-xs mt-2" style={{ color: "rgba(249,246,240,0.4)" }}>
-            Early enrollment opens November 9, 2026. Classes begin January 18, 2027.
+            Enrollment launches October 27, 2026. January–June 2027 cohort.
           </p>
         </div>
 

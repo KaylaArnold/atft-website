@@ -25,14 +25,14 @@ const FAQ_SECTIONS = [
     ],
   },
   {
-    category: "Community Membership",
+    category: "5% Daily Drip™",
     questions: [
-      { q: "What is the 5% Drippers community?", a: "The 5% Drippers is a private trading community hosted on Mighty Networks. Members get access to daily live trading sessions, a full replay library, weekly market insights, trade education, and a supportive group of traders all learning the 5% DRIP Method together." },
-      { q: "I am an existing member. How do I access the community?", a: "If you are already a 5% Drippers member, you can log back in directly through Mighty Networks. Visit our Community page and click the 'Access your community here' link at the bottom of the enrollment box." },
-      { q: "Is enrollment currently open?", a: "Enrollment is currently closed and the present class is underway. Early enrollment for the next six-month Mini Dripper program opens November 9 and runs through December 11, 2026. Regular enrollment closes January 4, 2027, and classes begin January 18." },
-      { q: "How much does the community cost?", a: "Early enrollment is $299 per month from November 9 through December 11, 2026. From December 12 through the January 4 deadline, tuition is $499 per month or $2,200 paid upfront for the full six-month program." },
+      { q: "What is 5% Daily Drip™?", a: "5% Daily Drip™ is ATFT Academy’s six-month trading education and mentorship experience. The January–June 2027 cohort combines practical trading education with discipline, accountability, community, journaling, review, and responsible risk management." },
+      { q: "I am an existing member. How do I access the community?", a: "If you are already a 5% Drippers member, you can log back in directly through Mighty Networks. Visit the 5% Daily Drip™ page and use the 'Access the ATFT community' link near the bottom." },
+      { q: "When does enrollment open?", a: "Enrollment for the January–June 2027 cohort launches October 27, 2026. The 72-Hour Faith Flash Sale runs October 27–29, Early Enrollment runs October 30–December 15, and Standard 2027 Enrollment begins December 16. All deadlines use Eastern Time." },
+      { q: "How much does 5% Daily Drip™ cost?", a: "The October 27–29 Flash Sale requires a separate $99 enrollment fee and locks in $99 per month for six months. October 30–December 15 Early Enrollment requires the same separate $99 fee and locks in $299 per month for six months. Standard Enrollment is $499 per month for six months with no separate fee; the first $499 payment counts toward tuition. All tiers receive the same program experience." },
       { q: "How do I access the community after joining?", a: "After signing up you will receive an invitation to join our Mighty Networks community where everything lives — sessions, replays, discussions, and resources." },
-      { q: "Is the community membership the same as the classes?", a: "No. The community membership and individual classes are separate. The membership gives you ongoing daily access. The classes are standalone educational programs. Many members participate in both." },
+      { q: "Is 5% Daily Drip™ the same as the standalone classes?", a: "No. 5% Daily Drip™ is a six-month mentorship experience. The classes listed on the Programs page are standalone educational programs. Many students participate in both." },
     ],
   },
   {

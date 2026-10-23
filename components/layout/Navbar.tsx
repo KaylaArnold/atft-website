@@ -86,10 +86,8 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-4">
-          <a
-            href={SITE_CONFIG.waitlistUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href={SITE_CONFIG.dailyDripUrl}
             className="
               bg-gold-gradient text-brand-black text-sm font-semibold
               px-5 py-2.5 rounded-md
@@ -98,8 +96,8 @@ export default function Navbar() {
               whitespace-nowrap
             "
           >
-            Join the Waitlist →
-          </a>
+            5% Daily Drip™ →
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -140,18 +138,16 @@ export default function Navbar() {
           ))}
 
           {/* Mobile CTA */}
-          <a
-            href={SITE_CONFIG.waitlistUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href={SITE_CONFIG.dailyDripUrl}
             className="
               mt-4 bg-gold-gradient text-brand-black text-sm font-semibold
               px-5 py-3 rounded-md text-center
               hover:opacity-90 transition-all duration-200
             "
           >
-            Join the Waitlist →
-          </a>
+            5% Daily Drip™ →
+          </Link>
         </nav>
       </div>
     </header>
