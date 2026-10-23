@@ -1,3 +1,5 @@
+import DailyDripWaitlistLink from "@/components/sections/community/DailyDripWaitlistLink"
+
 const gradientBg = "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)"
 const goldText = "linear-gradient(135deg, #C9A84C 0%, #E8C96A 50%, #C9A84C 100%)"
 
@@ -42,9 +44,12 @@ export default function CommunityHero() {
               <p className="font-display text-4xl font-bold" style={{ color: "#E8C96A" }}>October 27, 2026</p>
             </div>
 
-            <a href="#enrollment" className="inline-flex items-center justify-center px-10 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: gradientBg }}>
-              View Enrollment Options
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a href="#enrollment" className="inline-flex items-center justify-center px-10 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: gradientBg }}>
+                View Enrollment Options
+              </a>
+              <DailyDripWaitlistLink />
+            </div>
 
             <p className="text-xs" style={{ color: "rgba(249,246,240,0.4)" }}>
               January–June 2027 cohort · Three enrollment windows · Same six-month experience

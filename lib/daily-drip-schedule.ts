@@ -19,3 +19,7 @@ export function getCurrentDailyDripTier(now = Date.now()): DailyDripEnrollmentPh
   if (now < standardStarts) return "early"
   return "standard"
 }
+
+export function isDailyDripWaitlistOpen(phase: DailyDripEnrollmentPhase) {
+  return phase !== "standard"
+}
