@@ -143,9 +143,6 @@ async function validateEnrollmentLineItem(stripe: Stripe, session: Stripe.Checko
 async function validatePaymentLink(stripe: Stripe, config: DailyDripFlashConfig) {
   const paymentLink = await stripe.paymentLinks.retrieve(config.paymentLinkId)
   if (paymentLink.livemode !== config.expectedLivemode) throw new Error("Payment Link livemode does not match the webhook environment")
-  if (paymentLink.payment_intent_data?.setup_future_usage !== "off_session") {
-    throw new Error("Payment Link must save the payment method with off_session future usage")
-  }
 }
 
 async function retrieveReusableCard(stripe: Stripe, session: Stripe.Checkout.Session, customerId: string) {
