@@ -1,12 +1,16 @@
 import "server-only"
 import { createHash } from "node:crypto"
 import type Stripe from "stripe"
-import { DAILY_DRIP_TUITION_START, isDailyDripFlashWindow } from "@/lib/daily-drip-schedule"
+import {
+  DAILY_DRIP_TUITION_START,
+  isDailyDripEarlyWindow,
+  isDailyDripFlashWindow,
+} from "@/lib/daily-drip-schedule"
 
 export const DAILY_DRIP_COHORT = "2027_january_june"
 export const DAILY_DRIP_PROGRAM = "5_percent_daily_drip"
 
-const EXPECTED_AMOUNT = 9_900
+const ENROLLMENT_FEE_AMOUNT = 9_900
 const EXPECTED_CURRENCY = "usd"
 const SUPPORTED_PAYMENT_METHODS = new Set(["card", "link", "cashapp", "klarna"])
 
@@ -22,13 +26,24 @@ const META = {
   failure: "atft_schedule_failure",
 } as const
 
-export type DailyDripFlashConfig = {
-  webhookSecret: string
+export type DailyDripPromotionalTierId = "flash" | "early"
+
+export type DailyDripTierConfig = {
+  id: DailyDripPromotionalTierId
   paymentLinkId: string
   enrollmentFeePriceId: string
   tuitionPriceId: string
+  tuitionAmount: number
+  metadataTier: string
+  isEnrollmentWindow: (timestamp: number) => boolean
+  windowDescription: string
+}
+
+export type DailyDripConfig = {
+  webhookSecret: string
   expectedLivemode: boolean
   allowTestOutsideWindow: boolean
+  tiers: DailyDripTierConfig[]
 }
 
 type ProcessResult =
@@ -36,9 +51,12 @@ type ProcessResult =
   | { outcome: "duplicate_prevented"; scheduleId: string }
 
 export class DailyDripWindowClosedError extends Error {
-  constructor() {
-    super("Enrollment payment completed outside the October 27–29 Eastern Time flash-sale window")
+  readonly tier: DailyDripPromotionalTierId
+
+  constructor(tier: DailyDripPromotionalTierId, windowDescription: string) {
+    super(`Enrollment payment completed outside the ${windowDescription}`)
     this.name = "DailyDripWindowClosedError"
+    this.tier = tier
   }
 }
 
@@ -54,19 +72,56 @@ function requireStripeId(name: string, prefix: string) {
   return value
 }
 
-export function getDailyDripFlashConfig(): DailyDripFlashConfig {
+function optionalStripeId(name: string, prefix: string) {
+  const value = process.env[name]?.trim()
+  if (!value) return null
+  if (!value.startsWith(prefix)) throw new Error(`${name} must begin with ${prefix}`)
+  return value
+}
+
+export function getDailyDripConfig(): DailyDripConfig {
   const livemode = requireEnvironment("STRIPE_DAILY_DRIP_LIVEMODE")
   if (livemode !== "true" && livemode !== "false") {
     throw new Error("STRIPE_DAILY_DRIP_LIVEMODE must be true or false")
   }
 
+  const enrollmentFeePriceId = requireStripeId("STRIPE_DAILY_DRIP_ENROLLMENT_FEE_PRICE_ID", "price_")
+  const tiers: DailyDripTierConfig[] = [
+    {
+      id: "flash",
+      paymentLinkId: requireStripeId("STRIPE_DAILY_DRIP_FLASH_PAYMENT_LINK_ID", "plink_"),
+      enrollmentFeePriceId,
+      tuitionPriceId: requireStripeId("STRIPE_DAILY_DRIP_TUITION_PRICE_ID", "price_"),
+      tuitionAmount: 9_900,
+      metadataTier: "faith_flash_99",
+      isEnrollmentWindow: isDailyDripFlashWindow,
+      windowDescription: "October 27–29 Eastern Time flash-sale window",
+    },
+  ]
+
+  const earlyPaymentLinkId = optionalStripeId("STRIPE_DAILY_DRIP_EARLY_PAYMENT_LINK_ID", "plink_")
+  const earlyTuitionPriceId = optionalStripeId("STRIPE_DAILY_DRIP_EARLY_TUITION_PRICE_ID", "price_")
+  if (Boolean(earlyPaymentLinkId) !== Boolean(earlyTuitionPriceId)) {
+    throw new Error("STRIPE_DAILY_DRIP_EARLY_PAYMENT_LINK_ID and STRIPE_DAILY_DRIP_EARLY_TUITION_PRICE_ID must be configured together")
+  }
+  if (earlyPaymentLinkId && earlyTuitionPriceId) {
+    tiers.push({
+      id: "early",
+      paymentLinkId: earlyPaymentLinkId,
+      enrollmentFeePriceId,
+      tuitionPriceId: earlyTuitionPriceId,
+      tuitionAmount: 29_900,
+      metadataTier: "early_enrollment_299",
+      isEnrollmentWindow: isDailyDripEarlyWindow,
+      windowDescription: "October 30–December 15 Eastern Time early-enrollment window",
+    })
+  }
+
   return {
     webhookSecret: requireStripeId("STRIPE_DAILY_DRIP_WEBHOOK_SECRET", "whsec_"),
-    paymentLinkId: requireStripeId("STRIPE_DAILY_DRIP_FLASH_PAYMENT_LINK_ID", "plink_"),
-    enrollmentFeePriceId: requireStripeId("STRIPE_DAILY_DRIP_ENROLLMENT_FEE_PRICE_ID", "price_"),
-    tuitionPriceId: requireStripeId("STRIPE_DAILY_DRIP_TUITION_PRICE_ID", "price_"),
     expectedLivemode: livemode === "true",
     allowTestOutsideWindow: livemode === "false" && process.env.STRIPE_DAILY_DRIP_TEST_ALLOW_OUTSIDE_WINDOW === "true",
+    tiers,
   }
 }
 
@@ -79,13 +134,18 @@ export function getPaymentLinkId(session: Stripe.Checkout.Session) {
   return getId(session.payment_link)
 }
 
+export function getTierForPaymentLink(config: DailyDripConfig, paymentLinkId: string | null) {
+  if (!paymentLinkId) return null
+  return config.tiers.find((tier) => tier.paymentLinkId === paymentLinkId) ?? null
+}
+
 function normalizeEmail(email: string) {
   return email.trim().toLowerCase()
 }
 
-function scheduleIdempotencyKey(email: string, livemode: boolean) {
+function scheduleIdempotencyKey(email: string, livemode: boolean, tier: DailyDripPromotionalTierId) {
   const emailHash = createHash("sha256").update(normalizeEmail(email)).digest("hex")
-  return `daily-drip-2027-flash-${livemode ? "live" : "test"}-${emailHash}`
+  return `daily-drip-2027-${tier}-${livemode ? "live" : "test"}-${emailHash}`
 }
 
 function shortFailure(error: unknown) {
@@ -93,13 +153,13 @@ function shortFailure(error: unknown) {
   return message.replace(/\s+/g, " ").slice(0, 450)
 }
 
-function cohortMetadata(session: Stripe.Checkout.Session, eventId: string, paymentLinkId: string) {
+function cohortMetadata(session: Stripe.Checkout.Session, eventId: string, tier: DailyDripTierConfig) {
   return {
     [META.program]: DAILY_DRIP_PROGRAM,
     [META.cohort]: DAILY_DRIP_COHORT,
-    [META.tier]: "faith_flash_99",
+    [META.tier]: tier.metadataTier,
     [META.session]: session.id,
-    [META.paymentLink]: paymentLinkId,
+    [META.paymentLink]: tier.paymentLinkId,
     [META.event]: eventId,
   }
 }
@@ -110,39 +170,45 @@ async function retrieveCustomer(stripe: Stripe, customerId: string) {
   return customer
 }
 
-async function validatePrices(stripe: Stripe, config: DailyDripFlashConfig) {
+async function validatePrices(stripe: Stripe, tier: DailyDripTierConfig) {
   const [enrollmentFee, tuition] = await Promise.all([
-    stripe.prices.retrieve(config.enrollmentFeePriceId),
-    stripe.prices.retrieve(config.tuitionPriceId),
+    stripe.prices.retrieve(tier.enrollmentFeePriceId),
+    stripe.prices.retrieve(tier.tuitionPriceId),
   ])
 
-  if (!enrollmentFee.active || enrollmentFee.currency !== EXPECTED_CURRENCY || enrollmentFee.unit_amount !== EXPECTED_AMOUNT || enrollmentFee.recurring) {
+  if (!enrollmentFee.active || enrollmentFee.currency !== EXPECTED_CURRENCY || enrollmentFee.unit_amount !== ENROLLMENT_FEE_AMOUNT || enrollmentFee.recurring) {
     throw new Error("Enrollment fee Price must be an active one-time USD $99 Price")
   }
 
-  if (!tuition.active || tuition.currency !== EXPECTED_CURRENCY || tuition.unit_amount !== EXPECTED_AMOUNT || tuition.recurring?.interval !== "month" || tuition.recurring.interval_count !== 1) {
-    throw new Error("Tuition Price must be an active recurring USD $99 monthly Price")
+  if (!tuition.active || tuition.currency !== EXPECTED_CURRENCY || tuition.unit_amount !== tier.tuitionAmount || tuition.recurring?.interval !== "month" || tuition.recurring.interval_count !== 1) {
+    throw new Error(`Tuition Price must be an active recurring USD $${tier.tuitionAmount / 100} monthly Price`)
   }
 }
 
-async function validateEnrollmentLineItem(stripe: Stripe, session: Stripe.Checkout.Session, config: DailyDripFlashConfig) {
+async function validateEnrollmentLineItem(stripe: Stripe, session: Stripe.Checkout.Session, tier: DailyDripTierConfig) {
   const lineItems = await stripe.checkout.sessions.listLineItems(session.id, { limit: 100 })
   if (lineItems.data.length !== 1) throw new Error("Checkout must contain exactly one enrollment fee line item")
 
   const lineItem = lineItems.data[0]
   const priceId = lineItem.price?.id
-  if (priceId !== config.enrollmentFeePriceId || lineItem.quantity !== 1 || lineItem.amount_subtotal !== EXPECTED_AMOUNT || lineItem.currency !== EXPECTED_CURRENCY) {
+  if (priceId !== tier.enrollmentFeePriceId || lineItem.quantity !== 1 || lineItem.amount_subtotal !== ENROLLMENT_FEE_AMOUNT || lineItem.currency !== EXPECTED_CURRENCY) {
     throw new Error("Checkout line item does not match the configured $99 enrollment fee Price")
   }
 
-  if (session.amount_subtotal !== EXPECTED_AMOUNT || session.amount_total !== EXPECTED_AMOUNT || session.currency !== EXPECTED_CURRENCY) {
+  if (session.amount_subtotal !== ENROLLMENT_FEE_AMOUNT || session.amount_total !== ENROLLMENT_FEE_AMOUNT || session.currency !== EXPECTED_CURRENCY) {
     throw new Error("Checkout total must be exactly USD $99")
   }
 }
 
-async function validatePaymentLink(stripe: Stripe, config: DailyDripFlashConfig) {
-  const paymentLink = await stripe.paymentLinks.retrieve(config.paymentLinkId)
+async function validatePaymentLink(stripe: Stripe, config: DailyDripConfig, tier: DailyDripTierConfig) {
+  const paymentLink = await stripe.paymentLinks.retrieve(tier.paymentLinkId)
+  if (!paymentLink.active) throw new Error("Payment Link is inactive")
   if (paymentLink.livemode !== config.expectedLivemode) throw new Error("Payment Link livemode does not match the webhook environment")
+  if (paymentLink.customer_creation !== "always") throw new Error("Payment Link must always create a Customer")
+  if (paymentLink.payment_intent_data?.setup_future_usage !== "off_session") {
+    throw new Error("Payment Link must save the payment method with off_session future usage")
+  }
+  if (paymentLink.automatic_tax.enabled) throw new Error("Payment Link automatic tax must be disabled so the enrollment total remains $99")
 }
 
 async function retrieveReusablePaymentMethod(stripe: Stripe, session: Stripe.Checkout.Session, customerId: string) {
@@ -150,7 +216,7 @@ async function retrieveReusablePaymentMethod(stripe: Stripe, session: Stripe.Che
   if (!paymentIntentId) throw new Error("Checkout Session has no PaymentIntent")
 
   const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId, { expand: ["payment_method", "latest_charge"] })
-  if (paymentIntent.status !== "succeeded" || paymentIntent.amount_received !== EXPECTED_AMOUNT || paymentIntent.currency !== EXPECTED_CURRENCY) {
+  if (paymentIntent.status !== "succeeded" || paymentIntent.amount_received !== ENROLLMENT_FEE_AMOUNT || paymentIntent.currency !== EXPECTED_CURRENCY) {
     throw new Error("Enrollment PaymentIntent is not a successful USD $99 payment")
   }
   if (getId(paymentIntent.customer) !== customerId) throw new Error("PaymentIntent Customer does not match Checkout Customer")
@@ -221,19 +287,25 @@ export async function flagDailyDripSchedulingFailure(stripe: Stripe, session: St
   await Promise.allSettled(updates)
 }
 
-export async function processDailyDripFlashCheckout(stripe: Stripe, incomingSession: Stripe.Checkout.Session, event: Stripe.Event, config: DailyDripFlashConfig): Promise<ProcessResult> {
+export async function processDailyDripCheckout(
+  stripe: Stripe,
+  incomingSession: Stripe.Checkout.Session,
+  event: Stripe.Event,
+  config: DailyDripConfig,
+  tier: DailyDripTierConfig,
+): Promise<ProcessResult> {
   if (event.livemode !== config.expectedLivemode) throw new Error("Stripe event livemode does not match STRIPE_DAILY_DRIP_LIVEMODE")
 
   const session = await stripe.checkout.sessions.retrieve(incomingSession.id)
-  if (getPaymentLinkId(session) !== config.paymentLinkId) throw new Error("Checkout Session did not originate from the configured flash-sale Payment Link")
+  if (getPaymentLinkId(session) !== tier.paymentLinkId) throw new Error("Checkout Session did not originate from the configured Payment Link")
   if (session.mode !== "payment" || session.status !== "complete" || session.payment_status !== "paid") {
     throw new Error("Checkout Session is not a completed, paid one-time payment")
   }
 
   await Promise.all([
-    validatePaymentLink(stripe, config),
-    validatePrices(stripe, config),
-    validateEnrollmentLineItem(stripe, session, config),
+    validatePaymentLink(stripe, config, tier),
+    validatePrices(stripe, tier),
+    validateEnrollmentLineItem(stripe, session, tier),
   ])
 
   const customerId = getId(session.customer)
@@ -249,11 +321,11 @@ export async function processDailyDripFlashCheckout(stripe: Stripe, incomingSess
     return { outcome: "duplicate_prevented", scheduleId: existingSchedule.id }
   }
 
-  if (!isDailyDripFlashWindow(event.created) && !config.allowTestOutsideWindow) {
-    throw new DailyDripWindowClosedError()
+  if (!tier.isEnrollmentWindow(event.created) && !config.allowTestOutsideWindow) {
+    throw new DailyDripWindowClosedError(tier.id, tier.windowDescription)
   }
 
-  const metadata = cohortMetadata(session, event.id, config.paymentLinkId)
+  const metadata = cohortMetadata(session, event.id, tier)
   const schedule = await stripe.subscriptionSchedules.create({
     customer: customerId,
     billing_mode: { type: "classic" },
@@ -271,14 +343,14 @@ export async function processDailyDripFlashCheckout(stripe: Stripe, incomingSess
         collection_method: "charge_automatically",
         default_payment_method: paymentMethod.id,
         duration: { interval: "month", interval_count: 6 },
-        items: [{ price: config.tuitionPriceId, quantity: 1 }],
+        items: [{ price: tier.tuitionPriceId, quantity: 1 }],
         metadata,
         proration_behavior: "none",
       },
     ],
     metadata,
   }, {
-    idempotencyKey: scheduleIdempotencyKey(email, event.livemode),
+    idempotencyKey: scheduleIdempotencyKey(email, event.livemode, tier.id),
   })
 
   await recordSuccess(stripe, session, customerId, paymentIntent.id, schedule.id, event.id, false)

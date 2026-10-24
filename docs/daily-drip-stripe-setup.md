@@ -21,29 +21,31 @@ Never commit real secret values to the repository.
 - `STRIPE_SECRET_KEY`
 - `STRIPE_DAILY_DRIP_WEBHOOK_SECRET`
 - `STRIPE_DAILY_DRIP_FLASH_PAYMENT_LINK_ID`
+- `STRIPE_DAILY_DRIP_EARLY_PAYMENT_LINK_ID` — required when Tier 2 webhook processing is enabled
 - `STRIPE_DAILY_DRIP_ENROLLMENT_FEE_PRICE_ID`
 - `STRIPE_DAILY_DRIP_TUITION_PRICE_ID`
+- `STRIPE_DAILY_DRIP_EARLY_TUITION_PRICE_ID` — recurring $299 monthly Price for Tier 2
 - `STRIPE_DAILY_DRIP_LIVEMODE` — use `false` in the sandbox and `true` in production
 - `STRIPE_DAILY_DRIP_TEST_ALLOW_OUTSIDE_WINDOW` — optional; set to `true` only with test-mode IDs so prelaunch sandbox events can run
-- `STRIPE_DAILY_DRIP_FLASH_PAYMENT_LINK_URL` — leave unset in production until testing is complete
-
-Reserved for the later enrollment windows:
-
+- `STRIPE_DAILY_DRIP_FLASH_PAYMENT_LINK_URL`
 - `STRIPE_DAILY_DRIP_EARLY_PAYMENT_LINK_URL`
+
+Reserved for the standard enrollment window:
+
 - `STRIPE_DAILY_DRIP_STANDARD_PAYMENT_LINK_URL`
 
 After adding or changing environment variables, redeploy the Vercel project.
 
 ## Payment Link requirements
 
-The flash-sale Payment Link must:
+Each promotional Payment Link must:
 
 - Use the configured one-time $99 enrollment-fee Price and quantity 1.
 - Always create a Stripe Customer.
 - Save the payment method with `setup_future_usage=off_session`.
-- Accept cards and Link only. Apple Pay and Google Pay are acceptable when Stripe returns the saved method as a reusable card. Disable bank debits, Cash App Pay, buy-now-pay-later, and other methods for this link.
+- Accept only Card/Link, Cash App Pay, or Klarna payment methods that Stripe returns as reusable and attached to the Checkout Customer. The webhook rejects unsupported or non-reusable methods.
 - Have promotion codes, adjustable quantity, optional items, and automatic tax disabled so the total remains exactly $99.
-- Display the authorization for six separate $99 automatic tuition payments beginning January 1, 2027.
+- Display the authorization for six separate automatic tuition payments beginning January 1, 2027: $99 monthly for Tier 1 or $299 monthly for Tier 2.
 
 The website link must remain unset until the sandbox checklist passes. At the deadline, deactivate the Payment Link in Stripe as well as relying on the website and webhook cutoff.
 
@@ -56,13 +58,13 @@ Because sandbox testing occurs before October 27, set `STRIPE_DAILY_DRIP_LIVEMOD
 1. Confirm checkout charges only the one-time $99 enrollment fee.
 2. Confirm the Checkout Session was created by the expected test `plink_…` ID.
 3. Confirm the PaymentIntent is `succeeded`, has `setup_future_usage=off_session`, and its card or Link PaymentMethod is attached to the Customer.
-4. Confirm one subscription schedule is created with a January 1, 2027 start, one $99 monthly item, a six-month duration, and `end_behavior=cancel`.
+4. Confirm one subscription schedule is created with a January 1, 2027 start, the correct monthly item ($99 for Tier 1 or $299 for Tier 2), a six-month duration, and `end_behavior=cancel`.
 5. Confirm the schedule represents January through June billing and ends before a July renewal invoice.
 6. Resend the same webhook event and confirm no second schedule appears.
 7. Complete checkout again with the same email and confirm no second cohort schedule appears.
 8. Send a signed test event with the wrong Payment Link ID and confirm it is ignored.
 9. Test an invalid or missing reusable card and confirm the Customer, Checkout Session, and PaymentIntent receive `atft_daily_drip_status=scheduling_failed`, the webhook returns HTTP 500, and the failed delivery is visible for recovery in Stripe Workbench.
-10. Confirm an event timestamp before October 27 or at/after October 30 Eastern is rejected and creates no schedule.
+10. Confirm Tier 1 events outside October 27–29 Eastern and Tier 2 events outside October 30–December 15 Eastern are rejected and create no schedule.
 
 Do not put the live Payment Link URL into the production environment until this checklist passes. Before launch, perform one controlled live-mode enrollment and inspect the resulting schedule before making the link public.
 
