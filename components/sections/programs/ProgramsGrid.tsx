@@ -145,9 +145,9 @@ const PROGRAM_SECTIONS: ProgramSection[] = [
     description: "Get direct guidance tailored to your mindset, habits, execution, and individual goals.",
     programs: [
       {
-        name: "Private Coaching (Coach Trent & Coach Tammy)",
-        description: "Personalized guidance when you need it most. Meet privately with an ATFT coach for support with mindset, accountability, trading habits, confidence, and execution.",
-        details: "Available with Coach Trent or Coach Tammy",
+        name: "Private Coaching with Coach Trent",
+        description: "Personalized guidance when you need it most. Meet privately with Coach Trent for support with mindset, accountability, trading habits, confidence, and execution.",
+        details: "Available with Coach Trent",
         highlight: "Mindset, accountability, and execution support",
         price: 150,
         bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=88265481",
