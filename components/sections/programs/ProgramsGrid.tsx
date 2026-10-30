@@ -2,6 +2,7 @@
 
 type ProgramCard = {
   name: string
+  anchor?: string
   tagline?: string
   badge?: string
   badgeColor?: string
@@ -34,6 +35,7 @@ const PROGRAM_SECTIONS: ProgramSection[] = [
     programs: [
       {
         name: "The Premarket Drip",
+        anchor: "premarket-drip",
         tagline: "Trade Early. Take Your Percentage. Start Your Day.",
         badge: "Live Class",
         badgeColor: "#7a4f00",
@@ -50,6 +52,7 @@ const PROGRAM_SECTIONS: ProgramSection[] = [
       },
       {
         name: "First Drip",
+        anchor: "first-drip",
         badge: "Beginner",
         badgeColor: "#1a6b3c",
         badgeBg: "#e6f4ed",
@@ -105,6 +108,7 @@ const PROGRAM_SECTIONS: ProgramSection[] = [
     programs: [
       {
         name: "Swing Drip",
+        anchor: "swing-drip",
         badge: "Intermediate",
         badgeColor: "#7a4f00",
         badgeBg: "#fef3e2",
@@ -119,6 +123,7 @@ const PROGRAM_SECTIONS: ProgramSection[] = [
       },
       {
         name: "Futures Drip",
+        anchor: "futures-drip",
         badge: "Advanced",
         badgeColor: "#8B1a1a",
         badgeBg: "#fde8e8",
@@ -133,6 +138,7 @@ const PROGRAM_SECTIONS: ProgramSection[] = [
       },
       {
         name: "AMAC Strategy",
+        anchor: "amac-strategy",
         badge: "Advanced",
         badgeColor: "#8B1a1a",
         badgeBg: "#fde8e8",
@@ -281,7 +287,7 @@ export default function ProgramsGrid() {
 
               <div className={`${getGridClass(section.programs)} gap-6 items-stretch`}>
                 {section.programs.map((program) => (
-                  <div key={program.name} className="flex flex-col gap-4 rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 bg-brand-white" style={cardStyle}>
+                  <div id={program.anchor} key={program.name} className="scroll-mt-36 flex flex-col gap-4 rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 bg-brand-white" style={cardStyle}>
                     {program.badge && (
                       <span className="self-start text-xs font-semibold px-3 py-1 rounded-full" style={{ background: program.badgeBg, color: program.badgeColor }}>{program.badge}</span>
                     )}
