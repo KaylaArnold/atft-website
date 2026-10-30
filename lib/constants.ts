@@ -1,6 +1,7 @@
 export const NAV_LINKS = [
   { label: 'About',         href: '/about',                                       external: false },
   { label: 'Programs',      href: '/programs',                                    external: false },
+  { label: 'Schedule',      href: '/schedule',                                    external: false },
   { label: '5% Daily Drip™', href: '/community',                                  external: false },
   { label: "Give Back",  href: '/give-back', external: false },
   { label: 'Atlanta Guide', href: '/atlanta-guide',                               external: false },
