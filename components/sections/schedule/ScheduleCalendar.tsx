@@ -25,7 +25,7 @@ function EventContent({ event }: { event: PublicScheduleEvent }) {
         </div>
         {event.href && (
           <span className="inline-flex items-center gap-1 text-sm font-semibold text-gold-dark">
-            View details <ArrowUpRight size={15} aria-hidden="true" />
+            {event.linkLabel ?? "View details"} <ArrowUpRight size={15} aria-hidden="true" />
           </span>
         )}
       </div>
