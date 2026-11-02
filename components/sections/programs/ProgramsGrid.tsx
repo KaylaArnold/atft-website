@@ -13,6 +13,7 @@ type ProgramCard = {
   price: number | null
   originalPrice?: number
   saleLabel?: string
+  statusLabel?: string
   bookingUrl: string
   buttonLabel: string
   features?: string[]
@@ -255,6 +256,41 @@ const PROGRAM_SECTIONS: ProgramSection[] = [
       },
     ],
   },
+  {
+    title: "Members Only",
+    eyebrow: "ATFT Member Events",
+    description: "Exclusive classes and events available to current ATFT members.",
+    programs: [
+      {
+        name: "Saturday Meetup",
+        anchor: "saturday-meetup",
+        badge: "Members Only",
+        badgeColor: "#7a4f00",
+        badgeBg: "#fef3e2",
+        description: "A hybrid community meetup for current ATFT members to connect, learn, and grow together. In-person seating is limited and requires advance registration. Virtual access details are shared inside the ATFT community.",
+        details: "November 7 and December 5 · 10:00 AM–12:00 PM ET",
+        highlight: "In-person registration is for current ATFT members only",
+        price: null,
+        statusLabel: "Members Only · No Fee",
+        bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=100049116",
+        buttonLabel: "Register In Person",
+      },
+      {
+        name: "The DRIP Room",
+        anchor: "drip-room",
+        badge: "Members Only",
+        badgeColor: "#8b6914",
+        badgeBg: "#fbf6ec",
+        description: "An exclusive session for active 5% Drippers community members. Details and schedule are shared inside the Mighty Networks community. Active membership is required to book.",
+        details: "Active 5% Drippers membership required",
+        highlight: "Members are verified before class",
+        price: null,
+        statusLabel: "Members Only",
+        bookingUrl: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=88266056",
+        buttonLabel: "Book This Class",
+      },
+    ],
+  },
 ]
 
 const gradientBg = "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)"
@@ -321,7 +357,7 @@ export default function ProgramsGrid() {
                         <span className="text-2xl font-bold font-display" style={{ color: "#C9A84C" }}>${program.price.toLocaleString()}</span>
                       </div>
                     ) : (
-                      <div className="text-sm font-semibold" style={{ color: "#C9A84C" }}>Application Required</div>
+                      <div className="text-sm font-semibold" style={{ color: "#C9A84C" }}>{program.statusLabel ?? "Application Required"}</div>
                     )}
 
                     <div className="flex flex-col gap-2 pt-3" style={dividerStyle}>
