@@ -37,7 +37,7 @@ export const PUBLIC_SCHEDULE: PublicScheduleMonth[] = [
     label: "December 2026",
     events: [
       { id: "dec-3-futures", date: "Thu, Dec 3", time: "1:00-3:00 PM ET", title: "Futures Class", type: "class", href: "/programs#futures-drip" },
-      { id: "dec-5-meetup", date: "Sat, Dec 5", time: "10:00 AM-12:00 PM ET", title: "Monthly Dripper Meetup", description: "Hybrid community meetup for current ATFT members. In-person seats require advance registration; virtual access is shared inside the community.", type: "member", href: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=100049116", linkLabel: "Register in person", location: "Atlanta + Online" },
+      { id: "dec-5-meetup", date: "Sat, Dec 5", time: "10:00 AM-12:00 PM ET", title: "Saturday Meetup", description: "Hybrid community meetup for current ATFT members. In-person seats require advance registration; virtual access is shared inside the community.", type: "member", href: "https://httpsarlettathefriendlytraderasme.as.me/?appointmentType=100049116", linkLabel: "Register in person", location: "Atlanta + Online" },
       { id: "dec-7-premarket", date: "Mon, Dec 7", time: "6:00-8:00 AM ET", title: "The Premarket Drip", type: "class", href: "/programs#premarket-drip" },
       { id: "dec-10-amac", date: "Thu, Dec 10", time: "1:00-3:00 PM ET", title: "AMAC Strategy", type: "class", href: "/programs#amac-strategy" },
       { id: "dec-11-completion", date: "Fri, Dec 11", time: "Date only", title: "5% Daily Drip Six-Month Completion", description: "Completion milestone and certificate recognition for the July cohort.", type: "member", href: "/community" },
