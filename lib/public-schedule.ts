@@ -21,7 +21,7 @@ export const PUBLIC_SCHEDULE: PublicScheduleMonth[] = [
     label: "November 2026",
     events: [
       { id: "nov-5-futures", date: "Thu, Nov 5", time: "1:00-3:00 PM ET", title: "Futures Class", type: "class", href: "/programs#futures-drip" },
-      { id: "nov-7-meetup", date: "Sat, Nov 7", time: "10:00 AM-12:00 PM ET", title: "Dripper Meetup", description: "Community gathering for current Drippers.", type: "member", href: "/community", location: "In Office" },
+      { id: "nov-7-meetup", date: "Sat, Nov 7", time: "10:00 AM-12:00 PM ET", title: "Saturday Meetup", description: "Hybrid community meetup for current ATFT members. In-person seats require advance registration; virtual access is shared inside the community.", type: "member", href: "/community", location: "Atlanta + Online" },
       { id: "nov-9-premarket", date: "Mon, Nov 9", time: "6:00-8:00 AM ET", title: "The Premarket Drip", type: "class", href: "/programs#premarket-drip" },
       { id: "nov-11-first", date: "Wed, Nov 11", time: "1:00-3:30 PM ET", title: "First Drip", description: "Beginner day trading class.", type: "class", href: "/programs#first-drip" },
       { id: "nov-12-graduation", date: "Thu, Nov 12", time: "1:00-3:00 PM ET", title: "Dripper Graduation", description: "Second class graduation celebration.", type: "member", href: "/community" },
