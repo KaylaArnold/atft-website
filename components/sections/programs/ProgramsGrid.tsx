@@ -325,7 +325,12 @@ export default function ProgramsGrid() {
 
               <div className={`${getGridClass(section.programs)} gap-6 items-stretch`}>
                 {section.programs.map((program) => (
-                  <div id={program.anchor} key={program.name} className="scroll-mt-36 flex flex-col gap-4 rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 bg-brand-white" style={cardStyle}>
+                  <div
+                    id={program.anchor}
+                    key={program.name}
+                    className={`scroll-mt-36 flex flex-col gap-4 rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 bg-brand-white ${program.name === "First Drip" ? "self-start" : ""}`}
+                    style={cardStyle}
+                  >
                     {program.badge && (
                       <span className="self-start text-xs font-semibold px-3 py-1 rounded-full" style={{ background: program.badgeBg, color: program.badgeColor }}>{program.badge}</span>
                     )}
