@@ -4,7 +4,7 @@ import type Stripe from "stripe"
 import {
   DAILY_DRIP_TUITION_START,
   isDailyDripEarlyWindow,
-  isDailyDripFlashWindow,
+  isDailyDripFlashCheckoutWindow,
 } from "@/lib/daily-drip-schedule"
 
 export const DAILY_DRIP_COHORT = "2027_january_june"
@@ -94,8 +94,8 @@ export function getDailyDripConfig(): DailyDripConfig {
       tuitionPriceId: requireStripeId("STRIPE_DAILY_DRIP_TUITION_PRICE_ID", "price_"),
       tuitionAmount: 9_900,
       metadataTier: "faith_flash_99",
-      isEnrollmentWindow: isDailyDripFlashWindow,
-      windowDescription: "October 27–29 Eastern Time flash-sale window",
+      isEnrollmentWindow: isDailyDripFlashCheckoutWindow,
+      windowDescription: "approved Eastern Time $99 flash-sale window",
     },
   ]
 
