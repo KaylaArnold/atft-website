@@ -1,6 +1,7 @@
 import assert from "node:assert/strict"
 import test from "node:test"
 import {
+  ATFT_COMMUNITY_ACCESS_START,
   DAILY_DRIP_EARLY_END_EXCLUSIVE,
   DAILY_DRIP_EARLY_START,
   DAILY_DRIP_FLASH_END_EXCLUSIVE,
@@ -9,6 +10,7 @@ import {
   DAILY_DRIP_THANKSGIVING_FLASH_START,
   DAILY_DRIP_TUITION_START,
   getCurrentDailyDripTier,
+  isAtftCommunityAccessOpen,
   isDailyDripEarlyWindow,
   isDailyDripFlashCheckoutWindow,
   isDailyDripFlashWindow,
@@ -23,6 +25,7 @@ test("flash-sale timestamps use the required Eastern Time boundaries", () => {
   assert.equal(DAILY_DRIP_EARLY_END_EXCLUSIVE, Date.parse("2026-12-16T00:00:00-05:00") / 1000)
   assert.equal(DAILY_DRIP_THANKSGIVING_FLASH_START, Date.parse("2026-11-26T00:00:00-05:00") / 1000)
   assert.equal(DAILY_DRIP_THANKSGIVING_FLASH_END_EXCLUSIVE, Date.parse("2026-11-28T00:00:00-05:00") / 1000)
+  assert.equal(ATFT_COMMUNITY_ACCESS_START, Date.parse("2026-11-28T00:00:00-05:00") / 1000)
   assert.equal(DAILY_DRIP_TUITION_START, Date.parse("2027-01-01T00:00:00-05:00") / 1000)
 })
 
@@ -46,6 +49,12 @@ test("Thanksgiving flash checkout opens on Thanksgiving and closes after Black F
   assert.equal(isDailyDripThanksgivingFlashWindow(DAILY_DRIP_THANKSGIVING_FLASH_END_EXCLUSIVE - 1), true)
   assert.equal(isDailyDripThanksgivingFlashWindow(DAILY_DRIP_THANKSGIVING_FLASH_END_EXCLUSIVE), false)
   assert.equal(isDailyDripFlashCheckoutWindow(DAILY_DRIP_THANKSGIVING_FLASH_START), true)
+})
+
+test("year-round ATFT Community Access opens when the Black Friday sale closes", () => {
+  assert.equal(isAtftCommunityAccessOpen(ATFT_COMMUNITY_ACCESS_START - 1), false)
+  assert.equal(isAtftCommunityAccessOpen(ATFT_COMMUNITY_ACCESS_START), true)
+  assert.equal(isAtftCommunityAccessOpen(ATFT_COMMUNITY_ACCESS_START + 31_536_000), true)
 })
 
 test("public enrollment phase switches at the same boundaries", () => {

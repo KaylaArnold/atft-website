@@ -4,11 +4,12 @@ import CommunityBenefits from "@/components/sections/community/CommunityBenefits
 import DailyDripEnrollment from "@/components/sections/community/DailyDripEnrollment"
 import DailyDripWaitlist from "@/components/sections/community/DailyDripWaitlist"
 import DailyDripClosing from "@/components/sections/community/DailyDripClosing"
+import AtftCommunityAccess from "@/components/sections/community/AtftCommunityAccess"
 import { getDailyDripCheckoutAvailability } from "@/lib/daily-drip-enrollment"
 
 export const metadata: Metadata = {
-  title: "5% Daily Drip™ | January–June 2027",
-  description: "Welcome to the 5% Daily Drip™ six-month trading education and mentorship experience. Explore January–June 2027 enrollment options.",
+  title: "ATFT Community & 5% Daily Drip™",
+  description: "Explore the January–June 2027 5% Daily Drip™ cohort or join the ATFT Community with immediate, ongoing monthly access.",
 }
 
 export default function CommunityPage() {
@@ -19,6 +20,7 @@ export default function CommunityPage() {
       <CommunityHero />
       <CommunityBenefits />
       <DailyDripEnrollment checkoutAvailability={checkoutAvailability} />
+      <AtftCommunityAccess />
       <DailyDripWaitlist />
       <DailyDripClosing />
     </div>
