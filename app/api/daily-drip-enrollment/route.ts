@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getCurrentDailyDripTier, getDailyDripCheckoutUrl, type DailyDripTierId } from "@/lib/daily-drip-enrollment"
+import { isDailyDripThanksgivingFlashWindow } from "@/lib/daily-drip-schedule"
 
 export const dynamic = "force-dynamic"
 
@@ -14,8 +15,9 @@ export function GET(request: NextRequest) {
   const tier = requestedTier as DailyDripTierId
   const activeTier = getCurrentDailyDripTier()
   const checkoutUrl = getDailyDripCheckoutUrl(tier)
+  const isThanksgivingFlash = tier === "flash" && isDailyDripThanksgivingFlashWindow(Math.floor(Date.now() / 1000))
 
-  if (activeTier !== tier || !checkoutUrl) {
+  if ((activeTier !== tier && !isThanksgivingFlash) || !checkoutUrl) {
     return NextResponse.redirect(new URL("/community?enrollment=unavailable#enrollment", request.url))
   }
 

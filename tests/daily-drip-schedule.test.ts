@@ -5,10 +5,14 @@ import {
   DAILY_DRIP_EARLY_START,
   DAILY_DRIP_FLASH_END_EXCLUSIVE,
   DAILY_DRIP_FLASH_START,
+  DAILY_DRIP_THANKSGIVING_FLASH_END_EXCLUSIVE,
+  DAILY_DRIP_THANKSGIVING_FLASH_START,
   DAILY_DRIP_TUITION_START,
   getCurrentDailyDripTier,
   isDailyDripEarlyWindow,
+  isDailyDripFlashCheckoutWindow,
   isDailyDripFlashWindow,
+  isDailyDripThanksgivingFlashWindow,
   isDailyDripWaitlistOpen,
 } from "../lib/daily-drip-schedule.ts"
 
@@ -17,6 +21,8 @@ test("flash-sale timestamps use the required Eastern Time boundaries", () => {
   assert.equal(DAILY_DRIP_FLASH_END_EXCLUSIVE, Date.parse("2026-10-30T00:00:00-04:00") / 1000)
   assert.equal(DAILY_DRIP_EARLY_START, Date.parse("2026-10-30T00:00:00-04:00") / 1000)
   assert.equal(DAILY_DRIP_EARLY_END_EXCLUSIVE, Date.parse("2026-12-16T00:00:00-05:00") / 1000)
+  assert.equal(DAILY_DRIP_THANKSGIVING_FLASH_START, Date.parse("2026-11-26T00:00:00-05:00") / 1000)
+  assert.equal(DAILY_DRIP_THANKSGIVING_FLASH_END_EXCLUSIVE, Date.parse("2026-11-28T00:00:00-05:00") / 1000)
   assert.equal(DAILY_DRIP_TUITION_START, Date.parse("2027-01-01T00:00:00-05:00") / 1000)
 })
 
@@ -34,10 +40,19 @@ test("early enrollment opens after the flash sale and closes before standard enr
   assert.equal(isDailyDripEarlyWindow(DAILY_DRIP_EARLY_END_EXCLUSIVE), false)
 })
 
+test("Thanksgiving flash checkout opens on Thanksgiving and closes after Black Friday", () => {
+  assert.equal(isDailyDripThanksgivingFlashWindow(DAILY_DRIP_THANKSGIVING_FLASH_START - 1), false)
+  assert.equal(isDailyDripThanksgivingFlashWindow(DAILY_DRIP_THANKSGIVING_FLASH_START), true)
+  assert.equal(isDailyDripThanksgivingFlashWindow(DAILY_DRIP_THANKSGIVING_FLASH_END_EXCLUSIVE - 1), true)
+  assert.equal(isDailyDripThanksgivingFlashWindow(DAILY_DRIP_THANKSGIVING_FLASH_END_EXCLUSIVE), false)
+  assert.equal(isDailyDripFlashCheckoutWindow(DAILY_DRIP_THANKSGIVING_FLASH_START), true)
+})
+
 test("public enrollment phase switches at the same boundaries", () => {
   assert.equal(getCurrentDailyDripTier((DAILY_DRIP_FLASH_START - 1) * 1000), "prelaunch")
   assert.equal(getCurrentDailyDripTier(DAILY_DRIP_FLASH_START * 1000), "flash")
   assert.equal(getCurrentDailyDripTier(DAILY_DRIP_EARLY_START * 1000), "early")
+  assert.equal(getCurrentDailyDripTier(DAILY_DRIP_THANKSGIVING_FLASH_START * 1000), "early")
   assert.equal(getCurrentDailyDripTier(DAILY_DRIP_EARLY_END_EXCLUSIVE * 1000), "standard")
 })
 
