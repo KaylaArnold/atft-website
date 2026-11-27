@@ -31,7 +31,7 @@ export default function CommunityBenefits() {
           <article className="rounded-2xl p-8 lg:p-10" style={{ background: "#FBF6EC", border: "1px solid rgba(201,168,76,0.2)" }}>
             <p className="text-xs font-semibold tracking-widest uppercase text-gold mb-4">More Than a Class</p>
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-brand-black mb-5">What Does It Mean to Become a Dripper?</h2>
-            <p className="text-base leading-relaxed text-brand-brown">Becoming a Dripper means entering a supportive community built around mentorship, accountability, encouragement, and growth. You will have people beside you, but you must still do your own work: study, practice, journal, review, ask questions, and take responsibility for every trading decision.</p>
+            <p className="text-base leading-relaxed text-brand-brown">Becoming a Dripper means joining the structured 5% Daily Drip™ mentorship experience. You’ll receive education, accountability, encouragement, and community—but you must still study, practice, journal, review, ask questions, and take responsibility for every trading decision.</p>
           </article>
           <article className="rounded-2xl p-8 lg:p-10 bg-brand-dark">
             <p className="text-xs font-semibold tracking-widest uppercase text-gold mb-4">Grow Together</p>
@@ -42,7 +42,7 @@ export default function CommunityBenefits() {
 
         <div>
           <div className="flex flex-col items-center gap-4 mb-10 text-center">
-            <p className="text-xs font-semibold tracking-widest uppercase text-gold">Six Months of Growth</p>
+            <p className="text-xs font-semibold tracking-widest uppercase text-gold">Inside the 5% Daily Drip™ Cohort</p>
             <h2 className="font-display text-4xl lg:text-5xl font-bold text-brand-black">What Will You Learn?</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

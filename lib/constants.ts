@@ -24,7 +24,6 @@ export const SITE_CONFIG = {
   bookingUrl: 'https://httpsarlettathefriendlytraderasme.as.me/schedule/1a78dddd',
   waitlistUrl: 'https://forms.gle/Z9VyFNpbc1btjt4N9',
   dailyDripUrl: '/community',
-  dailyDripCohortEnrollmentUrl: 'https://arletta-the-friendly-trader.mn.co/plans/1998145?bundle_token=08dbace4fef8f14eedcd234c4b7e5664&utm_source=manual',
   atftCommunityAccessUrl: 'https://arletta-the-friendly-trader.mn.co/plans/1948245?bundle_token=dcce36b59c9ea5364a55b808327e6eb5&utm_source=manual',
   disclaimer:     'Educational content only. Trading involves risk. Past results are not indicative of future performance.',
 } as const

@@ -65,11 +65,11 @@ export default function CommunitySection() {
                   <div className="flex flex-col gap-2">
                     <p className="text-xs font-semibold tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.7)" }}>Two Ways to Join</p>
                     <p className="font-display text-4xl font-bold" style={{ color: "#E8C96A" }}>$299/month</p>
-                    <p className="text-sm" style={{ color: "rgba(249,246,240,0.55)" }}>Choose structure or flexibility.</p>
+                    <p className="text-sm" style={{ color: "rgba(249,246,240,0.55)" }}>Choose structure or flexibility. The cohort has a $99 seat deposit.</p>
                   </div>
                   <div style={{ borderTop: "1px solid rgba(201,168,76,0.15)" }} />
                   <div className="flex flex-col gap-4">
-                    <div><p className="font-semibold text-brand-white">5% Daily Drip™</p><p className="mt-1 text-sm" style={{ color: "rgba(249,246,240,0.6)" }}>Structured six-month cohort beginning January 18.</p></div>
+                    <div><p className="font-semibold text-brand-white">5% Daily Drip™</p><p className="mt-1 text-sm" style={{ color: "rgba(249,246,240,0.6)" }}>$99 deposit holds your seat for the structured six-month cohort beginning January 18.</p></div>
                     <div><p className="font-semibold text-brand-white">ATFT Community</p><p className="mt-1 text-sm" style={{ color: "rgba(249,246,240,0.6)" }}>Immediate, self-paced access available year-round.</p></div>
                   </div>
                   <div style={{ borderTop: "1px solid rgba(201,168,76,0.15)" }} />

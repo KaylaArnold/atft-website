@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getCurrentDailyDripTier, getDailyDripCheckoutUrl, type DailyDripTierId } from "@/lib/daily-drip-enrollment"
-import { isAtftCommunityAccessOpen, isDailyDripThanksgivingFlashWindow } from "@/lib/daily-drip-schedule"
-import { SITE_CONFIG } from "@/lib/constants"
+import { isAtftCommunityAccessOpen, isDailyDripEarlyCheckoutWindow, isDailyDripThanksgivingFlashWindow } from "@/lib/daily-drip-schedule"
 
 export const dynamic = "force-dynamic"
 
@@ -23,7 +22,10 @@ export function GET(request: NextRequest) {
     if (tier === "flash") {
       return NextResponse.redirect(new URL("/community?enrollment=unavailable#enrollment", request.url))
     }
-    return NextResponse.redirect(SITE_CONFIG.dailyDripCohortEnrollmentUrl)
+    const cohortCheckoutUrl = isDailyDripEarlyCheckoutWindow(now) ? getDailyDripCheckoutUrl("early") : ""
+    return cohortCheckoutUrl
+      ? NextResponse.redirect(cohortCheckoutUrl)
+      : NextResponse.redirect(new URL("/community?enrollment=unavailable#enrollment", request.url))
   }
 
   if ((activeTier !== tier && !isThanksgivingFlash) || !checkoutUrl) {

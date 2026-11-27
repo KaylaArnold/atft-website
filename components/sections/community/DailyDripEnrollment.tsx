@@ -7,9 +7,10 @@ import { isAtftCommunityAccessOpen } from "@/lib/daily-drip-schedule"
 const cohortDetails = [
   "Structured six-month trading education and mentorship",
   "January–June 2027 cohort begins January 18, 2027",
-  "Six monthly payments of $299; no separate deposit",
+  "$99 enrollment deposit holds your seat",
+  "Six monthly tuition payments of $299 begin in January",
   "Accountability, instruction, community, and milestones",
-  "Total cohort tuition: $1,794",
+  "Total deposit plus tuition: $1,893",
 ]
 
 const communityDetails = [
@@ -74,7 +75,7 @@ export default function DailyDripEnrollment() {
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">Two Ways to Join ATFT</p>
           <h2 className="mt-4 font-display text-4xl font-bold text-brand-white lg:text-5xl">Choose the Experience That Fits You</h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-brand-white/70">Choose the structured six-month 5% Daily Drip™ cohort or flexible, self-paced ATFT Community access. Both are $299 per month, but they are different experiences.</p>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-brand-white/70">Choose the structured six-month 5% Daily Drip™ cohort or flexible, self-paced ATFT Community access. Both are $299 per month, but the cohort begins in January and requires a $99 seat-holding deposit today.</p>
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -85,11 +86,11 @@ export default function DailyDripEnrollment() {
             </div>
             <h3 className="font-display text-3xl font-bold text-brand-white">5% Daily Drip™</h3>
             <p className="mt-4 font-display text-5xl font-bold text-gold">$299<span className="text-xl">/mo</span></p>
-            <p className="mt-3 text-sm leading-relaxed text-brand-white/65">Six monthly payments with no separate deposit.</p>
+            <p className="mt-3 text-sm leading-relaxed text-brand-white/65">$99 deposit today to hold your seat. The deposit is separate from tuition and does not count toward the six $299 payments, which begin in January.</p>
             <ul className="my-7 flex flex-1 flex-col gap-3">
               {cohortDetails.map((detail) => <li key={detail} className="flex items-start gap-3 text-sm leading-relaxed text-brand-white/75"><span className="text-gold" aria-hidden="true">✓</span><span>{detail}</span></li>)}
             </ul>
-            <a href={SITE_CONFIG.dailyDripCohortEnrollmentUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-md bg-gold-gradient px-6 py-3 text-center text-sm font-bold text-brand-black transition-opacity hover:opacity-90">JOIN THE JANUARY 2027 COHORT</a>
+            <a href="/api/daily-drip-enrollment?tier=early&source=community-enrollment" className="inline-flex min-h-12 items-center justify-center rounded-md bg-gold-gradient px-6 py-3 text-center text-sm font-bold text-brand-black transition-opacity hover:opacity-90">HOLD MY SEAT FOR $99</a>
           </article>
 
           <article className="flex flex-col rounded-2xl border border-brand-white/15 bg-brand-white/5 p-7 lg:p-9">
