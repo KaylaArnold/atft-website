@@ -4,7 +4,7 @@ export type DailyDripEnrollmentPhase = DailyDripTierId | "prelaunch"
 export const DAILY_DRIP_FLASH_START = Math.floor(Date.parse("2026-10-27T00:00:00-04:00") / 1000)
 export const DAILY_DRIP_FLASH_END_EXCLUSIVE = Math.floor(Date.parse("2026-10-30T00:00:00-04:00") / 1000)
 export const DAILY_DRIP_EARLY_START = DAILY_DRIP_FLASH_END_EXCLUSIVE
-export const DAILY_DRIP_EARLY_END_EXCLUSIVE = Math.floor(Date.parse("2026-12-16T00:00:00-05:00") / 1000)
+export const DAILY_DRIP_EARLY_END_EXCLUSIVE = Math.floor(Date.parse("2027-01-18T00:00:00-05:00") / 1000)
 export const DAILY_DRIP_THANKSGIVING_FLASH_START = Math.floor(Date.parse("2026-11-26T00:00:00-05:00") / 1000)
 export const DAILY_DRIP_THANKSGIVING_FLASH_END_EXCLUSIVE = Math.floor(Date.parse("2026-11-28T00:00:00-05:00") / 1000)
 export const ATFT_COMMUNITY_ACCESS_START = DAILY_DRIP_THANKSGIVING_FLASH_END_EXCLUSIVE
@@ -19,7 +19,7 @@ export function isDailyDripEarlyWindow(timestamp: number) {
 }
 
 export function isDailyDripEarlyCheckoutWindow(timestamp: number) {
-  return isDailyDripEarlyWindow(timestamp) && timestamp < ATFT_COMMUNITY_ACCESS_START
+  return isDailyDripEarlyWindow(timestamp)
 }
 
 export function isDailyDripThanksgivingFlashWindow(timestamp: number) {

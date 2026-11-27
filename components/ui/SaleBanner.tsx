@@ -24,7 +24,9 @@ export default function SaleBanner() {
         <>
           <span>Choose Your Path — 5% Daily Drip™ Cohort or Self-Paced ATFT Community</span>
           <span style={{ opacity: 0.6 }}>|</span>
-          <span>Both $299/month</span>
+          <span>Daily Drip: $99 Deposit + $299/Month</span>
+          <span style={{ opacity: 0.6 }}>|</span>
+          <span>Community: $299/Month</span>
           <span style={{ opacity: 0.6 }}>|</span>
           <Link href="/community#enrollment" className="underline font-bold hover:opacity-80 transition-opacity duration-200">Compare Options</Link>
         </>

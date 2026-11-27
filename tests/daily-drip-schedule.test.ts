@@ -23,7 +23,7 @@ test("flash-sale timestamps use the required Eastern Time boundaries", () => {
   assert.equal(DAILY_DRIP_FLASH_START, Date.parse("2026-10-27T00:00:00-04:00") / 1000)
   assert.equal(DAILY_DRIP_FLASH_END_EXCLUSIVE, Date.parse("2026-10-30T00:00:00-04:00") / 1000)
   assert.equal(DAILY_DRIP_EARLY_START, Date.parse("2026-10-30T00:00:00-04:00") / 1000)
-  assert.equal(DAILY_DRIP_EARLY_END_EXCLUSIVE, Date.parse("2026-12-16T00:00:00-05:00") / 1000)
+  assert.equal(DAILY_DRIP_EARLY_END_EXCLUSIVE, Date.parse("2027-01-18T00:00:00-05:00") / 1000)
   assert.equal(DAILY_DRIP_THANKSGIVING_FLASH_START, Date.parse("2026-11-26T00:00:00-05:00") / 1000)
   assert.equal(DAILY_DRIP_THANKSGIVING_FLASH_END_EXCLUSIVE, Date.parse("2026-11-28T00:00:00-05:00") / 1000)
   assert.equal(ATFT_COMMUNITY_ACCESS_START, Date.parse("2026-11-28T00:00:00-05:00") / 1000)
@@ -58,9 +58,11 @@ test("year-round ATFT Community Access opens when the Black Friday sale closes",
   assert.equal(isAtftCommunityAccessOpen(ATFT_COMMUNITY_ACCESS_START + 31_536_000), true)
 })
 
-test("the old early-enrollment deposit checkout closes before the no-deposit rate begins", () => {
+test("the $299 cohort deposit checkout remains open after the Black Friday sale", () => {
   assert.equal(isDailyDripEarlyCheckoutWindow(ATFT_COMMUNITY_ACCESS_START - 1), true)
-  assert.equal(isDailyDripEarlyCheckoutWindow(ATFT_COMMUNITY_ACCESS_START), false)
+  assert.equal(isDailyDripEarlyCheckoutWindow(ATFT_COMMUNITY_ACCESS_START), true)
+  assert.equal(isDailyDripEarlyCheckoutWindow(DAILY_DRIP_EARLY_END_EXCLUSIVE - 1), true)
+  assert.equal(isDailyDripEarlyCheckoutWindow(DAILY_DRIP_EARLY_END_EXCLUSIVE), false)
 })
 
 test("public enrollment phase switches at the same boundaries", () => {
