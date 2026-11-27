@@ -86,7 +86,7 @@ export default function DailyDripEnrollment() {
             </div>
             <h3 className="font-display text-3xl font-bold text-brand-white">5% Daily Drip™</h3>
             <p className="mt-4 font-display text-5xl font-bold text-gold">$299<span className="text-xl">/mo</span></p>
-            <p className="mt-3 text-sm leading-relaxed text-brand-white/65">$99 deposit today to hold your seat. Six $299 tuition payments begin in January.</p>
+            <p className="mt-3 text-sm leading-relaxed text-brand-white/65">$99 deposit today to hold your seat. The deposit is separate from tuition and does not count toward the six $299 payments, which begin in January.</p>
             <ul className="my-7 flex flex-1 flex-col gap-3">
               {cohortDetails.map((detail) => <li key={detail} className="flex items-start gap-3 text-sm leading-relaxed text-brand-white/75"><span className="text-gold" aria-hidden="true">✓</span><span>{detail}</span></li>)}
             </ul>

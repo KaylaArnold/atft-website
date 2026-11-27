@@ -64,7 +64,7 @@ export default function CommunityHero() {
             </div>
             <div className="flex flex-col items-center gap-1">
               <span className="font-display text-3xl font-bold" style={{ color: "#E8C96A" }}>One</span>
-              <span className="text-xs text-center" style={{ color: "rgba(249,246,240,0.5)" }}>Dripper Family</span>
+              <span className="text-xs text-center" style={{ color: "rgba(249,246,240,0.5)" }}>ATFT Community</span>
             </div>
           </div>
 
