@@ -18,6 +18,10 @@ export function isDailyDripEarlyWindow(timestamp: number) {
   return timestamp >= DAILY_DRIP_EARLY_START && timestamp < DAILY_DRIP_EARLY_END_EXCLUSIVE
 }
 
+export function isDailyDripEarlyCheckoutWindow(timestamp: number) {
+  return isDailyDripEarlyWindow(timestamp) && timestamp < ATFT_COMMUNITY_ACCESS_START
+}
+
 export function isDailyDripThanksgivingFlashWindow(timestamp: number) {
   return timestamp >= DAILY_DRIP_THANKSGIVING_FLASH_START && timestamp < DAILY_DRIP_THANKSGIVING_FLASH_END_EXCLUSIVE
 }

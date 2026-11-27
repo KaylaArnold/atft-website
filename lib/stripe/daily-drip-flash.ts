@@ -3,7 +3,7 @@ import { createHash } from "node:crypto"
 import type Stripe from "stripe"
 import {
   DAILY_DRIP_TUITION_START,
-  isDailyDripEarlyWindow,
+  isDailyDripEarlyCheckoutWindow,
   isDailyDripFlashCheckoutWindow,
 } from "@/lib/daily-drip-schedule"
 
@@ -112,8 +112,8 @@ export function getDailyDripConfig(): DailyDripConfig {
       tuitionPriceId: earlyTuitionPriceId,
       tuitionAmount: 29_900,
       metadataTier: "early_enrollment_299",
-      isEnrollmentWindow: isDailyDripEarlyWindow,
-      windowDescription: "October 30–December 15 Eastern Time early-enrollment window",
+      isEnrollmentWindow: isDailyDripEarlyCheckoutWindow,
+      windowDescription: "approved Eastern Time early-enrollment deposit window",
     })
   }
 

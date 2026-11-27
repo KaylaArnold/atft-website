@@ -11,6 +11,7 @@ import {
   DAILY_DRIP_TUITION_START,
   getCurrentDailyDripTier,
   isAtftCommunityAccessOpen,
+  isDailyDripEarlyCheckoutWindow,
   isDailyDripEarlyWindow,
   isDailyDripFlashCheckoutWindow,
   isDailyDripFlashWindow,
@@ -55,6 +56,11 @@ test("year-round ATFT Community Access opens when the Black Friday sale closes",
   assert.equal(isAtftCommunityAccessOpen(ATFT_COMMUNITY_ACCESS_START - 1), false)
   assert.equal(isAtftCommunityAccessOpen(ATFT_COMMUNITY_ACCESS_START), true)
   assert.equal(isAtftCommunityAccessOpen(ATFT_COMMUNITY_ACCESS_START + 31_536_000), true)
+})
+
+test("the old early-enrollment deposit checkout closes before the no-deposit rate begins", () => {
+  assert.equal(isDailyDripEarlyCheckoutWindow(ATFT_COMMUNITY_ACCESS_START - 1), true)
+  assert.equal(isDailyDripEarlyCheckoutWindow(ATFT_COMMUNITY_ACCESS_START), false)
 })
 
 test("public enrollment phase switches at the same boundaries", () => {
