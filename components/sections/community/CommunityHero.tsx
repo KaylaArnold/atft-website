@@ -1,5 +1,3 @@
-import DailyDripWaitlistLink from "@/components/sections/community/DailyDripWaitlistLink"
-
 const gradientBg = "linear-gradient(135deg, #C9A84C 0%, #E8C96A 40%, #C9A84C 100%)"
 const goldText = "linear-gradient(135deg, #C9A84C 0%, #E8C96A 50%, #C9A84C 100%)"
 
@@ -14,7 +12,7 @@ export default function CommunityHero() {
 
           <div className="flex items-center gap-3">
             <div className="h-px w-8" style={{ background: "#C9A84C" }} />
-            <span className="text-xs font-semibold tracking-widest uppercase text-gold">ATFT Academy · January–June 2027</span>
+            <span className="text-xs font-semibold tracking-widest uppercase text-gold">Structured Cohort · Flexible Community</span>
             <div className="h-px w-8" style={{ background: "#C9A84C" }} />
           </div>
 
@@ -40,19 +38,18 @@ export default function CommunityHero() {
             </p>
 
             <div className="flex flex-col items-center gap-2">
-              <p className="text-xs tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.6)" }}>Enrollment launches</p>
-              <p className="font-display text-4xl font-bold" style={{ color: "#E8C96A" }}>October 27, 2026</p>
+              <p className="text-xs tracking-widest uppercase" style={{ color: "rgba(201,168,76,0.6)" }}>Next structured cohort begins</p>
+              <p className="font-display text-4xl font-bold" style={{ color: "#E8C96A" }}>January 18, 2027</p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="flex items-center justify-center">
               <a href="#enrollment" className="inline-flex items-center justify-center px-10 py-4 rounded-md text-sm font-semibold text-brand-black hover:opacity-90 transition-all duration-200" style={{ background: gradientBg }}>
                 View Enrollment Options
               </a>
-              <DailyDripWaitlistLink />
             </div>
 
             <p className="text-xs" style={{ color: "rgba(249,246,240,0.4)" }}>
-              January–June 2027 cohort · Three enrollment windows · Same six-month experience
+              Choose a structured six-month cohort or flexible self-paced community access
             </p>
           </div>
 

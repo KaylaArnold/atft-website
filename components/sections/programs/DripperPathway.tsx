@@ -24,13 +24,13 @@ const PATHWAY_LEVELS: PathwayLevel[] = [
     level: "Level 1",
     title: "5% Daily Drip™",
     action: "Learn It",
-    summary: "The six-month ATFT Academy mentorship where Drippers learn the foundation of the ATFT trading system and how to responsibly grow from their first $100.",
+    summary: "The structured six-month ATFT Academy mentorship where Drippers learn the foundation of the ATFT trading system and how to responsibly grow from their first $100. The January–June 2027 cohort begins January 18.",
     topics: [
       "Trading discipline and risk management",
       "Chart reading and structured execution",
       "Building confidence and responsible account growth",
     ],
-    buttonLabel: "View Enrollment Options",
+    buttonLabel: "Compare Enrollment Options",
     buttonUrl: SITE_CONFIG.dailyDripUrl,
   },
   {

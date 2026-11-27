@@ -64,7 +64,7 @@ export default function Footer() {
             Explore 5% Daily Drip™
           </Link>
           <p className="text-xs mt-2" style={{ color: "rgba(249,246,240,0.4)" }}>
-            Enrollment launches October 27, 2026. January–June 2027 cohort.
+            January–June 2027 cohort begins January 18. Compare structured cohort and flexible community options.
           </p>
         </div>
 

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getCurrentDailyDripTier, getDailyDripCheckoutUrl, type DailyDripTierId } from "@/lib/daily-drip-enrollment"
-import { isDailyDripThanksgivingFlashWindow } from "@/lib/daily-drip-schedule"
+import { isAtftCommunityAccessOpen, isDailyDripThanksgivingFlashWindow } from "@/lib/daily-drip-schedule"
+import { SITE_CONFIG } from "@/lib/constants"
 
 export const dynamic = "force-dynamic"
 
@@ -13,9 +14,17 @@ export function GET(request: NextRequest) {
   }
 
   const tier = requestedTier as DailyDripTierId
+  const now = Math.floor(Date.now() / 1000)
   const activeTier = getCurrentDailyDripTier()
   const checkoutUrl = getDailyDripCheckoutUrl(tier)
-  const isThanksgivingFlash = tier === "flash" && isDailyDripThanksgivingFlashWindow(Math.floor(Date.now() / 1000))
+  const isThanksgivingFlash = tier === "flash" && isDailyDripThanksgivingFlashWindow(now)
+
+  if (isAtftCommunityAccessOpen(now)) {
+    if (tier === "flash") {
+      return NextResponse.redirect(new URL("/community?enrollment=unavailable#enrollment", request.url))
+    }
+    return NextResponse.redirect(SITE_CONFIG.dailyDripCohortEnrollmentUrl)
+  }
 
   if ((activeTier !== tier && !isThanksgivingFlash) || !checkoutUrl) {
     return NextResponse.redirect(new URL("/community?enrollment=unavailable#enrollment", request.url))
